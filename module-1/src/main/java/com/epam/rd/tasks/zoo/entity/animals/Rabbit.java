@@ -1,6 +1,6 @@
-package ru.kifor4ik.entity.animals;
+package com.epam.rd.tasks.zoo.entity.animals;
 
-import ru.kifor4ik.entity.Animal;
+import com.epam.rd.tasks.zoo.entity.Animal;
 
 public class Rabbit extends Animal {
     public Rabbit(String name, int age, String describe) {

@@ -1,4 +1,4 @@
-package ru.kifor4ik.entity;
+package com.epam.rd.tasks.zoo.entity;
 
 public class Address {
 

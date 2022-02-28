@@ -1,8 +1,8 @@
-package ru.kifor4ik;
+package com.epam.rd.tasks.zoo;
 
-import ru.kifor4ik.entity.animals.Tiger;
-import ru.kifor4ik.service.ZooService;
-import ru.kifor4ik.entity.animals.Rabbit;
+import com.epam.rd.tasks.zoo.entity.animals.Tiger;
+import com.epam.rd.tasks.zoo.service.ZooService;
+import com.epam.rd.tasks.zoo.entity.animals.Rabbit;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

@@ -1,10 +1,10 @@
-package ru.kifor4ik.service;
+package com.epam.rd.tasks.zoo.service;
 
-import ru.kifor4ik.entity.Animal;
-import ru.kifor4ik.entity.Address;
-import ru.kifor4ik.entity.Ticket;
-import ru.kifor4ik.entity.Zoo;
-import ru.kifor4ik.exception.WrongEnterException;
+import com.epam.rd.tasks.zoo.entity.Animal;
+import com.epam.rd.tasks.zoo.entity.Address;
+import com.epam.rd.tasks.zoo.entity.Ticket;
+import com.epam.rd.tasks.zoo.entity.Zoo;
+import com.epam.rd.tasks.zoo.exception.WrongEnterException;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
