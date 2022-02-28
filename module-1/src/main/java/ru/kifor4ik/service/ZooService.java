@@ -1,7 +1,7 @@
 package ru.kifor4ik.service;
 
-import ru.kifor4ik.entity.Address;
 import ru.kifor4ik.entity.Animal;
+import ru.kifor4ik.entity.Address;
 import ru.kifor4ik.entity.Ticket;
 import ru.kifor4ik.entity.Zoo;
 import ru.kifor4ik.exception.WrongEnterException;
@@ -49,7 +49,7 @@ public class ZooService {
         return ZOO_LIST.get(id);
     }
 
-    public void addAnimal(Integer zooId,Animal animal) {
+    public void addAnimal(Integer zooId, Animal animal) {
         animal.setId(ZOO_LIST.get(zooId).getAnimals().size());
         ZOO_LIST.get(zooId).getAnimals().add(animal);
     }
@@ -64,6 +64,14 @@ public class ZooService {
         if(name != null) changeAnimal.setName(name);
         if(age > 0 && age < 200) changeAnimal.setAge(age);
         if(describe != null) changeAnimal.setAge(age);
+    }
+
+    public Animal getAnimalById(Integer zooId, Integer animalId){
+        return ZOO_LIST.get(zooId).getAnimals()
+                .stream()
+                .filter(animal -> Objects.equals(animal.getId(), animalId))
+                .collect(Collectors.toList())
+                .get(0);
     }
 
     public void addAnimalHouse() {

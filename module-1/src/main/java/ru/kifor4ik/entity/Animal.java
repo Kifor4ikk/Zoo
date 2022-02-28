@@ -42,7 +42,7 @@ public abstract class Animal {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", describe='" + describe + '\'' +
-                '}' + '\n';
+                '}';
     }
 
     public Integer getId() {
