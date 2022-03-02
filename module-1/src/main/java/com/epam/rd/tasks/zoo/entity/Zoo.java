@@ -34,6 +34,7 @@ public class Zoo {
         return animalsHouse;
     }
 
+
     public Map<String, Integer> getFood() {
         return food;
     }
@@ -46,7 +47,6 @@ public class Zoo {
                 ", address=" + address +
                 ", description='" + description + '\'' +
                 ", contactInfo='" + contactInfo + '\'' +
-                ", animals=" + animals +
                 ", animalsHouse=" + animalsHouse +
                 ", food=" + food +
                 ", soldTickets=" + soldTickets +

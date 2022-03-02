@@ -1,11 +1,10 @@
 package com.epam.rd.tasks.zoo.service;
 
-import com.epam.rd.tasks.zoo.entity.Animal;
-import com.epam.rd.tasks.zoo.entity.Address;
-import com.epam.rd.tasks.zoo.entity.Ticket;
-import com.epam.rd.tasks.zoo.entity.Zoo;
+import com.epam.rd.tasks.zoo.entity.*;
+import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.exception.WrongEnterException;
 
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -45,7 +44,7 @@ public class ZooService {
         return ZOO_LIST;
     }
 
-    public Zoo getZooById(Integer id){
+    public Zoo getZooById(Integer id) {
         return ZOO_LIST.get(id);
     }
 
@@ -54,32 +53,41 @@ public class ZooService {
         ZOO_LIST.get(zooId).getAnimals().add(animal);
     }
 
-    public void changeAnimal(Integer zooId,Integer animalId,String name, Integer age, String describe){
+    public void changeAnimal(Integer zooId, Integer animalId, String name, Integer age, String describe) {
         Animal changeAnimal =
-        ZOO_LIST.get(zooId).getAnimals()
-                .stream()
-                .filter(animal -> Objects.equals(animal.getId(), animalId))
-                .collect(Collectors.toList())
-                .get(0);
-        if(name != null) changeAnimal.setName(name);
-        if(age > 0 && age < 200) changeAnimal.setAge(age);
-        if(describe != null) changeAnimal.setAge(age);
+                ZOO_LIST.get(zooId).getAnimals()
+                        .stream()
+                        .filter(animal -> Objects.equals(animal.getId(), animalId))
+                        .collect(Collectors.toList())
+                        .get(0);
+        if (name != null) changeAnimal.setName(name);
+        if (age > 0 && age < 200) changeAnimal.setAge(age);
+        if (describe != null) changeAnimal.setAge(age);
     }
 
-    public Animal getAnimalById(Integer zooId, Integer animalId){
+    public Animal getAnimalById(Integer zooId, Integer animalId) {
         return ZOO_LIST.get(zooId).getAnimals()
                 .stream()
                 .filter(animal -> Objects.equals(animal.getId(), animalId))
                 .collect(Collectors.toList())
-                .get(0);
+                .stream().findAny().orElseThrow();
     }
 
-    public void addAnimalHouse() {
-
+    public void addAnimalHouse(Integer zooId, String name, Integer area) {
+        ZOO_LIST.get(zooId).getAnimalsHouse()
+                .add(new AnimalHouse(ZOO_LIST.get(zooId).getAnimalsHouse().size(), name, area));
     }
 
-    public void addFood() {
+    public void addAnimalToHouse(Integer zooId,Integer houseId, Integer animalId){
+        ZOO_LIST.get(zooId).getAnimalsHouse().get(houseId).addAnimalToHouse(getAnimalById(zooId, animalId));
+    }
 
+    public void addFood(Integer zooId, String name, Integer count) {
+        if(count <= 0) throw new WrongEnterException("Count of food should be more than 0!");
+        if (ZOO_LIST.get(zooId).getFood().containsKey(name))
+            ZOO_LIST.get(zooId).getFood().put(name, count + ZOO_LIST.get(zooId).getFood().get(name));
+        else
+            ZOO_LIST.get(zooId).getFood().put(name, count);
     }
 
     public void sellTicket(Integer zooId, BigDecimal price, boolean isForChild, Integer count) {
