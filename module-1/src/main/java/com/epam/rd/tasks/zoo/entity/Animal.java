@@ -23,26 +23,12 @@ public abstract class Animal {
 
     public abstract void eat(String food);
 
-    public void move() {
-        System.out.println(name + " move.");
-    }
-
     public void describe() {
         System.out.println(describe);
     }
 
     public String getName() {
         return name;
-    }
-
-    @Override
-    public String toString() {
-        return "\nAnimal{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", describe='" + describe + '\'' +
-                '}';
     }
 
     public Integer getId() {
@@ -72,5 +58,15 @@ public abstract class Animal {
     @Override
     public int hashCode() {
         return Objects.hash(name, age, describe);
+    }
+
+    @Override
+    public String toString() {
+        return "\nAnimal{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", describe='" + describe + '\'' +
+                '}';
     }
 }
