@@ -79,7 +79,7 @@ public class ZooService {
     }
 
     public void addAnimalToHouse(Integer zooId,Integer houseId, Integer animalId){
-        ZOO_LIST.get(zooId).getAnimalsHouse().get(houseId).addAnimalToHouse(getAnimalById(zooId, animalId));
+        ZOO_LIST.get(zooId).getAnimalInHouse().put(getAnimalById(zooId,animalId),ZOO_LIST.get(zooId).getAnimalsHouse().get(houseId));
     }
 
     public void addFood(Integer zooId, String name, Integer count) {

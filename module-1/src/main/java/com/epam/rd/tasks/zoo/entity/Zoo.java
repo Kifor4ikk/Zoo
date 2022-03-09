@@ -1,5 +1,6 @@
 package com.epam.rd.tasks.zoo.entity;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class Zoo {
@@ -9,10 +10,14 @@ public class Zoo {
     private Address address;
     private String description;
     private String contactInfo;
+    private BigDecimal budget = BigDecimal.ZERO;
     private final Set<Animal> animals = new HashSet<>();
     private final List<AnimalHouse> animalsHouse = new ArrayList<>();
+    private final Map<Animal,AnimalHouse> animalInHouse = new HashMap<>();
     private final Map<String, Integer> food = new HashMap<>();
     private final List<Ticket> soldTickets = new ArrayList<>();
+    private final List<Expense> expenses = new ArrayList<>();
+    private final List<VisitorReview> visitorReviews = new ArrayList<>();
 
     public Zoo(Integer id,String name, Address address, String description, String contactInfo) {
         this.id = id;
@@ -34,9 +39,12 @@ public class Zoo {
         return animalsHouse;
     }
 
-
     public Map<String, Integer> getFood() {
         return food;
+    }
+
+    public Map<Animal, AnimalHouse> getAnimalInHouse() {
+        return animalInHouse;
     }
 
     @Override
@@ -45,11 +53,13 @@ public class Zoo {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address=" + address +
+                ", budget=" + budget +
                 ", description='" + description + '\'' +
                 ", contactInfo='" + contactInfo + '\'' +
                 ", animalsHouse=" + animalsHouse +
                 ", food=" + food +
                 ", soldTickets=" + soldTickets +
+                ", animals in cage= " + animalInHouse +
                 '}' + "\n";
     }
 }
