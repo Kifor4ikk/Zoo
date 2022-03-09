@@ -19,10 +19,6 @@ public abstract class Animal {
         this.id = id;
     }
 
-    public abstract void sound();
-
-    public abstract void eat(String food);
-
     public void describe() {
         System.out.println(describe);
     }
