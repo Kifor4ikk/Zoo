@@ -1,7 +1,0 @@
-package com.epam.rd.tasks.zoo.exception;
-
-public class NotFoundException extends RuntimeException{
-    public NotFoundException(String message) {
-        super(message);
-    }
-}
