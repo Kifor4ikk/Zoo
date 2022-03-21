@@ -2,6 +2,7 @@ package com.epam.rd.tasks.zoo.animals;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
+import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.util.List;
@@ -56,6 +57,7 @@ public abstract class Animal {
     }
 
     public void setAge(int age) {
+        if(age < 0) throw new WrongAgeException("Age should be more than 0");
         this.age = age;
     }
 
@@ -69,6 +71,10 @@ public abstract class Animal {
 
     public Class<? extends Food> getFoodType() {
         return foodType;
+    }
+
+    public void setFoodType(Class<? extends Food> foodType) {
+        this.foodType = foodType;
     }
 
     @Override
