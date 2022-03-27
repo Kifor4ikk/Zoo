@@ -27,14 +27,14 @@ public class ChameleonTest {
 
     public void describeTest(){
         Assert.assertEquals(chameleon.getDescribe(), "TestDescribe12");
-        chameleon.setName("TempDescribeForAnimal");
+        chameleon.setDescribe("TempDescribeForAnimal");
         Assert.assertNotEquals(chameleon.getDescribe(), "TestDescribe12");
         Assert.assertEquals(chameleon.getDescribe(), "TempDescribeForAnimal");
     }
 
     @Test(expectedExceptions = WrongAgeException.class)
     public void ageTest(){
-        Assert.assertNotEquals(chameleon.getAge(), 1);
+        Assert.assertEquals(chameleon.getAge(), 1);
         chameleon.setAge(-1);
         chameleon.setAge(2);
         Assert.assertEquals(chameleon.getAge(), 2);
