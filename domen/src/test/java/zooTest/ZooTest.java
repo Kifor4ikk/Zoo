@@ -31,27 +31,28 @@ public class ZooTest {
     Zoo zoo = new Zoo("AnimalPlanet", "Best zoo in whole cyberworld!", "vk.com/kifor4ik", BigDecimal.ZERO,
             "CyberCountry", "CyberCity", "CyberStreet", "1488A");
 
-    Bullfinch bullfinch = new Bullfinch("Snegir","Norm takoi",1, Field.class,
+    Bullfinch bullfinch = new Bullfinch("Snegir", "Norm takoi", 1, Field.class,
             List.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Wheat.class);
-    Bullfinch bullfinch2 = new Bullfinch("Snegir2","Norm takoi2",2, Field.class,
+    Bullfinch bullfinch2 = new Bullfinch("Snegir2", "Norm takoi2", 2, Field.class,
             List.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Wheat.class);
 
-    Lion lion = new Lion("Lion","Norm takoi",4, Field.class,
-            List.of(ClimateZone.TROPICAL,ClimateZone.SUBTROPICAL), Meat.class);
+    Lion lion = new Lion("Lion", "Norm takoi", 4, Field.class,
+            List.of(ClimateZone.TROPICAL, ClimateZone.SUBTROPICAL), Meat.class);
 
-    EmperorPenguin emperorPenguin = new EmperorPenguin("Emperor Penguin","Norm takoi",2, Aquarium.class,
-            List.of(ClimateZone.ARCTIC, ClimateZone.SUBANTARCTIC,ClimateZone.ANTARCTIC,ClimateZone.SUBANTARCTIC), Wheat.class);
+    EmperorPenguin emperorPenguin = new EmperorPenguin("Emperor Penguin", "Norm takoi", 2, Aquarium.class,
+            List.of(ClimateZone.ARCTIC, ClimateZone.SUBANTARCTIC, ClimateZone.ANTARCTIC, ClimateZone.SUBANTARCTIC), Wheat.class);
 
-    Chameleon chameleon = new Chameleon("Chameleon","Norm takoi",2, Aquarium.class,
-            List.of(ClimateZone.TROPICAL,ClimateZone.SUBEQUATORIAL), Bugs.class);
+    Chameleon chameleon = new Chameleon("Chameleon", "Norm takoi", 2, Aquarium.class,
+            List.of(ClimateZone.TROPICAL, ClimateZone.SUBEQUATORIAL), Bugs.class);
 
-    Field field = new Field(1L,"Savanna field",128,List.of(Lion.class),ClimateZone.TROPICAL);
-    Field field2 = new Field(2L,"Forest field",128,List.of(Bullfinch.class),ClimateZone.MODERATE);
-    Aquarium aquarium = new Aquarium(3L,"Acrtic aquarium",128,List.of(EmperorPenguin.class, RoyalPenguin.class), ClimateZone.ARCTIC);
-    Terrarium terrarium = new Terrarium(4L,"Terrarium",128,List.of(Chameleon.class, Python.class),ClimateZone.TROPICAL);
+    Field field = new Field(1L, "Savanna field", 128, List.of(Lion.class), ClimateZone.TROPICAL);
+    Field field2 = new Field(2L, "Forest field", 128, List.of(Bullfinch.class), ClimateZone.MODERATE);
+    Aquarium aquarium = new Aquarium(3L, "Acrtic aquarium", 128, List.of(EmperorPenguin.class, RoyalPenguin.class), ClimateZone.ARCTIC);
+    Terrarium terrarium = new Terrarium(4L, "Terrarium", 128, List.of(Chameleon.class, Python.class), ClimateZone.TROPICAL);
     //finance
     Salary salary = new Salary("Salary for workers", LocalDateTime.now(), BigDecimal.valueOf(10));
     Ticket ticket = new Ticket("Ticket", LocalDateTime.now(), BigDecimal.valueOf(12));
+
     @BeforeTest
     public void setIdForAllEntities() {
         zoo.setId(1L);
@@ -63,40 +64,45 @@ public class ZooTest {
         chameleon.setId(5L);
     }
 
-    public void idTest(){
+    public void idTest() {
         Assert.assertEquals(zoo.getId(), 1);
     }
 
-    public void nameTest(){
-        Assert.assertEquals(zoo.getName(),"AnimalPlanet");
+    public void nameTest() {
+        Assert.assertEquals(zoo.getName(), "AnimalPlanet");
         zoo.setName("Animal Planet");
-        Assert.assertNotEquals(zoo.getName(),"AnimalPlanet");
-        Assert.assertEquals(zoo.getName(),"Animal Planet");
+        Assert.assertNotEquals(zoo.getName(), "AnimalPlanet");
+        Assert.assertEquals(zoo.getName(), "Animal Planet");
     }
 
-    public void describeTest(){
-        Assert.assertEquals(zoo.getDescribe(),"Best zoo in whole cyberworld!");
+    public void describeTest() {
+        Assert.assertEquals(zoo.getDescribe(), "Best zoo in whole cyberworld!");
         zoo.setName("Best zoo in whole cyber world!");
-        Assert.assertNotEquals(zoo.getName(),"Best zoo in whole cyberworld!");
-        Assert.assertEquals(zoo.getName(),"Best zoo in whole cyber world!");
+        Assert.assertNotEquals(zoo.getName(), "Best zoo in whole cyberworld!");
+        Assert.assertEquals(zoo.getName(), "Best zoo in whole cyber world!");
     }
 
-    public void testContactInfo(){
-        Assert.assertEquals(zoo.getContactInfo(),"vk.com/kifor4ik");
+    public void testContactInfo() {
+        Assert.assertEquals(zoo.getContactInfo(), "vk.com/kifor4ik");
         zoo.setContactInfo("vk.com/kifor4ik | tg.me/kifor4ik");
-        Assert.assertNotEquals(zoo.getContactInfo(),"vk.com/kifor4ik");
-        Assert.assertEquals(zoo.getContactInfo(),"vk.com/kifor4ik | tg.me/kifor4ik");
+        Assert.assertNotEquals(zoo.getContactInfo(), "vk.com/kifor4ik");
+        Assert.assertEquals(zoo.getContactInfo(), "vk.com/kifor4ik | tg.me/kifor4ik");
     }
 
-    public void budgetTest(){
+    public void budgetTest() {
+        //@TODO delete esli cho
+//        Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO);
+//        zoo.addMoneyToBudget(ticket);
+//        Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO.add(ticket.getCost()));
+//        zoo.removeMoneyFromBudget(salary);
+//        Assert.assertEquals(zoo.getBudget(), BigDecimal.valueOf(2));
         Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO);
-        zoo.addMoneyToBudget(ticket);
-        Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO.add(ticket.getCost()));
-        zoo.removeMoneyFromBudget(salary);
-        Assert.assertEquals(zoo.getBudget(), BigDecimal.valueOf(2));
+        zoo.setBudget(BigDecimal.TEN);
+        Assert.assertNotEquals(zoo.getBudget(), BigDecimal.ZERO);
+        Assert.assertEquals(zoo.getBudget(), BigDecimal.TEN);
     }
 
-    public void addressTest(){
+    public void addressTest() {
         Assert.assertEquals(zoo.getAddress().getCountry(), "CyberCountry");
         zoo.getAddress().setCountry("Cyber Country 12");
         Assert.assertNotEquals(zoo.getAddress().getCountry(), "CyberCountry");
@@ -107,7 +113,7 @@ public class ZooTest {
         Assert.assertNotEquals(zoo.getAddress().getCity(), "CyberCity");
         Assert.assertEquals(zoo.getAddress().getCity(), "Cyber City 12");
         // ---
-        Assert.assertEquals(zoo.getAddress().getStreet(), "CyberStreet");;
+        Assert.assertEquals(zoo.getAddress().getStreet(), "CyberStreet");
         zoo.getAddress().setStreet("Cyber Street 12");
         Assert.assertNotEquals(zoo.getAddress().getStreet(), "CyberStreet");
         Assert.assertEquals(zoo.getAddress().getStreet(), "Cyber Street 12");
@@ -116,6 +122,31 @@ public class ZooTest {
         zoo.getAddress().setHouseNumber("1487B");
         Assert.assertNotEquals(zoo.getAddress().getHouseNumber(), "1488A");
         Assert.assertEquals(zoo.getAddress().getHouseNumber(), "1487B");
+    }
+
+    public void animalHouseTest() {
+        zoo.getAnimalHouses().add(aquarium);
+        zoo.getAnimalHouses().add(aquarium);
+        zoo.getAnimalHouses().add(terrarium);
+        Assert.assertEquals(zoo.getAnimalHouses().size(), 3);
+        Assert.assertEquals(zoo.getAnimalHouses().get(0), aquarium);
+        Assert.assertEquals(zoo.getAnimalHouses().get(1), aquarium);
+        Assert.assertEquals(zoo.getAnimalHouses().get(2), terrarium);
+    }
+
+    public void foodTest() {
+        zoo.getFoodCount().put(Wheat.class, 10);
+        zoo.getFoodCount().put(Meat.class, 0);
+        Assert.assertEquals(zoo.getFoodCount().get(Wheat.class), 10);
+        Assert.assertEquals(zoo.getFoodCount().get(Meat.class), 0);
+    }
+
+    public void financeTest(){
+        zoo.getFinance().add(salary);
+        zoo.getFinance().add(ticket);
+        Assert.assertTrue(zoo.getFinance().contains(ticket));
+        Assert.assertTrue(zoo.getFinance().contains(salary));
+
     }
 
 }

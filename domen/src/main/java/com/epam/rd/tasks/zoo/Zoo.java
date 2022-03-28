@@ -20,9 +20,9 @@ public class Zoo {
     private String describe;
     private String contactInfo;
     private BigDecimal budget;
-    private Address address;
+    private final Address address;
     private final List<AnimalHouse> animalHouses = new ArrayList<>();
-    private final Map<Food, Integer> foodCount = new HashMap<>();
+    private final Map<Class<? extends Food>, Integer> foodCount = new HashMap<>();
     private final Map<Animal,AnimalHouse> animals = new HashMap<>();
     private final List<Finance> finance = new ArrayList<>();
     private final List<VisitorReview> visitorReviews = new ArrayList<>();
@@ -73,23 +73,27 @@ public class Zoo {
         return budget;
     }
 
-    public void addMoneyToBudget(Income income){
-        if(income.getCost().compareTo(BigDecimal.ZERO) > 0)
-            this.budget = this.budget.add(income.getCost());
-        else
-            throw new WrongCountException("Amount should be more than 0");
+    public void setBudget(BigDecimal budget){
+        this.budget = budget;
     }
 
-    public void removeMoneyFromBudget(Expenses expenses) {
-        if (expenses.getCost().compareTo(BigDecimal.ZERO) > 0) {
-            //@TODO ес че включить, если бюджет меньше нуля не может быть.
-//            if(this.budget.subtract(expenses.getCost()).compareTo(BigDecimal.ZERO) < 0)
-//                throw new WrongCountException("Budget cant be less than ZERO");
-            this.budget = this.budget.subtract(expenses.getCost());
-        } else {
-            throw new WrongCountException("Amount should be more than 0");
-        }
-    }
+//    public void addMoneyToBudget(Income income){
+//        if(income.getCost().compareTo(BigDecimal.ZERO) > 0)
+//            this.budget = this.budget.add(income.getCost());
+//        else
+//            throw new WrongCountException("Amount should be more than 0");
+//    }
+//
+//    public void removeMoneyFromBudget(Expenses expenses) {
+//        if (expenses.getCost().compareTo(BigDecimal.ZERO) > 0) {
+//            //@TODO ес че включить, если бюджет меньше нуля не может быть.
+////            if(this.budget.subtract(expenses.getCost()).compareTo(BigDecimal.ZERO) < 0)
+////                throw new WrongCountException("Budget cant be less than ZERO");
+//            this.budget = this.budget.subtract(expenses.getCost());
+//        } else {
+//            throw new WrongCountException("Amount should be more than 0");
+//        }
+//    }
 
     public Address getAddress() {
         return address;
@@ -99,7 +103,8 @@ public class Zoo {
         return animalHouses;
     }
 
-    public Map<Food, Integer> getFoodCount() {
+
+    public Map<Class<? extends Food>, Integer> getFoodCount() {
         return foodCount;
     }
 
