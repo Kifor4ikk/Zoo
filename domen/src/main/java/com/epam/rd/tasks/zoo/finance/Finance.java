@@ -9,6 +9,7 @@ public abstract class Finance {
     private String describe;
     private LocalDateTime localDateTime;
     private BigDecimal cost;
+    private boolean isDeleted = false;
 
     public Finance(String describe, LocalDateTime localDateTime, BigDecimal cost) {
         if(cost.compareTo(BigDecimal.ZERO) < 0)
@@ -28,5 +29,13 @@ public abstract class Finance {
 
     public void setDescribe(String describe) {
         this.describe = describe;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

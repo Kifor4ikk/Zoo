@@ -45,7 +45,6 @@ public class FieldTest {
         Assert.assertEquals(field.getArea(),8);
     }
 
-    //@TODO поменять на Ассерт жду эксепшн
     @Test(expectedExceptions = BadAnimalTypeException.class)
     public void typeOfAnimalTest(){
         //Проверка на совпадение начальных данных
@@ -61,7 +60,6 @@ public class FieldTest {
         Assert.assertEquals(field.getTypeOfAnimal(), List.of(Elephant.class));
     }
 
-    //@TODO поменять на Ассерт жду эксепшн
     @Test(expectedExceptions = BadClimateException.class)
     public void climateZoneTest(){
         //Проверка начальных данных.

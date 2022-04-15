@@ -8,7 +8,12 @@ import com.epam.rd.tasks.zoo.food.Food;
 import java.util.List;
 
 public abstract class HigherСancers extends Crustacean {
+
     public HigherСancers(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType) {
         super(name, describe, age, livingZone, climateZone, foodType);
+    }
+
+    public HigherСancers(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
+        super(name, describe, age, livingZone, climateZone, foodType, isDeleted);
     }
 }

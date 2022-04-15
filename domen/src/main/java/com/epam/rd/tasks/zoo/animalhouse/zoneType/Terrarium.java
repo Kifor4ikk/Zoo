@@ -10,4 +10,7 @@ public class Terrarium extends AnimalHouse {
     public Terrarium(Long id, String name, Integer area, List<Class<? extends Animal>> typeOfAnimal, ClimateZone climateZone) {
         super(id, name, area, typeOfAnimal, climateZone);
     }
+
+    public Terrarium() {
+    }
 }

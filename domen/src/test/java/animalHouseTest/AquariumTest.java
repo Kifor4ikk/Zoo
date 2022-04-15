@@ -48,7 +48,6 @@ public class AquariumTest {
         Assert.assertEquals(aquarium.getArea(),8);
     }
 
-    //@TODO поменять на Ассерт жду эксепшн
     @Test(expectedExceptions = BadAnimalTypeException.class)
     public void typeOfAnimalTest(){
         //Проверка на совпадение начальных данных
@@ -64,7 +63,6 @@ public class AquariumTest {
         Assert.assertEquals(aquarium.getTypeOfAnimal(), List.of(Sterlet.class, Vobla.class,Bream.class));
     }
 
-    //@TODO поменять на Ассерт жду эксепшн
     @Test(expectedExceptions = BadClimateException.class)
     public void climateZoneTest(){
         //Проверка начальных данных.

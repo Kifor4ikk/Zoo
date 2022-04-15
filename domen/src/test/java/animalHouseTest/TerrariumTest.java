@@ -49,7 +49,6 @@ public class TerrariumTest {
         Assert.assertEquals(terrarium.getArea(),8);
     }
 
-    //@TODO поменять на Ассерт жду эксепшн
     @Test(expectedExceptions = BadAnimalTypeException.class)
     public void typeOfAnimalTest(){
         //Проверка на совпадение начальных данных
@@ -65,7 +64,6 @@ public class TerrariumTest {
         Assert.assertEquals(terrarium.getTypeOfAnimal(), List.of(Python.class));
     }
 
-    //@TODO поменять на Ассерт жду эксепшн
     @Test(expectedExceptions = BadClimateException.class)
     public void climateZoneTest(){
         //Проверка начальных данных.

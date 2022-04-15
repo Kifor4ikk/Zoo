@@ -6,6 +6,7 @@ public class VisitorReview{
     private String visitorName;
     private String review;
     private LocalDateTime visitTime;
+    private Integer zooId;
 
     public VisitorReview(String visitorName, String review, LocalDateTime visitTime) {
         this.visitorName = visitorName;

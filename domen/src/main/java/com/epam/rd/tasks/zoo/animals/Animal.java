@@ -4,9 +4,12 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Food;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode
 public abstract class Animal {
 
     private Long id;
@@ -16,6 +19,7 @@ public abstract class Animal {
     private Class<? extends AnimalHouse> livingZone;
     private List<ClimateZone> climateZone;
     private Class<? extends Food> foodType;
+    private boolean isDeleted = false;
 
     public Animal(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
                   List<ClimateZone> climateZone, Class<? extends Food> foodType) {
@@ -25,6 +29,12 @@ public abstract class Animal {
         this.livingZone = livingZone;
         this.climateZone = climateZone;
         this.foodType = foodType;
+    }
+
+    public Animal(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
+                  List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
+        this(name, describe, age, livingZone, climateZone, foodType);
+        this.isDeleted = isDeleted;
     }
 
     public Long getId() {
@@ -77,6 +87,14 @@ public abstract class Animal {
         this.foodType = foodType;
     }
 
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
@@ -90,4 +108,6 @@ public abstract class Animal {
                 ", class=" + this.getClass() +
                 '}';
     }
+
+
 }

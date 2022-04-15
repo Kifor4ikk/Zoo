@@ -11,4 +11,8 @@ public abstract class Bird extends Animal {
     public Bird(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType) {
         super(name, describe, age, livingZone, climateZone, foodType);
     }
+
+    public Bird(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
+        super(name, describe, age, livingZone, climateZone, foodType, isDeleted);
+    }
 }

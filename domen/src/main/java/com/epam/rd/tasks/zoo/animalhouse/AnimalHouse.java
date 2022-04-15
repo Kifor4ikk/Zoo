@@ -4,12 +4,18 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.BadClimateException;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public abstract class AnimalHouse {
     private Long id;
     private String name;
@@ -17,8 +23,8 @@ public abstract class AnimalHouse {
     private List<Class<? extends Animal>> typeOfAnimal;
     private List<Animal> animals = new ArrayList<>();
     private ClimateZone climateZone;
+    private boolean isDeleted = false;
 
-    //@TODO при добавлении БАЗЫ ДАННЫХ УБРАТЬ ID ИЗ КОНСТРУКТОРА
     public AnimalHouse(Long id, String name, Integer area,
                        List<Class<? extends Animal>> typeOfAnimal, ClimateZone climateZone) {
         this.id = id;
@@ -26,6 +32,14 @@ public abstract class AnimalHouse {
         this.area = area;
         this.typeOfAnimal = typeOfAnimal;
         this.climateZone = climateZone;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -73,6 +87,14 @@ public abstract class AnimalHouse {
 
     public ClimateZone getClimateZone() {
         return climateZone;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 
     public void addAnimal(Animal animal) {
