@@ -5,6 +5,7 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.animals.reptile.scaled.Chameleon;
 import com.epam.rd.tasks.zoo.dto.animal.AnimalDto;
+import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.food.Bugs;
 import com.epam.rd.tasks.zoo.repository.animal.CrabImpl;
 import com.epam.rd.tasks.zoo.repository.database.Database;
@@ -35,8 +36,22 @@ public class CrabRepoTest {
         Assert.assertEquals(crab2,crab);
     }
 
-    public void getTest() throws SQLException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-
+    @Test(expectedExceptions = PSQLException.class)
+    public void updateTest() throws SQLException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        crabImpl.updateCrab(2L, AnimalDto.toDTO(new Crab("AnimalName", "TestDescribe12",10 ,Terrarium.class,
+                List.of(ClimateZone.TROPICAL, ClimateZone.SUBARCTIC,ClimateZone.ANTARCTIC), Bugs.class, false)));
     }
+
+    @Test(expectedExceptions = PSQLException.class)
+    public void deleteSoftTest() throws SQLException, ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+        if(crabImpl.getById(2L).isDeleted()) {
+            crabImpl.deleteCrab(2L, false);
+        }
+        crabImpl.deleteCrab(2L, true);
+        System.out.println("->");
+        System.out.println("->" + crabImpl.getById(2L));
+    }
+
+
 
 }

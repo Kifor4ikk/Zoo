@@ -16,16 +16,6 @@ public class TerrariumRepoImpl extends HouseRepoImpl implements TerrariumReposit
         super(connection);
     }
 
-    /*
-    private Long id;
-    private String name;
-    private Integer area;
-    private List<String> typeOfAnimal;
-    //private List<Animal> animals = new ArrayList<>();
-    private String climateZone;
-    private boolean isDeleted = false;
-    */
-
     @Override
     public void create(Terrarium terrarium) throws SQLException {
         //@TODO change to StringBuilder

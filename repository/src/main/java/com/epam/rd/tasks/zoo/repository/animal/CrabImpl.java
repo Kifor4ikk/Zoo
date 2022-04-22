@@ -57,12 +57,24 @@ public class CrabImpl extends AnimalRepoImpl implements CrabRepository {
     }
 
     @Override
-    public void updateCrab(Long id) {
-        //@TODO потом
+    public void updateCrab(Long id, AnimalDto animal) throws SQLException {
+        state().executeQuery("UPDATE crab SET " +
+                "name = '" + animal.getName() + "' " +
+                ", describe = '" + animal.getDescribe() + "' " +
+                ", age = '" + animal.getAge() + "'" +
+                ", zonetype = '" + animal.getLivingZone() + "' " +
+                ", foodtype = '" + animal.getFoodType() +"' " +
+                ", climatezone = '" +  animal.getClimateZone() + "' " +
+                "WHERE id = " + id);
     }
 
     @Override
-    public void deleteCrab(Long id) throws SQLException {
-        state().executeQuery("UPDATE TABLE crab SET isDeleted = false WHERE Id = '" + id + "'");
+    public void deleteCrab(Long id, boolean isDeleted) throws SQLException {
+        state().executeQuery("UPDATE crab SET isDeleted = " + isDeleted + " WHERE Id = '" + id + "'");
+    }
+
+    @Override
+    public void deleteHard(Long id) throws SQLException{
+        state().executeQuery("DELETE FROM crab WHERE Id = '" + id + "'");
     }
 }
