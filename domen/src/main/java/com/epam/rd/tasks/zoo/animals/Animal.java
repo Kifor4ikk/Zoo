@@ -21,6 +21,7 @@ public abstract class Animal {
     private Class<? extends Food> foodType;
     private boolean isDeleted = false;
 
+    public Animal(){}
     public Animal(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
                   List<ClimateZone> climateZone, Class<? extends Food> foodType) {
         this.name = name;
@@ -89,6 +90,14 @@ public abstract class Animal {
 
     public boolean isDeleted() {
         return isDeleted;
+    }
+
+    public void setLivingZone(Class<? extends AnimalHouse> livingZone) {
+        this.livingZone = livingZone;
+    }
+
+    public void setClimateZone(List<ClimateZone> climateZone) {
+        this.climateZone = climateZone;
     }
 
     public void setDeleted(boolean deleted) {

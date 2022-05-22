@@ -1,4 +1,4 @@
-package com.epam.rd.tasks.zoo.animals.ampfibian;
+package com.epam.rd.tasks.zoo.animals.amphibian;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;

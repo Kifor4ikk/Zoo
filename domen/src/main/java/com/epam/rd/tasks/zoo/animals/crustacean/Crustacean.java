@@ -9,6 +9,7 @@ import java.util.List;
 
 public abstract class Crustacean extends Animal {
 
+    public Crustacean(){ super(); }
     public Crustacean(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType) {
         super(name, describe, age, livingZone, climateZone, foodType);
     }

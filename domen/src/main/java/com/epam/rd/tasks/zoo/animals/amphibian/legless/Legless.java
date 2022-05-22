@@ -1,8 +1,8 @@
-package com.epam.rd.tasks.zoo.animals.ampfibian.legless;
+package com.epam.rd.tasks.zoo.animals.amphibian.legless;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
-import com.epam.rd.tasks.zoo.animals.ampfibian.Amphibian;
+import com.epam.rd.tasks.zoo.animals.amphibian.Amphibian;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.util.List;
