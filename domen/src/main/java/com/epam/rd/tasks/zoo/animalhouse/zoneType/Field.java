@@ -10,4 +10,13 @@ public class Field extends AnimalHouse {
     public Field(Long id, String name, Integer area, List<Class<? extends Animal>> typeOfAnimal, ClimateZone climateZone) {
         super(id, name, area, typeOfAnimal, climateZone);
     }
+
+    public Field() {
+        super();
+    }
+
+    @Override
+    public String toString() {
+        return "Field{"+super.toString()+"}";
+    }
 }

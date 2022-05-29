@@ -22,6 +22,7 @@ public abstract class Animal {
     private boolean isDeleted = false;
 
     public Animal(){}
+
     public Animal(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
                   List<ClimateZone> climateZone, Class<? extends Food> foodType) {
         this.name = name;

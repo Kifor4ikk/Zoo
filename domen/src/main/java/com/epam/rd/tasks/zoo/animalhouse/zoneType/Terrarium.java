@@ -12,5 +12,6 @@ public class Terrarium extends AnimalHouse {
     }
 
     public Terrarium() {
+        super();
     }
 }

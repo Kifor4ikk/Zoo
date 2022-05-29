@@ -10,11 +10,33 @@ import java.util.List;
 public abstract class Crustacean extends Animal {
 
     public Crustacean(){ super(); }
-    public Crustacean(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType) {
+
+    private String seashell;
+
+    public Crustacean(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
+                      List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell) {
         super(name, describe, age, livingZone, climateZone, foodType);
+        this.seashell = seashell;
     }
 
-    public Crustacean(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
+    public Crustacean(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
+                      List<ClimateZone> climateZone, Class<? extends Food> foodType,String seashell, boolean isDeleted) {
         super(name, describe, age, livingZone, climateZone, foodType, isDeleted);
+        this.seashell = seashell;
+    }
+
+    public String getSeashell() {
+        return seashell;
+    }
+
+    public void setSeashell(String seashell) {
+        this.seashell = seashell;
+    }
+
+    @Override
+    public String toString() {
+        return "Crustacean{" + super.toString() +
+                "seashell='" + seashell + '\'' +
+                '}';
     }
 }

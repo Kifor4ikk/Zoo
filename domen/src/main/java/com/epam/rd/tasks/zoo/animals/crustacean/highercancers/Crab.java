@@ -12,13 +12,11 @@ public class Crab extends HigherСancers{
     public Crab(){
         super();
     }
-    public Crab(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType) {
-        super(name, describe, age, livingZone, climateZone, foodType);
+    public Crab(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell) {
+        super(name, describe, age, livingZone, climateZone, foodType, seashell);
     }
 
-    public Crab(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
-        super(name, describe, age, livingZone, climateZone, foodType, isDeleted);
+    public Crab(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell, boolean isDeleted) {
+        super(name, describe, age, livingZone, climateZone, foodType, seashell, isDeleted);
     }
-
-
 }

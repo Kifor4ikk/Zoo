@@ -16,7 +16,7 @@ import java.util.List;
 @Test
 public class CrabTest {
     Crab crab = new Crab("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class,"Seashell medium");
 
     public void nameTest(){
         Assert.assertEquals(crab.getName(), "AnimalName");

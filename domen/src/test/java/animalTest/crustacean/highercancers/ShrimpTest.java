@@ -16,7 +16,7 @@ import java.util.List;
 @Test
 public class ShrimpTest {
     Shrimp shrimp = new Shrimp("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class,"Medium");
 
     public void nameTest(){
         Assert.assertEquals(shrimp.getName(), "AnimalName");

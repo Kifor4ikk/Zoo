@@ -13,14 +13,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 public abstract class AnimalHouse {
     private Long id;
     private String name;
     private Integer area;
-    private List<Class<? extends Animal>> typeOfAnimal;
+    private List<Class<? extends Animal>> typeOfAnimal = new ArrayList<>();
     private List<Animal> animals = new ArrayList<>();
     private ClimateZone climateZone;
     private boolean isDeleted = false;
@@ -32,6 +29,9 @@ public abstract class AnimalHouse {
         this.area = area;
         this.typeOfAnimal = typeOfAnimal;
         this.climateZone = climateZone;
+    }
+
+    public AnimalHouse() {
     }
 
     public void setId(Long id) {
@@ -65,7 +65,7 @@ public abstract class AnimalHouse {
     public void setTypeOfAnimal(List<Class<? extends Animal>> typeOfAnimal) {
         if (!animals.isEmpty()) {
             // есть вариант с темпорари листом, чтобы конкретно говорить какие типы животных тут ещё живут
-            if(!typeOfAnimal.containsAll(animals.stream()
+            if (!typeOfAnimal.containsAll(animals.stream()
                     .map(Animal::getClass)
                     .collect(Collectors.toList())))
                 throw new BadAnimalTypeException("Cant change animal type in cage " + getName() + " cause another animal still living here!");
@@ -76,13 +76,17 @@ public abstract class AnimalHouse {
     public void setClimateZone(ClimateZone climateZone) {
         if (!animals.isEmpty()) {
             // есть вариант с темпорари листом, чтобы конкретно говорить какие типы животных тут ещё живут
-            if(animals.stream()
+            if (animals.stream()
                     .map(Animal::getClimateZone)
                     .collect(Collectors.toList())
                     .stream().anyMatch(climateZones -> !climateZones.contains(climateZone)))
                 throw new BadClimateException("Cant change climate zone in cage " + getName() + " cause another animal still living here!");
         }
         this.climateZone = climateZone;
+    }
+
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
     }
 
     public ClimateZone getClimateZone() {
@@ -102,7 +106,7 @@ public abstract class AnimalHouse {
             throw new BadClimateException(animal.getName() + " cant live in " + name + " because bad climate!");
         if (!animal.getLivingZone().equals(this.getClass()))
             throw new BadClimateException(animal.getName() + " cant live in " + name + " because bad living zone!");
-        if(!typeOfAnimal.contains(animal.getClass()))
+        if (!typeOfAnimal.contains(animal.getClass()))
             throw new BadAnimalTypeException(animal.getName() + " cant live in " + name + " because this cage for different type of animals!");
         animals.add(animal);
     }
@@ -115,5 +119,31 @@ public abstract class AnimalHouse {
 
     public List<Animal> getAnimals() {
         return animals;
+    }
+
+    @Override
+    public String toString() {
+        return "AnimalHouse{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", area=" + area +
+                ", typeOfAnimal=" + typeOfAnimal +
+                ", animals=" + animals +
+                ", climateZone=" + climateZone +
+                ", isDeleted=" + isDeleted +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AnimalHouse that = (AnimalHouse) o;
+        return isDeleted == that.isDeleted && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(area, that.area) && Objects.equals(typeOfAnimal, that.typeOfAnimal) && Objects.equals(animals, that.animals) && climateZone == that.climateZone;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, area, typeOfAnimal, animals, climateZone, isDeleted);
     }
 }
