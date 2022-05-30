@@ -26,8 +26,7 @@ public class AnimalHouseDto {
     //все кто живет в халупе
     private List<Animal> animals = new ArrayList<>();
 
-    public AnimalHouseDto() {
-    }
+    public AnimalHouseDto() {}
 
     public AnimalHouseDto(Long id, String name, Integer area, String typeOfAnimal, String climateZone, String typeOfHouse, boolean isDeleted, List<Animal> animals) {
         this.id = id;
@@ -136,7 +135,6 @@ public class AnimalHouseDto {
             animalHouse.setId(dto.getId());
             animalHouse.setName(dto.getName());
             animalHouse.setArea(dto.getArea());
-            System.out.println(dto.getTypeOfAnimal().substring(1, dto.getTypeOfAnimal().length() - 1));
             for (String className : dto.getTypeOfAnimal().substring(1, dto.getTypeOfAnimal().length() - 1).split(", "))
                 animalHouse.getTypeOfAnimal().add((Class<? extends Animal>) Class.forName(className));
             animalHouse.setClimateZone(ClimateZone.valueOf(dto.getClimateZone()));

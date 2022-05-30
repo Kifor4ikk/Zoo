@@ -1,6 +1,14 @@
 package com.epam.rd.tasks.zoo.dto.animal;
 
+import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
+import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
+import com.epam.rd.tasks.zoo.dto.animal.crustacean.CrustaceanDto;
+import com.epam.rd.tasks.zoo.food.Food;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -88,6 +96,41 @@ public class AnimalDto {
         isDeleted = deleted;
     }
 
+    public static AnimalDto toDTO(Animal animal) {
+
+        AnimalDto dto = new AnimalDto();
+
+        dto.setName(animal.getName());
+        dto.setDescribe(animal.getDescribe());
+        dto.setAge(animal.getAge());
+        dto.setLivingZone(animal.getLivingZone().getName());
+        dto.setClimateZone(animal.getClimateZone().stream().map(Enum::name).collect(Collectors.toList()));
+        dto.setFoodType(animal.getFoodType().getName());
+        dto.setDeleted(animal.isDeleted());
+        dto.setTypeOfAnimal(animal.getClass().getName());
+        return dto;
+    }
+
+    public static <T extends Animal, Z extends AnimalDto> T fromDto(Z dto) throws ClassNotFoundException {
+        T animal = null;
+        try{
+            Constructor<?> constructor = Class.forName(dto.getTypeOfAnimal()).getConstructor();
+            animal = (T) constructor.newInstance();
+
+            animal.setName(dto.getName());
+            animal.setDescribe(dto.getDescribe());
+            animal.setAge(dto.getAge());
+            animal.setLivingZone((Class<? extends AnimalHouse>) Class.forName(dto.getLivingZone()));
+            animal.setClimateZone(dto.getClimateZone().stream().map(ClimateZone::valueOf).collect(Collectors.toList()));
+            animal.setFoodType((Class<? extends Food>)Class.forName(dto.getFoodType()));
+            animal.setDeleted(dto.isDeleted());
+            animal.setId(dto.getId());
+
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e){
+            System.err.println("->" + e);
+        }
+        return animal;
+    }
     @Override
     public String toString() {
         return "AnimalDto{" +
