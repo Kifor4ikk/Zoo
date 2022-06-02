@@ -7,15 +7,15 @@ import com.epam.rd.tasks.zoo.food.Food;
 
 import java.util.List;
 
-public abstract class HigherСancers extends Crustacean {
-    public HigherСancers(){
+public abstract class HigherCancers extends Crustacean {
+    public HigherCancers(){
         super();
     }
-    public HigherСancers(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell) {
+    public HigherCancers(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell) {
         super(name, describe, age, livingZone, climateZone, foodType, seashell);
     }
 
-    public HigherСancers(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell, boolean isDeleted) {
+    public HigherCancers(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell, boolean isDeleted) {
         super(name, describe, age, livingZone, climateZone, foodType, seashell, isDeleted);
     }
 }

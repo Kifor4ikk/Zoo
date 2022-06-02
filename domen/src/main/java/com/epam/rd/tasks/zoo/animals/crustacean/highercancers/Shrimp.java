@@ -6,7 +6,7 @@ import com.epam.rd.tasks.zoo.food.Food;
 
 import java.util.List;
 
-public class Shrimp extends HigherСancers{
+public class Shrimp extends HigherCancers {
 
     public Shrimp(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, String seashell) {
         super(name, describe, age, livingZone, climateZone, foodType, seashell);

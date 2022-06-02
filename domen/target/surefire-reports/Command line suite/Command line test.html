@@ -1,0 +1,2456 @@
+<html>
+<head>
+<title>TestNG:  Command line test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Command line test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>181/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jun 02 11:05:37 MSK 2022</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (132 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='animalTest.mammal.primate.MonkeyTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.mammal.primate.MonkeyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.MonkeyTest@31e5415e</td></tr>
+<tr>
+<td title='animalTest.fish.carp.VoblaTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.fish.carp.VoblaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.VoblaTest@41fecb8b</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.WolfTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.mammal.predator.WolfTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.predator.WolfTest.ageTest(WolfTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1293677337", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1293677337'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.predator.WolfTest.ageTest(WolfTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.mammal.predator.WolfTest@27ff5d15</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.MonkeyTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.mammal.primate.MonkeyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.MonkeyTest@31e5415e</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.ShrimpTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.crustacean.highercancers.ShrimpTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.crustacean.highercancers.ShrimpTest.ageTest(ShrimpTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace899543194", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace899543194'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.crustacean.highercancers.ShrimpTest.ageTest(ShrimpTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.ShrimpTest@1ba9117e</td></tr>
+<tr>
+<td title='animalTest.insect.coleoptera.StagBeetleTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.insect.coleoptera.StagBeetleTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.insect.coleoptera.StagBeetleTest@2accdbb5</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.ChameleonTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.reptile.scaled.ChameleonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.ChameleonTest@1b6e1eff</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.BelugaTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.fish.sturgeon.BelugaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.BelugaTest@625732</td></tr>
+<tr>
+<td title='animalTest.bird.pigeonlike.VyakhirTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.pigeonlike.VyakhirTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.pigeonlike.VyakhirTest@29e495ff</td></tr>
+<tr>
+<td title='animalTest.insect.coleoptera.StagBeetleTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.insect.coleoptera.StagBeetleTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.insect.coleoptera.StagBeetleTest@2accdbb5</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.ShrimpTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.crustacean.highercancers.ShrimpTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.ShrimpTest@1ba9117e</td></tr>
+<tr>
+<td title='animalTest.fish.carp.BreamTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.fish.carp.BreamTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.BreamTest@732c2a62</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.BelugaTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.fish.sturgeon.BelugaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.BelugaTest@625732</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioItalianTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioItalianTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioMotleyTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioMotleyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.CrabTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.crustacean.highercancers.CrabTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.CrabTest@44821a96</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.SterletTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.fish.sturgeon.SterletTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.SterletTest@51dcb805</td></tr>
+<tr>
+<td title='Test.AnimalTest()'><b>AnimalTest</b><br>Test class: Test</td>
+<td></td>
+<td>0</td>
+<td>Test@101952da</td></tr>
+<tr>
+<td title='animalTest.mammal.rodent.SquirrelTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.mammal.rodent.SquirrelTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.rodent.SquirrelTest@1a4013</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.RoyalPenguinTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.penguin.RoyalPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.RoyalPenguinTest@53976f5c</td></tr>
+<tr>
+<td title='animalHouseTest.AquariumTest.nameTest()'><b>nameTest</b><br>Test class: animalHouseTest.AquariumTest</td>
+<td></td>
+<td>0</td>
+<td>animalHouseTest.AquariumTest@503d687a</td></tr>
+<tr>
+<td title='animalTest.bird.finche.BullfinchTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.finche.BullfinchTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.finche.BullfinchTest.ageTest(BullfinchTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1401316767", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1401316767'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.finche.BullfinchTest.ageTest(BullfinchTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.finche.BullfinchTest@c333c60</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.CrabTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.crustacean.highercancers.CrabTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.CrabTest@44821a96</td></tr>
+<tr>
+<td title='animalTest.fish.carp.VoblaTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.fish.carp.VoblaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.VoblaTest@41fecb8b</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.EiderDuckTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.anseriforme.EiderDuckTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.EiderDuckTest@e7edb54</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioItalianTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioItalianTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.arachnid.scorpio.ScorpioItalianTest.ageTest(ScorpioItalianTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace764419760", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace764419760'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.arachnid.scorpio.ScorpioItalianTest.ageTest(ScorpioItalianTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.ShrimpTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.crustacean.highercancers.ShrimpTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.ShrimpTest@1ba9117e</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.SterletTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.fish.sturgeon.SterletTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.sturgeon.SterletTest.ageTest(SterletTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace79782883", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace79782883'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.sturgeon.SterletTest.ageTest(SterletTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.SterletTest@51dcb805</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.PythonTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.reptile.scaled.PythonTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.reptile.scaled.PythonTest.ageTest(PythonTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1222768327", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1222768327'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.reptile.scaled.PythonTest.ageTest(PythonTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.PythonTest@702b8b12</td></tr>
+<tr>
+<td title='animalTest.bird.pigeonlike.VyakhirTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.pigeonlike.VyakhirTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.pigeonlike.VyakhirTest@29e495ff</td></tr>
+<tr>
+<td title='animalHouseTest.TerrariumTest.typeOfAnimalTest()'><b>typeOfAnimalTest</b><br>Test class: animalHouseTest.TerrariumTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage newTerrarium cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+	at animalHouseTest.TerrariumTest.typeOfAnimalTest(TerrariumTest.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace352598575", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace352598575'><pre>com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage newTerrarium cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+	at animalHouseTest.TerrariumTest.typeOfAnimalTest(TerrariumTest.java:58)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalHouseTest.TerrariumTest@49dc7102</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.RoyalPenguinTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.penguin.RoyalPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.RoyalPenguinTest@53976f5c</td></tr>
+<tr>
+<td title='animalTest.insect.coleoptera.StagBeetleTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.insect.coleoptera.StagBeetleTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.insect.coleoptera.StagBeetleTest@2accdbb5</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.SterletTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.fish.sturgeon.SterletTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.SterletTest@51dcb805</td></tr>
+<tr>
+<td title='animalTest.fish.carp.VoblaTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.fish.carp.VoblaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.VoblaTest@41fecb8b</td></tr>
+<tr>
+<td title='animalTest.fish.carp.VoblaTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.fish.carp.VoblaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.VoblaTest@41fecb8b</td></tr>
+<tr>
+<td title='zooTest.ZooTest.addressTest()'><b>addressTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.bird.finche.BullfinchTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.finche.BullfinchTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.finche.BullfinchTest@c333c60</td></tr>
+<tr>
+<td title='animalTest.fish.carp.BreamTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.fish.carp.BreamTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.BreamTest@732c2a62</td></tr>
+<tr>
+<td title='animalTest.arachnid.spider.BirdmanTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.arachnid.spider.BirdmanTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.arachnid.spider.BirdmanTest.ageTest(BirdmanTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1579957528", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1579957528'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.arachnid.spider.BirdmanTest.ageTest(BirdmanTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.arachnid.spider.BirdmanTest@62230c58</td></tr>
+<tr>
+<td title='animalTest.arachnid.spider.BirdmanTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.arachnid.spider.BirdmanTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.spider.BirdmanTest@62230c58</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.ChimpanzeeTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.mammal.primate.ChimpanzeeTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.ChimpanzeeTest@693fe6c9</td></tr>
+<tr>
+<td title='animalTest.mammal.rodent.SquirrelTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.mammal.rodent.SquirrelTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.rodent.SquirrelTest@1a4013</td></tr>
+<tr>
+<td title='animalHouseTest.AquariumTest.typeOfAnimalTest()'><b>typeOfAnimalTest</b><br>Test class: animalHouseTest.AquariumTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage newAquaLand cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+	at animalHouseTest.AquariumTest.typeOfAnimalTest(AquariumTest.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1273143001", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1273143001'><pre>com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage newAquaLand cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+	at animalHouseTest.AquariumTest.typeOfAnimalTest(AquariumTest.java:57)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalHouseTest.AquariumTest@503d687a</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.EmperorPenguinTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.penguin.EmperorPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.EmperorPenguinTest@696da30b</td></tr>
+<tr>
+<td title='animalTest.bird.pigeonlike.VyakhirTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.pigeonlike.VyakhirTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.pigeonlike.VyakhirTest.ageTest(VyakhirTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1231799381", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1231799381'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.pigeonlike.VyakhirTest.ageTest(VyakhirTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.pigeonlike.VyakhirTest@29e495ff</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioMotleyTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioMotleyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e</td></tr>
+<tr>
+<td title='animalTest.bird.ostrichlike.AfricanOstrichTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.ostrichlike.AfricanOstrichTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.ostrichlike.AfricanOstrichTest@67080771</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.RoyalPenguinTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.penguin.RoyalPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.RoyalPenguinTest@53976f5c</td></tr>
+<tr>
+<td title='animalTest.bird.ostrichlike.AfricanOstrichTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.ostrichlike.AfricanOstrichTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.ostrichlike.AfricanOstrichTest.ageTest(AfricanOstrichTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1529115495", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1529115495'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.ostrichlike.AfricanOstrichTest.ageTest(AfricanOstrichTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.ostrichlike.AfricanOstrichTest@67080771</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.PythonTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.reptile.scaled.PythonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.PythonTest@702b8b12</td></tr>
+<tr>
+<td title='animalTest.bird.ostrichlike.AfricanOstrichTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.ostrichlike.AfricanOstrichTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.ostrichlike.AfricanOstrichTest@67080771</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.EiderDuckTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.anseriforme.EiderDuckTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.anseriforme.EiderDuckTest.ageTest(EiderDuckTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace384515747", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace384515747'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.anseriforme.EiderDuckTest.ageTest(EiderDuckTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.EiderDuckTest@e7edb54</td></tr>
+<tr>
+<td title='financeTest.expenses.BuyFoodTest.typeOfFoodTest()'><b>typeOfFoodTest</b><br>Test class: financeTest.expenses.BuyFoodTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.BuyFoodTest@29d89d5d</td></tr>
+<tr>
+<td title='financeTest.expenses.MaintenanceTest.describeTest()'><b>describeTest</b><br>Test class: financeTest.expenses.MaintenanceTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.MaintenanceTest@212b5695</td></tr>
+<tr>
+<td title='animalTest.mammal.rodent.SquirrelTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.mammal.rodent.SquirrelTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.rodent.SquirrelTest@1a4013</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.ChimpanzeeTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.mammal.primate.ChimpanzeeTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.ChimpanzeeTest@693fe6c9</td></tr>
+<tr>
+<td title='zooTest.ZooTest.describeTest()'><b>describeTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='financeTest.expenses.BuyFoodTest.pricePerEachTest()'><b>pricePerEachTest</b><br>Test class: financeTest.expenses.BuyFoodTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.BuyFoodTest@29d89d5d</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.ChameleonTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.reptile.scaled.ChameleonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.ChameleonTest@1b6e1eff</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.MonkeyTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.mammal.primate.MonkeyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.MonkeyTest@31e5415e</td></tr>
+<tr>
+<td title='financeTest.expenses.BuyFoodTest.countTest()'><b>countTest</b><br>Test class: financeTest.expenses.BuyFoodTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.BuyFoodTest@29d89d5d</td></tr>
+<tr>
+<td title='animalTest.mammal.rodent.SquirrelTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.mammal.rodent.SquirrelTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.rodent.SquirrelTest@1a4013</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.ChameleonTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.reptile.scaled.ChameleonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.ChameleonTest@1b6e1eff</td></tr>
+<tr>
+<td title='financeTest.expenses.BuyFoodTest.costTest()'><b>costTest</b><br>Test class: financeTest.expenses.BuyFoodTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.DissimilarityOfValuesException: Wrong values! PricePerEach * count not equals cost .. Check numbers
+	at com.epam.rd.tasks.zoo.finance.expenses.BuyFood.&lt;init&gt;(BuyFood.java:18)
+	at financeTest.expenses.BuyFoodTest.costTest(BuyFoodTest.java:29)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace120360571", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace120360571'><pre>com.epam.rd.tasks.zoo.exception.DissimilarityOfValuesException: Wrong values! PricePerEach * count not equals cost .. Check numbers
+	at com.epam.rd.tasks.zoo.finance.expenses.BuyFood.&lt;init&gt;(BuyFood.java:18)
+	at financeTest.expenses.BuyFoodTest.costTest(BuyFoodTest.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>financeTest.expenses.BuyFoodTest@29d89d5d</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.WolfTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.mammal.predator.WolfTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.predator.WolfTest@27ff5d15</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.GogolTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.anseriforme.GogolTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.GogolTest@3738449f</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioItalianTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioItalianTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.PythonTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.reptile.scaled.PythonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.PythonTest@702b8b12</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.SterletTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.fish.sturgeon.SterletTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.SterletTest@51dcb805</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.WolfTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.mammal.predator.WolfTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.predator.WolfTest@27ff5d15</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.WolfTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.mammal.predator.WolfTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.predator.WolfTest@27ff5d15</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.PythonTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.reptile.scaled.PythonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.PythonTest@702b8b12</td></tr>
+<tr>
+<td title='animalTest.fish.carp.BreamTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.fish.carp.BreamTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.BreamTest@732c2a62</td></tr>
+<tr>
+<td title='financeTest.expenses.MaintenanceTest.maintenanceCageTest()'><b>maintenanceCageTest</b><br>Test class: financeTest.expenses.MaintenanceTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.MaintenanceTest@212b5695</td></tr>
+<tr>
+<td title='zooTest.ZooTest.testContactInfo()'><b>testContactInfo</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.ChimpanzeeTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.mammal.primate.ChimpanzeeTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.ChimpanzeeTest@693fe6c9</td></tr>
+<tr>
+<td title='animalTest.insect.coleoptera.StagBeetleTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.insect.coleoptera.StagBeetleTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.insect.coleoptera.StagBeetleTest@2accdbb5</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioItalianTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioItalianTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.MonkeyTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.mammal.primate.MonkeyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.MonkeyTest@31e5415e</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.EmperorPenguinTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.penguin.EmperorPenguinTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.penguin.EmperorPenguinTest.ageTest(EmperorPenguinTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace837457281", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace837457281'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.penguin.EmperorPenguinTest.ageTest(EmperorPenguinTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.penguin.EmperorPenguinTest@696da30b</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.EiderDuckTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.anseriforme.EiderDuckTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.EiderDuckTest@e7edb54</td></tr>
+<tr>
+<td title='animalTest.bird.ostrichlike.AfricanOstrichTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.ostrichlike.AfricanOstrichTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.ostrichlike.AfricanOstrichTest@67080771</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.SterletTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.fish.sturgeon.SterletTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.SterletTest@51dcb805</td></tr>
+<tr>
+<td title='animalHouseTest.AquariumTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalHouseTest.AquariumTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.BadClimateException: Cant change climate zone in cage Aqualand cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setClimateZone(AnimalHouse.java:83)
+	at animalHouseTest.AquariumTest.climateZoneTest(AquariumTest.java:71)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1363793720", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1363793720'><pre>com.epam.rd.tasks.zoo.exception.BadClimateException: Cant change climate zone in cage Aqualand cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setClimateZone(AnimalHouse.java:83)
+	at animalHouseTest.AquariumTest.climateZoneTest(AquariumTest.java:71)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalHouseTest.AquariumTest@503d687a</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.GogolTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.anseriforme.GogolTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.GogolTest@3738449f</td></tr>
+<tr>
+<td title='animalHouseTest.TerrariumTest.areaTest()'><b>areaTest</b><br>Test class: animalHouseTest.TerrariumTest</td>
+<td></td>
+<td>0</td>
+<td>animalHouseTest.TerrariumTest@49dc7102</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioMotleyTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioMotleyTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.arachnid.scorpio.ScorpioMotleyTest.ageTest(ScorpioMotleyTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace151593342", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace151593342'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.arachnid.scorpio.ScorpioMotleyTest.ageTest(ScorpioMotleyTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.RoyalPenguinTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.penguin.RoyalPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.RoyalPenguinTest@53976f5c</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.PythonTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.reptile.scaled.PythonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.PythonTest@702b8b12</td></tr>
+<tr>
+<td title='financeTest.income.TicketTest.costTest()'><b>costTest</b><br>Test class: financeTest.income.TicketTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.income.TicketTest@50b5ac82</td></tr>
+<tr>
+<td title='financeTest.income.DonationTest.costTest()'><b>costTest</b><br>Test class: financeTest.income.DonationTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.income.DonationTest@37654521</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.EiderDuckTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.anseriforme.EiderDuckTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.EiderDuckTest@e7edb54</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioMotleyTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioMotleyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.CrabTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.crustacean.highercancers.CrabTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.CrabTest@44821a96</td></tr>
+<tr>
+<td title='animalTest.mammal.rodent.SquirrelTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.mammal.rodent.SquirrelTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.rodent.SquirrelTest@1a4013</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.WolfTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.mammal.predator.WolfTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.predator.WolfTest@27ff5d15</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.ChimpanzeeTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.mammal.primate.ChimpanzeeTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.ChimpanzeeTest@693fe6c9</td></tr>
+<tr>
+<td title='animalHouseTest.FieldTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalHouseTest.FieldTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.BadClimateException: Cant change climate zone in cage Field for Eleph cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setClimateZone(AnimalHouse.java:83)
+	at animalHouseTest.FieldTest.climateZoneTest(FieldTest.java:68)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace889891977", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace889891977'><pre>com.epam.rd.tasks.zoo.exception.BadClimateException: Cant change climate zone in cage Field for Eleph cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setClimateZone(AnimalHouse.java:83)
+	at animalHouseTest.FieldTest.climateZoneTest(FieldTest.java:68)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalHouseTest.FieldTest@3246fb96</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.EiderDuckTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.anseriforme.EiderDuckTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.EiderDuckTest@e7edb54</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.GogolTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.anseriforme.GogolTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.anseriforme.GogolTest.ageTest(GogolTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace892555958", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace892555958'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.anseriforme.GogolTest.ageTest(GogolTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.GogolTest@3738449f</td></tr>
+<tr>
+<td title='animalTest.bird.finche.BullfinchTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.finche.BullfinchTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.finche.BullfinchTest@c333c60</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.EmperorPenguinTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.penguin.EmperorPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.EmperorPenguinTest@696da30b</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.ShrimpTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.crustacean.highercancers.ShrimpTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.ShrimpTest@1ba9117e</td></tr>
+<tr>
+<td title='animalHouseTest.FieldTest.typeOfAnimalTest()'><b>typeOfAnimalTest</b><br>Test class: animalHouseTest.FieldTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage Field for Eleph cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+	at animalHouseTest.FieldTest.typeOfAnimalTest(FieldTest.java:54)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace475603167", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace475603167'><pre>com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage Field for Eleph cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+	at animalHouseTest.FieldTest.typeOfAnimalTest(FieldTest.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalHouseTest.FieldTest@3246fb96</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.CrabTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.crustacean.highercancers.CrabTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.crustacean.highercancers.CrabTest.ageTest(CrabTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace809300666", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace809300666'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.crustacean.highercancers.CrabTest.ageTest(CrabTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.CrabTest@44821a96</td></tr>
+<tr>
+<td title='animalHouseTest.TerrariumTest.nameTest()'><b>nameTest</b><br>Test class: animalHouseTest.TerrariumTest</td>
+<td></td>
+<td>0</td>
+<td>animalHouseTest.TerrariumTest@49dc7102</td></tr>
+<tr>
+<td title='animalHouseTest.AquariumTest.areaTest()'><b>areaTest</b><br>Test class: animalHouseTest.AquariumTest</td>
+<td></td>
+<td>0</td>
+<td>animalHouseTest.AquariumTest@503d687a</td></tr>
+<tr>
+<td title='animalTest.arachnid.spider.BirdmanTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.arachnid.spider.BirdmanTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.spider.BirdmanTest@62230c58</td></tr>
+<tr>
+<td title='zooTest.ZooTest.idTest()'><b>idTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.ampfibian.tailless.FrogTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.ampfibian.tailless.FrogTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.ampfibian.tailless.FrogTest@3a6bb9bf</td></tr>
+<tr>
+<td title='animalTest.bird.finche.BullfinchTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.finche.BullfinchTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.finche.BullfinchTest@c333c60</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.GogolTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.anseriforme.GogolTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.GogolTest@3738449f</td></tr>
+<tr>
+<td title='animalTest.insect.coleoptera.StagBeetleTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.insect.coleoptera.StagBeetleTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.insect.coleoptera.StagBeetleTest@2accdbb5</td></tr>
+<tr>
+<td title='animalTest.insect.coleoptera.StagBeetleTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.insect.coleoptera.StagBeetleTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.insect.coleoptera.StagBeetleTest.ageTest(StagBeetleTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1721246982", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1721246982'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.insect.coleoptera.StagBeetleTest.ageTest(StagBeetleTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.insect.coleoptera.StagBeetleTest@2accdbb5</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.LionTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.mammal.predator.LionTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.predator.LionTest.ageTest(LionTest.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1328718765", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1328718765'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.predator.LionTest.ageTest(LionTest.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.mammal.predator.LionTest@5ace1ed4</td></tr>
+<tr>
+<td title='financeTest.income.TicketTest.describeTest()'><b>describeTest</b><br>Test class: financeTest.income.TicketTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.income.TicketTest@50b5ac82</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.ChimpanzeeTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.mammal.primate.ChimpanzeeTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.ChimpanzeeTest@693fe6c9</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioItalianTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioItalianTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad</td></tr>
+<tr>
+<td title='animalTest.bird.pigeonlike.VyakhirTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.pigeonlike.VyakhirTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.pigeonlike.VyakhirTest@29e495ff</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioMotleyTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioMotleyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e</td></tr>
+<tr>
+<td title='animalTest.fish.carp.BreamTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.fish.carp.BreamTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.BreamTest@732c2a62</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioItalianTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioItalianTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad</td></tr>
+<tr>
+<td title='animalTest.arachnid.spider.BirdmanTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.arachnid.spider.BirdmanTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.spider.BirdmanTest@62230c58</td></tr>
+<tr>
+<td title='animalTest.fish.carp.VoblaTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.fish.carp.VoblaTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.carp.VoblaTest.ageTest(VoblaTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1863374262", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1863374262'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.carp.VoblaTest.ageTest(VoblaTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.fish.carp.VoblaTest@41fecb8b</td></tr>
+<tr>
+<td title='zooTest.ZooTest.nameTest()'><b>nameTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.ampfibian.tailless.FrogTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.ampfibian.tailless.FrogTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.ampfibian.tailless.FrogTest@3a6bb9bf</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.ChameleonTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.reptile.scaled.ChameleonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.ChameleonTest@1b6e1eff</td></tr>
+<tr>
+<td title='animalHouseTest.TerrariumTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalHouseTest.TerrariumTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.BadClimateException: Cant change climate zone in cage Terrarium cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setClimateZone(AnimalHouse.java:83)
+	at animalHouseTest.TerrariumTest.climateZoneTest(TerrariumTest.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace426394307", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace426394307'><pre>com.epam.rd.tasks.zoo.exception.BadClimateException: Cant change climate zone in cage Terrarium cause another animal still living here!
+	at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setClimateZone(AnimalHouse.java:83)
+	at animalHouseTest.TerrariumTest.climateZoneTest(TerrariumTest.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalHouseTest.TerrariumTest@49dc7102</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.GogolTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.anseriforme.GogolTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.GogolTest@3738449f</td></tr>
+<tr>
+<td title='animalTest.fish.carp.BreamTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.fish.carp.BreamTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.carp.BreamTest.ageTest(BreamTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1363560175", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1363560175'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.carp.BreamTest.ageTest(BreamTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.fish.carp.BreamTest@732c2a62</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.BelugaTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.fish.sturgeon.BelugaTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.sturgeon.BelugaTest.ageTest(BelugaTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1396431506", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1396431506'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.fish.sturgeon.BelugaTest.ageTest(BelugaTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.BelugaTest@625732</td></tr>
+<tr>
+<td title='financeTest.expenses.BuyFoodTest.describeTest()'><b>describeTest</b><br>Test class: financeTest.expenses.BuyFoodTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.BuyFoodTest@29d89d5d</td></tr>
+<tr>
+<td title='financeTest.expenses.SalaryTest.costTest()'><b>costTest</b><br>Test class: financeTest.expenses.SalaryTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.SalaryTest@69997e9d</td></tr>
+<tr>
+<td title='financeTest.expenses.SalaryTest.describeTest()'><b>describeTest</b><br>Test class: financeTest.expenses.SalaryTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.SalaryTest@69997e9d</td></tr>
+<tr>
+<td title='animalTest.mammal.predator.WolfTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.mammal.predator.WolfTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.predator.WolfTest@27ff5d15</td></tr>
+<tr>
+<td title='animalTest.ampfibian.tailless.FrogTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.ampfibian.tailless.FrogTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.ampfibian.tailless.FrogTest.ageTest(FrogTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace20224131", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace20224131'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.ampfibian.tailless.FrogTest.ageTest(FrogTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.ampfibian.tailless.FrogTest@3a6bb9bf</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.ShrimpTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.crustacean.highercancers.ShrimpTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.ShrimpTest@1ba9117e</td></tr>
+<tr>
+<td title='zooTest.ZooTest.animalHouseTest()'><b>animalHouseTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.bird.pigeonlike.VyakhirTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.pigeonlike.VyakhirTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.pigeonlike.VyakhirTest@29e495ff</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.EmperorPenguinTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.penguin.EmperorPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.EmperorPenguinTest@696da30b</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.CrabTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.crustacean.highercancers.CrabTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.CrabTest@44821a96</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.ChameleonTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.reptile.scaled.ChameleonTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.reptile.scaled.ChameleonTest.ageTest(ChameleonTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1020154737", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1020154737'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.reptile.scaled.ChameleonTest.ageTest(ChameleonTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.ChameleonTest@1b6e1eff</td></tr>
+<tr>
+<td title='animalTest.fish.carp.BreamTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.fish.carp.BreamTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.BreamTest@732c2a62</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.EmperorPenguinTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.penguin.EmperorPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.EmperorPenguinTest@696da30b</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.MonkeyTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.mammal.primate.MonkeyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.mammal.primate.MonkeyTest@31e5415e</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.EiderDuckTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.anseriforme.EiderDuckTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.EiderDuckTest@e7edb54</td></tr>
+<tr>
+<td title='financeTest.income.DonationTest.describeTest()'><b>describeTest</b><br>Test class: financeTest.income.DonationTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.income.DonationTest@37654521</td></tr>
+<tr>
+<td title='animalTest.arachnid.spider.BirdmanTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.arachnid.spider.BirdmanTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.spider.BirdmanTest@62230c58</td></tr>
+<tr>
+<td title='animalTest.bird.pigeonlike.VyakhirTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.pigeonlike.VyakhirTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.pigeonlike.VyakhirTest@29e495ff</td></tr>
+<tr>
+<td title='animalTest.fish.carp.VoblaTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.fish.carp.VoblaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.carp.VoblaTest@41fecb8b</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.BelugaTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.fish.sturgeon.BelugaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.BelugaTest@625732</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.ChameleonTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.reptile.scaled.ChameleonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.ChameleonTest@1b6e1eff</td></tr>
+<tr>
+<td title='financeTest.expenses.MaintenanceTest.costTest()'><b>costTest</b><br>Test class: financeTest.expenses.MaintenanceTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.expenses.MaintenanceTest@212b5695</td></tr>
+<tr>
+<td title='animalTest.bird.finche.BullfinchTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.bird.finche.BullfinchTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.finche.BullfinchTest@c333c60</td></tr>
+<tr>
+<td title='zooTest.ZooTest.budgetTest()'><b>budgetTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.arachnid.spider.BirdmanTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.arachnid.spider.BirdmanTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.spider.BirdmanTest@62230c58</td></tr>
+<tr>
+<td title='zooTest.ZooTest.financeTest()'><b>financeTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.RoyalPenguinTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.bird.penguin.RoyalPenguinTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.penguin.RoyalPenguinTest.ageTest(RoyalPenguinTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace725680028", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace725680028'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.bird.penguin.RoyalPenguinTest.ageTest(RoyalPenguinTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.bird.penguin.RoyalPenguinTest@53976f5c</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.BelugaTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.fish.sturgeon.BelugaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.BelugaTest@625732</td></tr>
+<tr>
+<td title='animalTest.bird.ostrichlike.AfricanOstrichTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.ostrichlike.AfricanOstrichTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.ostrichlike.AfricanOstrichTest@67080771</td></tr>
+<tr>
+<td title='animalTest.mammal.rodent.SquirrelTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.mammal.rodent.SquirrelTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.rodent.SquirrelTest.ageTest(SquirrelTest.java:39)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace597307515", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace597307515'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.rodent.SquirrelTest.ageTest(SquirrelTest.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.mammal.rodent.SquirrelTest@1a4013</td></tr>
+<tr>
+<td title='animalTest.ampfibian.tailless.FrogTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.ampfibian.tailless.FrogTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.ampfibian.tailless.FrogTest@3a6bb9bf</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.CrabTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.crustacean.highercancers.CrabTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.CrabTest@44821a96</td></tr>
+<tr>
+<td title='animalTest.bird.ostrichlike.AfricanOstrichTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.bird.ostrichlike.AfricanOstrichTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.ostrichlike.AfricanOstrichTest@67080771</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.SterletTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.fish.sturgeon.SterletTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.SterletTest@51dcb805</td></tr>
+<tr>
+<td title='animalTest.crustacean.highercancers.ShrimpTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.crustacean.highercancers.ShrimpTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.crustacean.highercancers.ShrimpTest@1ba9117e</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.RoyalPenguinTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.bird.penguin.RoyalPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.RoyalPenguinTest@53976f5c</td></tr>
+<tr>
+<td title='animalTest.bird.finche.BullfinchTest.foodTest()'><b>foodTest</b><br>Test class: animalTest.bird.finche.BullfinchTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.finche.BullfinchTest@c333c60</td></tr>
+<tr>
+<td title='financeTest.income.StateSupportTest.describeTest()'><b>describeTest</b><br>Test class: financeTest.income.StateSupportTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.income.StateSupportTest@33990a0c</td></tr>
+<tr>
+<td title='animalTest.bird.penguin.EmperorPenguinTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.penguin.EmperorPenguinTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.penguin.EmperorPenguinTest@696da30b</td></tr>
+<tr>
+<td title='zooTest.ZooTest.foodTest()'><b>foodTest</b><br>Test class: zooTest.ZooTest</td>
+<td></td>
+<td>0</td>
+<td>zooTest.ZooTest@7ea9e1e2</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.ChimpanzeeTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.mammal.primate.ChimpanzeeTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.primate.ChimpanzeeTest.ageTest(ChimpanzeeTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1732238286", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1732238286'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.primate.ChimpanzeeTest.ageTest(ChimpanzeeTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.mammal.primate.ChimpanzeeTest@693fe6c9</td></tr>
+<tr>
+<td title='animalTest.mammal.primate.MonkeyTest.ageTest()'><b>ageTest</b><br>Test class: animalTest.mammal.primate.MonkeyTest</td>
+<td><div><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.primate.MonkeyTest.ageTest(MonkeyTest.java:37)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 37 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1038677529", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1038677529'><pre>com.epam.rd.tasks.zoo.exception.WrongAgeException: Age should be more than 0
+	at com.epam.rd.tasks.zoo.animals.Animal.setAge(Animal.java:72)
+	at animalTest.mammal.primate.MonkeyTest.ageTest(MonkeyTest.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:808)
+	at org.testng.TestRunner.run(TestRunner.java:603)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.runSuites(TestNG.java:1092)
+	at org.testng.TestNG.run(TestNG.java:1060)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>animalTest.mammal.primate.MonkeyTest@31e5415e</td></tr>
+<tr>
+<td title='animalTest.reptile.scaled.PythonTest.describeTest()'><b>describeTest</b><br>Test class: animalTest.reptile.scaled.PythonTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.reptile.scaled.PythonTest@702b8b12</td></tr>
+<tr>
+<td title='animalTest.bird.anseriforme.GogolTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.bird.anseriforme.GogolTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.bird.anseriforme.GogolTest@3738449f</td></tr>
+<tr>
+<td title='animalTest.arachnid.scorpio.ScorpioMotleyTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.arachnid.scorpio.ScorpioMotleyTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e</td></tr>
+<tr>
+<td title='animalTest.fish.sturgeon.BelugaTest.nameTest()'><b>nameTest</b><br>Test class: animalTest.fish.sturgeon.BelugaTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.fish.sturgeon.BelugaTest@625732</td></tr>
+<tr>
+<td title='financeTest.income.StateSupportTest.costTest()'><b>costTest</b><br>Test class: financeTest.income.StateSupportTest</td>
+<td></td>
+<td>0</td>
+<td>financeTest.income.StateSupportTest@33990a0c</td></tr>
+<tr>
+<td title='animalTest.ampfibian.tailless.FrogTest.livingZoneTest()'><b>livingZoneTest</b><br>Test class: animalTest.ampfibian.tailless.FrogTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.ampfibian.tailless.FrogTest@3a6bb9bf</td></tr>
+<tr>
+<td title='animalTest.ampfibian.tailless.FrogTest.climateZoneTest()'><b>climateZoneTest</b><br>Test class: animalTest.ampfibian.tailless.FrogTest</td>
+<td></td>
+<td>0</td>
+<td>animalTest.ampfibian.tailless.FrogTest@3a6bb9bf</td></tr>
+</table><p>
+</body>
+</html>

@@ -3,11 +3,10 @@ package com.epam.rd.tasks.zoo.animals.crustacean.highercancers;
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.food.Food;
-import lombok.Builder;
 
 import java.util.List;
 
-public class Crab extends HigherСancers{
+public class Crab extends HigherCancers {
 
     public Crab(){
         super();

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="181" failures="0" name="TestSuite" time="0.041" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.14+8-LTS-263"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.14\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\java\Zoo"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\java\Zoo"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.14+8-LTS-263"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Kifor4ik\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="classworlds.conf" value="C:\Program Files\apache-maven-3.8.5\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.14\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\vmware\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;d:\quartius\quartus\bin;%JAVA_HOME%\bin;D:\Mathlab\runtime\win64;D:\Mathlab\bin;D:\Quartius\modelsim_ae\win32aloem;C:\Users\Kifor4ik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-11.0.14\bin;C:\Program Files\apache-maven-3.8.5\bin;D:\JetBrains Rider 2020.2.4\bin;;."/>
+    <property name="maven.conf" value="C:\Program Files\apache-maven-3.8.5/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\Program Files\apache-maven-3.8.5\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\Kifor4ik"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="Kifor4ik"/>
+    <property name="java.class.path" value="C:\Program Files\apache-maven-3.8.5\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.14"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.14"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="sun.stderr.encoding" value="cp866"/>
+    <property name="maven.home" value="C:\Program Files\apache-maven-3.8.5"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2022-01-18"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="sun.stdout.encoding" value="cp866"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="animalHouseTest.AquariumTest" name="areaTest" time="0.003"/>
+  <testcase classname="animalHouseTest.AquariumTest" name="climateZoneTest" time="0.011"/>
+  <testcase classname="animalHouseTest.AquariumTest" name="nameTest" time="0.001"/>
+  <testcase classname="animalHouseTest.AquariumTest" name="typeOfAnimalTest" time="0"/>
+  <testcase classname="animalHouseTest.FieldTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalHouseTest.FieldTest" name="typeOfAnimalTest" time="0"/>
+  <testcase classname="animalHouseTest.TerrariumTest" name="areaTest" time="0"/>
+  <testcase classname="animalHouseTest.TerrariumTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalHouseTest.TerrariumTest" name="nameTest" time="0"/>
+  <testcase classname="animalHouseTest.TerrariumTest" name="typeOfAnimalTest" time="0"/>
+  <testcase classname="animalTest.ampfibian.tailless.FrogTest" name="ageTest" time="0.001"/>
+  <testcase classname="animalTest.ampfibian.tailless.FrogTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.ampfibian.tailless.FrogTest" name="describeTest" time="0.001"/>
+  <testcase classname="animalTest.ampfibian.tailless.FrogTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.ampfibian.tailless.FrogTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.ampfibian.tailless.FrogTest" name="nameTest" time="0.001"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioItalianTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioItalianTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioItalianTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioItalianTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioItalianTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioItalianTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioMotleyTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioMotleyTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioMotleyTest" name="describeTest" time="0.001"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioMotleyTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioMotleyTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.arachnid.scorpio.ScorpioMotleyTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.arachnid.spider.BirdmanTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.arachnid.spider.BirdmanTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.arachnid.spider.BirdmanTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.arachnid.spider.BirdmanTest" name="foodTest" time="0.001"/>
+  <testcase classname="animalTest.arachnid.spider.BirdmanTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.arachnid.spider.BirdmanTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.EiderDuckTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.EiderDuckTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.EiderDuckTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.EiderDuckTest" name="foodTest" time="0.001"/>
+  <testcase classname="animalTest.bird.anseriforme.EiderDuckTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.EiderDuckTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.GogolTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.GogolTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.GogolTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.GogolTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.GogolTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.anseriforme.GogolTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.finche.BullfinchTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.bird.finche.BullfinchTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.finche.BullfinchTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.finche.BullfinchTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.bird.finche.BullfinchTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.finche.BullfinchTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.ostrichlike.AfricanOstrichTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.bird.ostrichlike.AfricanOstrichTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.ostrichlike.AfricanOstrichTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.ostrichlike.AfricanOstrichTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.bird.ostrichlike.AfricanOstrichTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.ostrichlike.AfricanOstrichTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.EmperorPenguinTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.EmperorPenguinTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.EmperorPenguinTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.EmperorPenguinTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.EmperorPenguinTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.EmperorPenguinTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.RoyalPenguinTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.RoyalPenguinTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.RoyalPenguinTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.RoyalPenguinTest" name="foodTest" time="0.001"/>
+  <testcase classname="animalTest.bird.penguin.RoyalPenguinTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.penguin.RoyalPenguinTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.bird.pigeonlike.VyakhirTest" name="ageTest" time="0.001"/>
+  <testcase classname="animalTest.bird.pigeonlike.VyakhirTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.pigeonlike.VyakhirTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.bird.pigeonlike.VyakhirTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.bird.pigeonlike.VyakhirTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.bird.pigeonlike.VyakhirTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.CrabTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.CrabTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.CrabTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.CrabTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.CrabTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.CrabTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.ShrimpTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.ShrimpTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.ShrimpTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.ShrimpTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.crustacean.highercancers.ShrimpTest" name="livingZoneTest" time="0.001"/>
+  <testcase classname="animalTest.crustacean.highercancers.ShrimpTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.BreamTest" name="ageTest" time="0.001"/>
+  <testcase classname="animalTest.fish.carp.BreamTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.BreamTest" name="describeTest" time="0.001"/>
+  <testcase classname="animalTest.fish.carp.BreamTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.BreamTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.BreamTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.VoblaTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.VoblaTest" name="climateZoneTest" time="0.001"/>
+  <testcase classname="animalTest.fish.carp.VoblaTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.VoblaTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.VoblaTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.fish.carp.VoblaTest" name="nameTest" time="0.001"/>
+  <testcase classname="animalTest.fish.sturgeon.BelugaTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.BelugaTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.BelugaTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.BelugaTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.BelugaTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.BelugaTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.SterletTest" name="ageTest" time="0.001"/>
+  <testcase classname="animalTest.fish.sturgeon.SterletTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.SterletTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.SterletTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.fish.sturgeon.SterletTest" name="livingZoneTest" time="0.001"/>
+  <testcase classname="animalTest.fish.sturgeon.SterletTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.insect.coleoptera.StagBeetleTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.insect.coleoptera.StagBeetleTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.insect.coleoptera.StagBeetleTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.insect.coleoptera.StagBeetleTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.insect.coleoptera.StagBeetleTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.insect.coleoptera.StagBeetleTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.LionTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.WolfTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.WolfTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.WolfTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.WolfTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.WolfTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.predator.WolfTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.ChimpanzeeTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.ChimpanzeeTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.ChimpanzeeTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.ChimpanzeeTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.ChimpanzeeTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.ChimpanzeeTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.MonkeyTest" name="ageTest" time="0.001"/>
+  <testcase classname="animalTest.mammal.primate.MonkeyTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.MonkeyTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.MonkeyTest" name="foodTest" time="0.001"/>
+  <testcase classname="animalTest.mammal.primate.MonkeyTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.primate.MonkeyTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.mammal.rodent.SquirrelTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.mammal.rodent.SquirrelTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.rodent.SquirrelTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.mammal.rodent.SquirrelTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.mammal.rodent.SquirrelTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.mammal.rodent.SquirrelTest" name="nameTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.ChameleonTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.ChameleonTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.ChameleonTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.ChameleonTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.ChameleonTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.ChameleonTest" name="nameTest" time="0.001"/>
+  <testcase classname="animalTest.reptile.scaled.PythonTest" name="ageTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.PythonTest" name="climateZoneTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.PythonTest" name="describeTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.PythonTest" name="foodTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.PythonTest" name="livingZoneTest" time="0"/>
+  <testcase classname="animalTest.reptile.scaled.PythonTest" name="nameTest" time="0.003"/>
+  <testcase classname="financeTest.expenses.BuyFoodTest" name="costTest" time="0"/>
+  <testcase classname="financeTest.expenses.BuyFoodTest" name="countTest" time="0"/>
+  <testcase classname="financeTest.expenses.BuyFoodTest" name="describeTest" time="0"/>
+  <testcase classname="financeTest.expenses.BuyFoodTest" name="pricePerEachTest" time="0"/>
+  <testcase classname="financeTest.expenses.BuyFoodTest" name="typeOfFoodTest" time="0.001"/>
+  <testcase classname="financeTest.expenses.MaintenanceTest" name="costTest" time="0"/>
+  <testcase classname="financeTest.expenses.MaintenanceTest" name="describeTest" time="0"/>
+  <testcase classname="financeTest.expenses.MaintenanceTest" name="maintenanceCageTest" time="0"/>
+  <testcase classname="financeTest.expenses.SalaryTest" name="costTest" time="0"/>
+  <testcase classname="financeTest.expenses.SalaryTest" name="describeTest" time="0.001"/>
+  <testcase classname="financeTest.income.DonationTest" name="costTest" time="0"/>
+  <testcase classname="financeTest.income.DonationTest" name="describeTest" time="0"/>
+  <testcase classname="financeTest.income.StateSupportTest" name="costTest" time="0"/>
+  <testcase classname="financeTest.income.StateSupportTest" name="describeTest" time="0"/>
+  <testcase classname="financeTest.income.TicketTest" name="costTest" time="0"/>
+  <testcase classname="financeTest.income.TicketTest" name="describeTest" time="0.001"/>
+  <testcase classname="Test" name="AnimalTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="addressTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="animalHouseTest" time="0.001"/>
+  <testcase classname="zooTest.ZooTest" name="budgetTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="describeTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="financeTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="foodTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="idTest" time="0.001"/>
+  <testcase classname="zooTest.ZooTest" name="nameTest" time="0"/>
+  <testcase classname="zooTest.ZooTest" name="testContactInfo" time="0"/>
+</testsuite>

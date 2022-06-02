@@ -77,9 +77,9 @@ public class ZooTest {
 
     public void describeTest() {
         Assert.assertEquals(zoo.getDescribe(), "Best zoo in whole cyberworld!");
-        zoo.setName("Best zoo in whole cyber world!");
-        Assert.assertNotEquals(zoo.getName(), "Best zoo in whole cyberworld!");
-        Assert.assertEquals(zoo.getName(), "Best zoo in whole cyber world!");
+        zoo.setDescribe("Best zoo in whole cyber world!");
+        Assert.assertNotEquals(zoo.getDescribe(), "Best zoo in whole cyberworld!");
+        Assert.assertEquals(zoo.getDescribe(), "Best zoo in whole cyber world!");
     }
 
     public void testContactInfo() {
@@ -90,12 +90,6 @@ public class ZooTest {
     }
 
     public void budgetTest() {
-        //@TODO delete esli cho
-//        Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO);
-//        zoo.addMoneyToBudget(ticket);
-//        Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO.add(ticket.getCost()));
-//        zoo.removeMoneyFromBudget(salary);
-//        Assert.assertEquals(zoo.getBudget(), BigDecimal.valueOf(2));
         Assert.assertEquals(zoo.getBudget(), BigDecimal.ZERO);
         zoo.setBudget(BigDecimal.TEN);
         Assert.assertNotEquals(zoo.getBudget(), BigDecimal.ZERO);
