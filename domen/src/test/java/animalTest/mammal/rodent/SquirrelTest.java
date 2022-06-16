@@ -6,18 +6,21 @@ import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.animals.reptile.scaled.Chameleon;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class SquirrelTest {
 
-    Squirrel squirrel = new Squirrel("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Squirrel squirrel = new Squirrel("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(squirrel.getName(), "AnimalName");
@@ -42,7 +45,7 @@ public class SquirrelTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(squirrel.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(squirrel.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -50,9 +53,11 @@ public class SquirrelTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(squirrel.getFoodType(), Bugs.class);
-        squirrel.setFoodType(Meat.class);
-        Assert.assertNotEquals(squirrel.getFoodType(), Bugs.class);
-        Assert.assertEquals(squirrel.getFoodType(), Meat.class);
+        Assert.assertEquals(squirrel.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        squirrel.setFoodType(food);
+        Assert.assertNotEquals(squirrel.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(squirrel.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

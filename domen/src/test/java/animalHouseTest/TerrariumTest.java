@@ -19,12 +19,13 @@ import org.testng.annotations.Test;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class TerrariumTest {
     Terrarium terrarium = new Terrarium(1L, "Terrarium", 4, List.of(Chameleon.class), ClimateZone.TROPICAL);
-    Chameleon chameleon = new Chameleon("Cham","Test",12,Terrarium.class, Collections.singletonList(ClimateZone.TROPICAL), Wheat.class);
-    Chameleon chameleon2 = new Chameleon("Cham2","Test2",1,Terrarium.class, Collections.singletonList(ClimateZone.TROPICAL), Wheat.class);
+    Chameleon chameleon = new Chameleon("Cham","Test",12,Set.of(Terrarium.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class));
+    Chameleon chameleon2 = new Chameleon("Cham2","Test2",1, Set.of(Terrarium.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class));
 
     @BeforeTest
     public void beforeTest(){

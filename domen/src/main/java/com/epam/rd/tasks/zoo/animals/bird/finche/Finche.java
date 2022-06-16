@@ -6,13 +6,14 @@ import com.epam.rd.tasks.zoo.animals.bird.Bird;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.util.List;
+import java.util.Set;
 
 public abstract class Finche extends Bird {
-    public Finche(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType) {
+    public Finche(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
         super(name, describe, age, livingZone, climateZone, foodType);
     }
 
-    public Finche(String name, String describe, int age, Class<? extends AnimalHouse> livingZone, List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
+    public Finche(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, boolean isDeleted) {
         super(name, describe, age, livingZone, climateZone, foodType, isDeleted);
     }
 }

@@ -9,6 +9,7 @@ import com.epam.rd.tasks.zoo.dto.animalhouse.AnimalHouseDto;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 @Test
@@ -17,9 +18,7 @@ public class AnimalHouseDtoTest {
     Field field = new Field(1L, "Fields",2, List.of(Lion.class, Bullfinch.class), ClimateZone.MODERATE);
 
     public void dtoTest() throws ClassNotFoundException {
-        System.out.println(field);
-        System.out.println(AnimalHouseDto.toDto(field));
-        System.out.println(AnimalHouseDto.fromDto(AnimalHouseDto.toDto(field)));
+
         Assert.assertEquals(field, AnimalHouseDto.fromDto(AnimalHouseDto.toDto(field)));
     }
 }

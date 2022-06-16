@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.bird.pigeonlike.Vyakhir;
 import com.epam.rd.tasks.zoo.animals.fish.carp.Bream;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class VyakhirTest {
-    Vyakhir vyakhir = new Vyakhir("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Vyakhir vyakhir = new Vyakhir("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(vyakhir.getName(), "AnimalName");
@@ -41,7 +44,7 @@ public class VyakhirTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(vyakhir.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(vyakhir.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class VyakhirTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(vyakhir.getFoodType(), Bugs.class);
-        vyakhir.setFoodType(Meat.class);
-        Assert.assertNotEquals(vyakhir.getFoodType(), Bugs.class);
-        Assert.assertEquals(vyakhir.getFoodType(), Meat.class);
+        Assert.assertEquals(vyakhir.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        vyakhir.setFoodType(food);
+        Assert.assertNotEquals(vyakhir.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(vyakhir.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

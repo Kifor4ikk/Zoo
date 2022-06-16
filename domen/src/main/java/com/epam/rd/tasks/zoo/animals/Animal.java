@@ -7,7 +7,9 @@ import com.epam.rd.tasks.zoo.food.Food;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @EqualsAndHashCode
 public abstract class Animal {
@@ -16,15 +18,14 @@ public abstract class Animal {
     private String name;
     private String describe;
     private int age;
-    private Class<? extends AnimalHouse> livingZone;
-    private List<ClimateZone> climateZone;
-    private Class<? extends Food> foodType;
+    private Set<Class<? extends AnimalHouse>> livingZone = new HashSet<>();
+    private Set<ClimateZone> climateZone = new HashSet<>();
+    private Set<Class<? extends Food>> foodType = new HashSet<>();
     private boolean isDeleted = false;
 
     public Animal(){}
 
-    public Animal(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
-                  List<ClimateZone> climateZone, Class<? extends Food> foodType) {
+    public Animal(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
         this.name = name;
         this.describe = describe;
         this.age = age;
@@ -33,9 +34,8 @@ public abstract class Animal {
         this.foodType = foodType;
     }
 
-    public Animal(String name, String describe, int age, Class<? extends AnimalHouse> livingZone,
-                  List<ClimateZone> climateZone, Class<? extends Food> foodType, boolean isDeleted) {
-        this(name, describe, age, livingZone, climateZone, foodType);
+    public Animal(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, boolean isDeleted) {
+        this(name,describe,age,livingZone,climateZone,foodType);
         this.isDeleted = isDeleted;
     }
 
@@ -73,32 +73,33 @@ public abstract class Animal {
         this.age = age;
     }
 
-    public Class<? extends AnimalHouse> getLivingZone() {
+
+    public Set<Class<? extends AnimalHouse>> getLivingZone() {
         return livingZone;
     }
 
-    public List<ClimateZone> getClimateZone() {
+    public Set<ClimateZone> getClimateZone() {
         return climateZone;
     }
 
-    public Class<? extends Food> getFoodType() {
+    public Set<Class<? extends Food>> getFoodType() {
         return foodType;
-    }
-
-    public void setFoodType(Class<? extends Food> foodType) {
-        this.foodType = foodType;
     }
 
     public boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setLivingZone(Class<? extends AnimalHouse> livingZone) {
+    public void setLivingZone(Set<Class<? extends AnimalHouse>> livingZone) {
         this.livingZone = livingZone;
     }
 
-    public void setClimateZone(List<ClimateZone> climateZone) {
+    public void setClimateZone(Set<ClimateZone> climateZone) {
         this.climateZone = climateZone;
+    }
+
+    public void setFoodType(Set<Class<? extends Food>> foodType) {
+        this.foodType = foodType;
     }
 
     public void setDeleted(boolean deleted) {

@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.arachnid.scorpio.ScorpioMotley;
 import com.epam.rd.tasks.zoo.animals.bird.pigeonlike.Vyakhir;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class ScorpioMotleyTest {
-    ScorpioMotley scorpio = new ScorpioMotley("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    ScorpioMotley scorpio = new ScorpioMotley("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(scorpio.getName(), "AnimalName");
@@ -41,7 +44,7 @@ public class ScorpioMotleyTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(scorpio.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(scorpio.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class ScorpioMotleyTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(scorpio.getFoodType(), Bugs.class);
-        scorpio.setFoodType(Meat.class);
-        Assert.assertNotEquals(scorpio.getFoodType(), Bugs.class);
-        Assert.assertEquals(scorpio.getFoodType(), Meat.class);
+        Assert.assertEquals(scorpio.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        scorpio.setFoodType(food);
+        Assert.assertNotEquals(scorpio.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(scorpio.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

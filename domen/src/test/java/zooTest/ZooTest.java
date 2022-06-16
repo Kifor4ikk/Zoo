@@ -24,6 +24,7 @@ import org.testng.annotations.Test;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class ZooTest {
@@ -31,19 +32,19 @@ public class ZooTest {
     Zoo zoo = new Zoo("AnimalPlanet", "Best zoo in whole cyberworld!", "vk.com/kifor4ik", BigDecimal.ZERO,
             "CyberCountry", "CyberCity", "CyberStreet", "1488A");
 
-    Bullfinch bullfinch = new Bullfinch("Snegir", "Norm takoi", 1, Field.class,
-            List.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Wheat.class);
-    Bullfinch bullfinch2 = new Bullfinch("Snegir2", "Norm takoi2", 2, Field.class,
-            List.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Wheat.class);
+    Bullfinch bullfinch = new Bullfinch("Snegir", "Norm takoi", 1, Set.of(Field.class),
+            Set.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Set.of(Wheat.class));
+    Bullfinch bullfinch2 = new Bullfinch("Snegir2", "Norm takoi2", 2, Set.of(Field.class),
+            Set.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Set.of(Wheat.class));
 
-    Lion lion = new Lion("Lion", "Norm takoi", 4, Field.class,
-            List.of(ClimateZone.TROPICAL, ClimateZone.SUBTROPICAL), Meat.class);
+    Lion lion = new Lion("Lion", "Norm takoi", 4, Set.of(Field.class),
+            Set.of(ClimateZone.TROPICAL, ClimateZone.SUBTROPICAL), Set.of(Meat.class));
 
-    EmperorPenguin emperorPenguin = new EmperorPenguin("Emperor Penguin", "Norm takoi", 2, Aquarium.class,
-            List.of(ClimateZone.ARCTIC, ClimateZone.SUBANTARCTIC, ClimateZone.ANTARCTIC, ClimateZone.SUBANTARCTIC), Wheat.class);
+    EmperorPenguin emperorPenguin = new EmperorPenguin("Emperor Penguin", "Norm takoi", 2, Set.of(Aquarium.class),
+            Set.of(ClimateZone.ARCTIC, ClimateZone.SUBANTARCTIC, ClimateZone.ANTARCTIC), Set.of(Wheat.class));
 
-    Chameleon chameleon = new Chameleon("Chameleon", "Norm takoi", 2, Aquarium.class,
-            List.of(ClimateZone.TROPICAL, ClimateZone.SUBEQUATORIAL), Bugs.class);
+    Chameleon chameleon = new Chameleon("Chameleon", "Norm takoi", 2, Set.of(Aquarium.class),
+            Set.of(ClimateZone.TROPICAL, ClimateZone.SUBEQUATORIAL), Set.of(Bugs.class));
 
     Field field = new Field(1L, "Savanna field", 128, List.of(Lion.class), ClimateZone.TROPICAL);
     Field field2 = new Field(2L, "Forest field", 128, List.of(Bullfinch.class), ClimateZone.MODERATE);

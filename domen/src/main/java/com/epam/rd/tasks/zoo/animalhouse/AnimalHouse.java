@@ -102,12 +102,6 @@ public abstract class AnimalHouse {
     }
 
     public void addAnimal(Animal animal) {
-        if (!animal.getClimateZone().contains(climateZone))
-            throw new BadClimateException(animal.getName() + " cant live in " + name + " because bad climate!");
-        if (!animal.getLivingZone().equals(this.getClass()))
-            throw new BadClimateException(animal.getName() + " cant live in " + name + " because bad living zone!");
-        if (!typeOfAnimal.contains(animal.getClass()))
-            throw new BadAnimalTypeException(animal.getName() + " cant live in " + name + " because this cage for different type of animals!");
         animals.add(animal);
     }
 

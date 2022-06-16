@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.animals.bird.pigeonlike.Vyakhir;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class BullfinchTest {
-    Bullfinch bullfinch = new Bullfinch("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Bullfinch bullfinch = new Bullfinch("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(bullfinch.getName(), "AnimalName");
@@ -41,7 +44,7 @@ public class BullfinchTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(bullfinch.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(bullfinch.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class BullfinchTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(bullfinch.getFoodType(), Bugs.class);
-        bullfinch.setFoodType(Meat.class);
-        Assert.assertNotEquals(bullfinch.getFoodType(), Bugs.class);
-        Assert.assertEquals(bullfinch.getFoodType(), Meat.class);
+        Assert.assertEquals(bullfinch.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        bullfinch.setFoodType(food);
+        Assert.assertNotEquals(bullfinch.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(bullfinch.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

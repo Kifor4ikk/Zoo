@@ -5,6 +5,7 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
 import com.epam.rd.tasks.zoo.dto.animal.crustacean.CrustaceanDto;
+import com.epam.rd.tasks.zoo.exception.ClassCastException;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.lang.reflect.Constructor;
@@ -19,34 +20,15 @@ public class AnimalHouseDto {
     private Long id;
     private String name;
     private Integer area;
-    private String typeOfAnimal;
+    private List<Class<? extends Animal>> typeOfAnimals = new ArrayList<>();
     private String climateZone;
     private String typeOfHouse;
     private boolean isDeleted = false;
-    //все кто живет в халупе
+
+    //all animals living here
     private List<Animal> animals = new ArrayList<>();
 
-    public AnimalHouseDto() {}
-
-    public AnimalHouseDto(Long id, String name, Integer area, String typeOfAnimal, String climateZone, String typeOfHouse, boolean isDeleted, List<Animal> animals) {
-        this.id = id;
-        this.name = name;
-        this.area = area;
-        this.typeOfAnimal = typeOfAnimal;
-        this.climateZone = climateZone;
-        this.typeOfHouse = typeOfHouse;
-        this.isDeleted = isDeleted;
-        this.animals = animals;
-    }
-
-    public AnimalHouseDto(Long id, String name, Integer area, String typeOfAnimal, String climateZone, String typeOfHouse, boolean isDeleted) {
-        this.id = id;
-        this.name = name;
-        this.area = area;
-        this.typeOfAnimal = typeOfAnimal;
-        this.climateZone = climateZone;
-        this.typeOfHouse = typeOfHouse;
-        this.isDeleted = isDeleted;
+    public AnimalHouseDto() {
     }
 
     public Long getId() {
@@ -73,12 +55,12 @@ public class AnimalHouseDto {
         this.area = area;
     }
 
-    public String getTypeOfAnimal() {
-        return typeOfAnimal;
+    public List<Class<? extends Animal>> getTypeOfAnimals() {
+        return typeOfAnimals;
     }
 
-    public void setTypeOfAnimal(String typeOfAnimal) {
-        this.typeOfAnimal = typeOfAnimal;
+    public void setTypeOfAnimals(List<Class<? extends Animal>> typeOfAnimals) {
+        this.typeOfAnimals = typeOfAnimals;
     }
 
     public String getClimateZone() {
@@ -118,7 +100,7 @@ public class AnimalHouseDto {
         dto.setId(animalHouse.getId());
         dto.setName(animalHouse.getName());
         dto.setArea(animalHouse.getArea());
-        dto.setTypeOfAnimal((animalHouse.getTypeOfAnimal().stream().map(Class::getName).collect(Collectors.toList())).toString());
+        dto.setTypeOfAnimals(animalHouse.getTypeOfAnimal());
         dto.setClimateZone(animalHouse.getClimateZone().name());
         dto.setTypeOfHouse(animalHouse.getClass().getName());
         dto.setAnimals(animalHouse.getAnimals());
@@ -126,7 +108,7 @@ public class AnimalHouseDto {
         return dto;
     }
 
-    public static <T extends AnimalHouse, Z extends AnimalHouseDto> T fromDto(Z dto) throws ClassNotFoundException {
+    public static <T extends AnimalHouse, Z extends AnimalHouseDto> T fromDto(Z dto) {
         T animalHouse = null;
         try {
             Constructor<?> constructor = Class.forName(dto.getTypeOfHouse()).getConstructor();
@@ -135,11 +117,11 @@ public class AnimalHouseDto {
             animalHouse.setId(dto.getId());
             animalHouse.setName(dto.getName());
             animalHouse.setArea(dto.getArea());
-            for (String className : dto.getTypeOfAnimal().substring(1, dto.getTypeOfAnimal().length() - 1).split(", "))
-                animalHouse.getTypeOfAnimal().add((Class<? extends Animal>) Class.forName(className));
+            animalHouse.setTypeOfAnimal(dto.getTypeOfAnimals());
             animalHouse.setClimateZone(ClimateZone.valueOf(dto.getClimateZone()));
             animalHouse.setAnimals(dto.getAnimals());
-
+        } catch (ClassNotFoundException e) {
+            throw new ClassCastException("DTO have problem with converting class");
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             System.err.println("->" + Arrays.toString(e.getStackTrace()));
         }
@@ -148,15 +130,6 @@ public class AnimalHouseDto {
 
     @Override
     public String toString() {
-        return "AnimalHouseDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", area=" + area +
-                ", typeOfAnimal='" + typeOfAnimal + '\'' +
-                ", climateZone='" + climateZone + '\'' +
-                ", typeOfHouse='" + typeOfHouse + '\'' +
-                ", isDeleted=" + isDeleted +
-                ", animals=" + animals +
-                '}';
+        return "AnimalHouseDto{" + "id=" + id + ", name='" + name + '\'' + ", area=" + area + ", typeOfAnimal='" + typeOfAnimals + '\'' + ", climateZone='" + climateZone + '\'' + ", typeOfHouse='" + typeOfHouse + '\'' + ", isDeleted=" + isDeleted + ", animals=" + animals + '}';
     }
 }

@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.bird.ostrichlike.AfricanOstrich;
 import com.epam.rd.tasks.zoo.animals.bird.pigeonlike.Vyakhir;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class AfricanOstrichTest {
-    AfricanOstrich ostrich = new AfricanOstrich("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    AfricanOstrich ostrich = new AfricanOstrich("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(ostrich.getName(), "AnimalName");
@@ -41,7 +44,7 @@ public class AfricanOstrichTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(ostrich.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(ostrich.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class AfricanOstrichTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(ostrich.getFoodType(), Bugs.class);
-        ostrich.setFoodType(Meat.class);
-        Assert.assertNotEquals(ostrich.getFoodType(), Bugs.class);
-        Assert.assertEquals(ostrich.getFoodType(), Meat.class);
+        Assert.assertEquals(ostrich.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        ostrich.setFoodType(food);
+        Assert.assertNotEquals(ostrich.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(ostrich.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

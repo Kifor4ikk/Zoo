@@ -16,14 +16,15 @@ import org.testng.annotations.Test;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Test
 public class AquariumTest {
 
     Aquarium aquarium = new Aquarium(1L,"Aqualand",4, List.of(Beluga.class, Sterlet.class, Bream.class), ClimateZone.MODERATE);
-    Bream bream = new Bream("oleg","norm",2,Aquarium.class, Collections.singletonList(ClimateZone.MODERATE), Meat.class);
-    Sterlet sterlet = new Sterlet("Sterlyad","2",3,Aquarium.class, Collections.singletonList(ClimateZone.MODERATE), Meat.class);
+    Bream bream = new Bream("oleg","norm",2,Set.of(Aquarium.class), Set.of(ClimateZone.MODERATE), Set.of(Meat.class));
+    Sterlet sterlet = new Sterlet("Sterlyad","2",3,Set.of(Aquarium.class), Set.of(ClimateZone.MODERATE), Set.of(Meat.class));
 
     @BeforeTest
     public void beforeTest(){

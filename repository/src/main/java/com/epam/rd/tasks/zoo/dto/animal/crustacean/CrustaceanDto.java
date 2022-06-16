@@ -21,9 +21,9 @@ public class CrustaceanDto extends AnimalDto {
         dto.setName(animal.getName());
         dto.setDescribe(animal.getDescribe());
         dto.setAge(animal.getAge());
-        dto.setLivingZone(animal.getLivingZone().getName());
+        //dto.setLivingZone(animal.getLivingZone().getName());
         dto.setClimateZone(animal.getClimateZone().stream().map(Enum::name).collect(Collectors.toList()));
-        dto.setFoodType(animal.getFoodType().getName());
+        //dto.setFoodType(animal.getFoodType().getName());
         dto.setDeleted(animal.isDeleted());
         dto.setTypeOfAnimal(animal.getClass().getName());
         dto.setSeashell(animal.getSeashell());
@@ -40,9 +40,9 @@ public class CrustaceanDto extends AnimalDto {
             animal.setName(dto.getName());
             animal.setDescribe(dto.getDescribe());
             animal.setAge(dto.getAge());
-            animal.setLivingZone((Class<? extends AnimalHouse>) Class.forName(dto.getLivingZone()));
-            animal.setClimateZone(dto.getClimateZone().stream().map(ClimateZone::valueOf).collect(Collectors.toList()));
-            animal.setFoodType((Class<? extends Food>)Class.forName(dto.getFoodType()));
+            //animal.setLivingZone((Class<? extends AnimalHouse>) Class.forName(dto.getLivingZone()));
+            //animal.setClimateZone(dto.getClimateZone().stream().map(ClimateZone::valueOf).collect(Collectors.toList()));
+            //animal.setFoodType((Class<? extends Food>)Class.forName(dto.getFoodType()));
             animal.setDeleted(dto.isDeleted());
             animal.setSeashell(dto.getSeashell());
             animal.setId(dto.getId());

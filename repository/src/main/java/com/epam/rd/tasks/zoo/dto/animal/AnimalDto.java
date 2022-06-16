@@ -5,11 +5,16 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
 import com.epam.rd.tasks.zoo.dto.animal.crustacean.CrustaceanDto;
+import com.epam.rd.tasks.zoo.exception.ClassCastException;
+import com.epam.rd.tasks.zoo.exception.MainException;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class AnimalDto {
@@ -19,10 +24,11 @@ public class AnimalDto {
     private String name;
     private String describe;
     private int age;
-    private String livingZone;
-    private List<String> climateZone;
-    private String foodType;
+    private List<String> livingZone = new ArrayList<>();
+    private List<String> climateZone = new ArrayList<>();
+    private List<String> foodType = new ArrayList<>();
     private boolean isDeleted = false;
+
 
     public String getTypeOfAnimal() {
         return typeOfAnimal;
@@ -64,11 +70,11 @@ public class AnimalDto {
         this.age = age;
     }
 
-    public String getLivingZone() {
+    public List<String> getLivingZone() {
         return livingZone;
     }
 
-    public void setLivingZone(String livingZone) {
+    public void setLivingZone(List<String> livingZone) {
         this.livingZone = livingZone;
     }
 
@@ -80,11 +86,11 @@ public class AnimalDto {
         this.climateZone = climateZone;
     }
 
-    public String getFoodType() {
+    public List<String> getFoodType() {
         return foodType;
     }
 
-    public void setFoodType(String foodType) {
+    public void setFoodType(List<String> foodType) {
         this.foodType = foodType;
     }
 
@@ -97,40 +103,52 @@ public class AnimalDto {
     }
 
     public static AnimalDto toDTO(Animal animal) {
-
         AnimalDto dto = new AnimalDto();
 
         dto.setName(animal.getName());
         dto.setDescribe(animal.getDescribe());
         dto.setAge(animal.getAge());
-        dto.setLivingZone(animal.getLivingZone().getName());
+        dto.setLivingZone(animal.getLivingZone().stream().map(Class::getName).collect(Collectors.toList()));
         dto.setClimateZone(animal.getClimateZone().stream().map(Enum::name).collect(Collectors.toList()));
-        dto.setFoodType(animal.getFoodType().getName());
+        dto.setFoodType(animal.getFoodType().stream().map(Class::getName).collect(Collectors.toList()));
         dto.setDeleted(animal.isDeleted());
         dto.setTypeOfAnimal(animal.getClass().getName());
         return dto;
     }
 
-    public static <T extends Animal, Z extends AnimalDto> T fromDto(Z dto) throws ClassNotFoundException {
+    public static <T extends Animal, Z extends AnimalDto> T fromDto(Z dto) {
         T animal = null;
-        try{
+        try {
             Constructor<?> constructor = Class.forName(dto.getTypeOfAnimal()).getConstructor();
             animal = (T) constructor.newInstance();
 
             animal.setName(dto.getName());
             animal.setDescribe(dto.getDescribe());
             animal.setAge(dto.getAge());
-            animal.setLivingZone((Class<? extends AnimalHouse>) Class.forName(dto.getLivingZone()));
-            animal.setClimateZone(dto.getClimateZone().stream().map(ClimateZone::valueOf).collect(Collectors.toList()));
-            animal.setFoodType((Class<? extends Food>)Class.forName(dto.getFoodType()));
+
+            Set livingZone = new HashSet();
+            for(String livingZoneName : dto.getLivingZone())
+                livingZone.add(Class.forName(livingZoneName));
+            animal.setLivingZone(livingZone);
+
+            animal.setClimateZone(dto.getClimateZone().stream().map(ClimateZone::valueOf).collect(Collectors.toSet()));
+
+            Set foodType = new HashSet();
+            for(String foodTypeName : dto.getFoodType())
+                foodType.add(Class.forName(foodTypeName));
+            animal.setFoodType(foodType);
+
             animal.setDeleted(dto.isDeleted());
             animal.setId(dto.getId());
+        } catch (ClassNotFoundException e) {
+            throw new ClassCastException("DTO have problem with converting class");
 
-        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e){
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             System.err.println("->" + e);
         }
         return animal;
     }
+
     @Override
     public String toString() {
         return "AnimalDto{" +

@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.reptile.scaled.Chameleon;
 import com.epam.rd.tasks.zoo.animals.reptile.scaled.Python;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class PythonTest {
-    Python python = new Python("Phyt","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Python python = new Python("Phyt","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(python.getName(), "Phyt");
@@ -41,7 +44,7 @@ public class PythonTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(python.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(python.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class PythonTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(python.getFoodType(), Bugs.class);
-        python.setFoodType(Meat.class);
-        Assert.assertNotEquals(python.getFoodType(), Bugs.class);
-        Assert.assertEquals(python.getFoodType(), Meat.class);
+        Assert.assertEquals(python.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        python.setFoodType(food);
+        Assert.assertNotEquals(python.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(python.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

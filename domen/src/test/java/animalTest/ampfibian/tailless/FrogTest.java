@@ -5,17 +5,20 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.animals.amphibian.tailless.Frog;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class FrogTest {
-    Frog frog = new Frog("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Frog frog = new Frog("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(frog.getName(), "AnimalName");
@@ -40,17 +43,19 @@ public class FrogTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(frog.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(frog.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
-        Assert.assertEquals(frog.getClimateZone(), List.of(ClimateZone.TROPICAL));
+        Assert.assertEquals(frog.getClimateZone(), Set.of(ClimateZone.TROPICAL));
     }
 
     public void foodTest(){
-        Assert.assertEquals(frog.getFoodType(), Bugs.class);
-        frog.setFoodType(Meat.class);
-        Assert.assertNotEquals(frog.getFoodType(), Bugs.class);
-        Assert.assertEquals(frog.getFoodType(), Meat.class);
+        Assert.assertEquals(frog.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        frog.setFoodType(food);
+        Assert.assertNotEquals(frog.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(frog.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

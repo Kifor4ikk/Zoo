@@ -5,17 +5,20 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Beluga;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class BelugaTest {
-    Beluga beluga = new Beluga("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Beluga beluga = new Beluga("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(beluga.getName(), "AnimalName");
@@ -40,7 +43,7 @@ public class BelugaTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(beluga.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(beluga.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -48,9 +51,11 @@ public class BelugaTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(beluga.getFoodType(), Bugs.class);
-        beluga.setFoodType(Meat.class);
-        Assert.assertNotEquals(beluga.getFoodType(), Bugs.class);
-        Assert.assertEquals(beluga.getFoodType(), Meat.class);
+        Assert.assertEquals(beluga.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        beluga.setFoodType(food);
+        Assert.assertNotEquals(beluga.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(beluga.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

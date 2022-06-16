@@ -5,8 +5,10 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
 import com.epam.rd.tasks.zoo.dto.animal.crustacean.CrustaceanDto;
+import com.epam.rd.tasks.zoo.dto.animalhouse.AnimalHouseDto;
 import com.epam.rd.tasks.zoo.exception.AlreadyExistException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
+import com.epam.rd.tasks.zoo.repository.animal.AnimalRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
 
@@ -16,18 +18,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class CrustaceanRepositoryImpl extends RepositoryConnection implements CrustaceanRepository {
-
-
-    private AnimalHouseRepositoryImpl animalHouseRepository;
+public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
 
     public CrustaceanRepositoryImpl(Connection connection) {
         super(connection);
-        animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
     }
 
     //@TODO
-    @Override
+
     public void create(Crustacean crustacean, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
         CrustaceanDto animal = CrustaceanDto.toDTO(crustacean);
         try {
@@ -47,8 +45,6 @@ public class CrustaceanRepositoryImpl extends RepositoryConnection implements Cr
             state().execute("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
                     getIdByParams(crustacean) + ",'" + animal.getSeashell() + "');");
 
-            animalHouseRepository.addAnimalToHouse(getIdByParams(crustacean),animalHouse.getId());
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -56,50 +52,10 @@ public class CrustaceanRepositoryImpl extends RepositoryConnection implements Cr
 
     @Override
     public Crustacean getById(Long id) throws SQLException, ClassNotFoundException {
-        CrustaceanDto animalDto = new CrustaceanDto();
-        animalDto.setId(0L);
-        try (ResultSet resultSet = state().executeQuery("SELECT * FROM crustacean up inner join animal ON animal.id = up.animal_id WHERE isDeleted = false AND animal_id = " + id)) {
-            if (resultSet.next()) {
-                animalDto.setId(id);
-                animalDto.setName(resultSet.getString("name"));
-                animalDto.setDescribe(resultSet.getString("describe"));
-                animalDto.setAge(resultSet.getInt("age"));
-                animalDto.setLivingZone(resultSet.getString("zoneType"));
-                animalDto.setClimateZone(List.of(resultSet.getString("climateZone")
-                        .substring(1, resultSet.getString("climateZone").length() - 1).split(", ")));
-                animalDto.setFoodType(resultSet.getString("foodType"));
-                animalDto.setDeleted(resultSet.getBoolean("isDeleted"));
-                animalDto.setTypeOfAnimal(resultSet.getString("typeofanimal"));
-                animalDto.setSeashell(resultSet.getString("seashell"));
-                if (resultSet.getLong("id") == 0)
-                    throw new NotFoundException("Crab was not found");
-            } else throw new NotFoundException("Crab was not found");
-        }
-        return CrustaceanDto.fromDto(animalDto);
+
+        return null;
     }
 
-    @Override
-    public Crustacean getByAllParamsFromAnimal(Crustacean crustacean) throws SQLException, ClassNotFoundException {
-        CrustaceanDto animal = CrustaceanDto.toDTO(crustacean);
-        try (ResultSet resultSet = state().executeQuery("SELECT * FROM crustacean up inner join animal ON animal.id = up.animal_id WHERE isDeleted = false"
-                + " AND name = '" + animal.getName()
-                + "' AND describe = '" + animal.getDescribe()
-                + "' AND age = '" + animal.getAge()
-                + "' AND zonetype = '" + animal.getLivingZone()
-                + "' AND foodtype = '" + animal.getFoodType()
-                + "' AND climatezone ='" + animal.getClimateZone()
-                + "' AND typeofanimal ='" + animal.getTypeOfAnimal()
-                + "' AND seashell ='" + animal.getSeashell() + "'")
-        ) {
-            if (resultSet.next()) {
-                animal.setId(resultSet.getLong("id"));
-
-                if (resultSet.getLong("id") == 0)
-                    throw new NotFoundException("Crustacean was not found");
-            } else throw new NotFoundException("Crustacean was not found");
-        }
-        return CrustaceanDto.fromDto(animal);
-    }
 
     private long getIdByParams(Crustacean crustacean) throws SQLException, ClassNotFoundException {
         CrustaceanDto animal = CrustaceanDto.toDTO(crustacean);
@@ -124,7 +80,6 @@ public class CrustaceanRepositoryImpl extends RepositoryConnection implements Cr
 
     //Have a 3 think how to realise this method
     //now this very SAFETY method
-    @Override
     public void update(Crustacean data) throws SQLException, ClassNotFoundException {
         CrustaceanDto crustacean = CrustaceanDto.toDTO(getById(data.getId()));
         CrustaceanDto animal = CrustaceanDto.toDTO(data);
@@ -149,7 +104,6 @@ public class CrustaceanRepositoryImpl extends RepositoryConnection implements Cr
         state().execute(
                 "UPDATE Crustacean SET seashell = '" + animal.getSeashell() + "' WHERE Animal_id = " + data.getId()
         );
-
     }
 
     @Override

@@ -5,17 +5,20 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.animals.insect.coleoptera.StagBeetle;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class StagBeetleTest {
-    StagBeetle stagbeetle = new StagBeetle("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    StagBeetle stagbeetle = new StagBeetle("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(stagbeetle.getName(), "AnimalName");
@@ -40,7 +43,7 @@ public class StagBeetleTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(stagbeetle.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(stagbeetle.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -48,9 +51,11 @@ public class StagBeetleTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(stagbeetle.getFoodType(), Bugs.class);
-        stagbeetle.setFoodType(Meat.class);
-        Assert.assertNotEquals(stagbeetle.getFoodType(), Bugs.class);
-        Assert.assertEquals(stagbeetle.getFoodType(), Meat.class);
+        Assert.assertEquals(stagbeetle.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        stagbeetle.setFoodType(food);
+        Assert.assertNotEquals(stagbeetle.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(stagbeetle.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

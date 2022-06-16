@@ -5,17 +5,20 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class WolfTest {
-    Wolf wolf = new Wolf("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Wolf wolf = new Wolf("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(wolf.getName(), "AnimalName");
@@ -40,7 +43,7 @@ public class WolfTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(wolf.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(wolf.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -48,9 +51,11 @@ public class WolfTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(wolf.getFoodType(), Bugs.class);
-        wolf.setFoodType(Meat.class);
-        Assert.assertNotEquals(wolf.getFoodType(), Bugs.class);
-        Assert.assertEquals(wolf.getFoodType(), Meat.class);
+        Assert.assertEquals(wolf.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        wolf.setFoodType(food);
+        Assert.assertNotEquals(wolf.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(wolf.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

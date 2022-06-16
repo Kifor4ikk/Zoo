@@ -16,11 +16,13 @@ import org.testng.annotations.Test;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
+@Test
 public class FieldTest {
     Field field = new Field(1L, "Field for Eleph", 4, List.of(Elephant.class), ClimateZone.TROPICAL);
-    Elephant elephant = new Elephant("Elephant","Test",12, Field.class, Collections.singletonList(ClimateZone.TROPICAL), Wheat.class);
-    Elephant elephant1 = new Elephant("Elephant2","Test2",1, Field.class, Collections.singletonList(ClimateZone.TROPICAL), Wheat.class);
+    Elephant elephant = new Elephant("Elephant","Test",12, Set.of(Field.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class));
+    Elephant elephant1 = new Elephant("Elephant2","Test2",1, Set.of(Field.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class));
 
     @BeforeTest
     public void beforeTest(){

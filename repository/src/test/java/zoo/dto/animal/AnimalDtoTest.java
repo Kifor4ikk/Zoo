@@ -10,11 +10,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class AnimalDtoTest {
-    Crab crab = new Crab("AnimalName","TestDescribe12",1, Terrarium.class,
-            List.of(ClimateZone.TROPICAL, ClimateZone.SUBARCTIC,ClimateZone.ANTARCTIC), Bugs.class,"Red chitin");
+    Crab crab = new Crab("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL, ClimateZone.SUBARCTIC,ClimateZone.ANTARCTIC), Set.of(Bugs.class),"Red chitin");
 
     public void animalDtoTest() throws ClassNotFoundException {
         Assert.assertEquals(crab,(AnimalDto.fromDto(AnimalDto.toDTO(crab))));

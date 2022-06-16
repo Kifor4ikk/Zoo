@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="181" passed="181" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-02T11:05:37 MSK" name="Command line suite" finished-at="2022-06-02T11:05:37 MSK" duration-ms="132">
+  <suite started-at="2022-06-13T17:29:40 MSK" name="Command line suite" finished-at="2022-06-13T17:29:40 MSK" duration-ms="121">
     <groups>
     </groups>
-    <test started-at="2022-06-02T11:05:37 MSK" name="Command line test" finished-at="2022-06-02T11:05:37 MSK" duration-ms="132">
+    <test started-at="2022-06-13T17:29:40 MSK" name="Command line test" finished-at="2022-06-13T17:29:40 MSK" duration-ms="121">
       <class name="animalHouseTest.FieldTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-02T11:05:37 MSK" name="beforeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-13T17:29:40 MSK" name="beforeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.BadClimateException">
             <message>
               <![CDATA[Cant change climate zone in cage Field for Eleph cause another animal still living here!]]>
@@ -64,7 +64,7 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="typeOfAnimalTest()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-02T11:05:37 MSK" name="typeOfAnimalTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="typeOfAnimalTest()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-13T17:29:40 MSK" name="typeOfAnimalTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.BadAnimalTypeException">
             <message>
               <![CDATA[Cant change animal type in cage Field for Eleph cause another animal still living here!]]>
@@ -117,23 +117,23 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- typeOfAnimalTest -->
-        <test-method is-config="true" signature="message()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-02T11:05:37 MSK" name="message" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="message()[pri:0, instance:animalHouseTest.FieldTest@3246fb96]" started-at="2022-06-13T17:29:40 MSK" name="message" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- message -->
       </class> <!-- animalHouseTest.FieldTest -->
       <class name="financeTest.income.StateSupportTest">
-        <test-method signature="describeTest()[pri:0, instance:financeTest.income.StateSupportTest@33990a0c]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:financeTest.income.StateSupportTest@33990a0c]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="costTest()[pri:0, instance:financeTest.income.StateSupportTest@33990a0c]" started-at="2022-06-02T11:05:37 MSK" name="costTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="costTest()[pri:0, instance:financeTest.income.StateSupportTest@33990a0c]" started-at="2022-06-13T17:29:40 MSK" name="costTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- costTest -->
       </class> <!-- financeTest.income.StateSupportTest -->
       <class name="animalTest.crustacean.highercancers.ShrimpTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -186,29 +186,33 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.ShrimpTest@1ba9117e]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.crustacean.highercancers.ShrimpTest -->
       <class name="animalTest.bird.ostrichlike.AfricanOstrichTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -261,43 +265,39 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.ostrichlike.AfricanOstrichTest@67080771]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.bird.ostrichlike.AfricanOstrichTest -->
       <class name="financeTest.expenses.MaintenanceTest">
-        <test-method signature="describeTest()[pri:0, instance:financeTest.expenses.MaintenanceTest@212b5695]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="maintenanceCageTest()[pri:0, instance:financeTest.expenses.MaintenanceTest@212b5695]" started-at="2022-06-02T11:05:37 MSK" name="maintenanceCageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- maintenanceCageTest -->
-        <test-method signature="costTest()[pri:0, instance:financeTest.expenses.MaintenanceTest@212b5695]" started-at="2022-06-02T11:05:37 MSK" name="costTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="costTest()[pri:0, instance:financeTest.expenses.MaintenanceTest@212b5695]" started-at="2022-06-13T17:29:40 MSK" name="costTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- costTest -->
+        <test-method signature="describeTest()[pri:0, instance:financeTest.expenses.MaintenanceTest@212b5695]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="maintenanceCageTest()[pri:0, instance:financeTest.expenses.MaintenanceTest@212b5695]" started-at="2022-06-13T17:29:40 MSK" name="maintenanceCageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- maintenanceCageTest -->
       </class> <!-- financeTest.expenses.MaintenanceTest -->
       <class name="animalTest.mammal.predator.LionTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.predator.LionTest@5ace1ed4]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.predator.LionTest@5ace1ed4]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -352,7 +352,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
         </test-method> <!-- ageTest -->
       </class> <!-- animalTest.mammal.predator.LionTest -->
       <class name="animalTest.bird.pigeonlike.VyakhirTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -405,29 +409,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.pigeonlike.VyakhirTest@29e495ff]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.bird.pigeonlike.VyakhirTest -->
       <class name="animalTest.mammal.primate.MonkeyTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -480,29 +484,25 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.primate.MonkeyTest@31e5415e]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
       </class> <!-- animalTest.mammal.primate.MonkeyTest -->
       <class name="animalTest.ampfibian.tailless.FrogTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -555,29 +555,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.ampfibian.tailless.FrogTest@3a6bb9bf]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.ampfibian.tailless.FrogTest -->
       <class name="animalTest.bird.finche.BullfinchTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -630,29 +630,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- livingZoneTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        </test-method> <!-- livingZoneTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.finche.BullfinchTest@c333c60]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
       </class> <!-- animalTest.bird.finche.BullfinchTest -->
       <class name="animalTest.mammal.predator.WolfTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -705,37 +705,37 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.predator.WolfTest@27ff5d15]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.mammal.predator.WolfTest -->
       <class name="animalTest.mammal.primate.ChimpanzeeTest">
-        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -788,21 +788,21 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.primate.ChimpanzeeTest@693fe6c9]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
       </class> <!-- animalTest.mammal.primate.ChimpanzeeTest -->
       <class name="animalTest.bird.anseriforme.GogolTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -855,39 +855,35 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.anseriforme.GogolTest@3738449f]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
       </class> <!-- animalTest.bird.anseriforme.GogolTest -->
       <class name="Test">
-        <test-method signature="AnimalTest()[pri:0, instance:Test@101952da]" started-at="2022-06-02T11:05:37 MSK" name="AnimalTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="AnimalTest()[pri:0, instance:Test@101952da]" started-at="2022-06-13T17:29:40 MSK" name="AnimalTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AnimalTest -->
       </class> <!-- Test -->
       <class name="animalTest.arachnid.scorpio.ScorpioMotleyTest">
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -940,47 +936,47 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="describeTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioMotleyTest@55536d9e]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.arachnid.scorpio.ScorpioMotleyTest -->
       <class name="financeTest.income.TicketTest">
-        <test-method signature="costTest()[pri:0, instance:financeTest.income.TicketTest@50b5ac82]" started-at="2022-06-02T11:05:37 MSK" name="costTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="costTest()[pri:0, instance:financeTest.income.TicketTest@50b5ac82]" started-at="2022-06-13T17:29:40 MSK" name="costTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- costTest -->
-        <test-method signature="describeTest()[pri:0, instance:financeTest.income.TicketTest@50b5ac82]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:financeTest.income.TicketTest@50b5ac82]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
       </class> <!-- financeTest.income.TicketTest -->
       <class name="animalTest.bird.penguin.RoyalPenguinTest">
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1033,17 +1029,21 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.penguin.RoyalPenguinTest@53976f5c]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.bird.penguin.RoyalPenguinTest -->
       <class name="animalTest.reptile.scaled.PythonTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1096,33 +1096,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.reptile.scaled.PythonTest@702b8b12]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.reptile.scaled.PythonTest -->
       <class name="animalTest.fish.carp.VoblaTest">
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1175,35 +1171,43 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.carp.VoblaTest@41fecb8b]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
       </class> <!-- animalTest.fish.carp.VoblaTest -->
       <class name="financeTest.income.DonationTest">
-        <test-method signature="costTest()[pri:0, instance:financeTest.income.DonationTest@37654521]" started-at="2022-06-02T11:05:37 MSK" name="costTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="costTest()[pri:0, instance:financeTest.income.DonationTest@37654521]" started-at="2022-06-13T17:29:40 MSK" name="costTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- costTest -->
-        <test-method signature="describeTest()[pri:0, instance:financeTest.income.DonationTest@37654521]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:financeTest.income.DonationTest@37654521]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
       </class> <!-- financeTest.income.DonationTest -->
       <class name="animalTest.insect.coleoptera.StagBeetleTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="ageTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1256,94 +1260,37 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.insect.coleoptera.StagBeetleTest@2accdbb5]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.insect.coleoptera.StagBeetleTest -->
       <class name="animalHouseTest.TerrariumTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-02T11:05:37 MSK" name="beforeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-13T17:29:40 MSK" name="beforeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="areaTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-02T11:05:37 MSK" name="areaTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="areaTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-13T17:29:40 MSK" name="areaTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- areaTest -->
-        <test-method signature="typeOfAnimalTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-02T11:05:37 MSK" name="typeOfAnimalTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <exception class="com.epam.rd.tasks.zoo.exception.BadAnimalTypeException">
-            <message>
-              <![CDATA[Cant change animal type in cage newTerrarium cause another animal still living here!]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage newTerrarium cause another animal still living here!
-at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
-at animalHouseTest.TerrariumTest.typeOfAnimalTest(TerrariumTest.java:58)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-at org.testng.TestRunner.privateRun(TestRunner.java:808)
-at org.testng.TestRunner.run(TestRunner.java:603)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
-at org.testng.SuiteRunner.run(SuiteRunner.java:326)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-at org.testng.TestNG.runSuites(TestNG.java:1092)
-at org.testng.TestNG.run(TestNG.java:1060)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-]]>
-            </full-stacktrace>
-          </exception> <!-- com.epam.rd.tasks.zoo.exception.BadAnimalTypeException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- typeOfAnimalTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.BadClimateException">
             <message>
               <![CDATA[Cant change climate zone in cage Terrarium cause another animal still living here!]]>
@@ -1396,13 +1343,66 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method is-config="true" signature="message()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-02T11:05:37 MSK" name="message" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="typeOfAnimalTest()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-13T17:29:40 MSK" name="typeOfAnimalTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <exception class="com.epam.rd.tasks.zoo.exception.BadAnimalTypeException">
+            <message>
+              <![CDATA[Cant change animal type in cage newTerrarium cause another animal still living here!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.epam.rd.tasks.zoo.exception.BadAnimalTypeException: Cant change animal type in cage newTerrarium cause another animal still living here!
+at com.epam.rd.tasks.zoo.animalhouse.AnimalHouse.setTypeOfAnimal(AnimalHouse.java:71)
+at animalHouseTest.TerrariumTest.typeOfAnimalTest(TerrariumTest.java:58)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.epam.rd.tasks.zoo.exception.BadAnimalTypeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- typeOfAnimalTest -->
+        <test-method is-config="true" signature="message()[pri:0, instance:animalHouseTest.TerrariumTest@49dc7102]" started-at="2022-06-13T17:29:40 MSK" name="message" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- message -->
       </class> <!-- animalHouseTest.TerrariumTest -->
       <class name="animalTest.fish.sturgeon.SterletTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1455,33 +1455,33 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- livingZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.sturgeon.SterletTest@51dcb805]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.fish.sturgeon.SterletTest -->
       <class name="animalTest.arachnid.scorpio.ScorpioItalianTest">
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1534,33 +1534,33 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.arachnid.scorpio.ScorpioItalianTest@3e6ef8ad]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nameTest -->
       </class> <!-- animalTest.arachnid.scorpio.ScorpioItalianTest -->
       <class name="animalHouseTest.AquariumTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-02T11:05:37 MSK" name="beforeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-13T17:29:40 MSK" name="beforeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="areaTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-02T11:05:37 MSK" name="areaTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="2" status="PASS">
+        <test-method signature="areaTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-13T17:29:40 MSK" name="areaTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- areaTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="11" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="11" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.BadClimateException">
             <message>
               <![CDATA[Cant change climate zone in cage Aqualand cause another animal still living here!]]>
@@ -1613,11 +1613,11 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="typeOfAnimalTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-02T11:05:37 MSK" name="typeOfAnimalTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="typeOfAnimalTest()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-13T17:29:40 MSK" name="typeOfAnimalTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.BadAnimalTypeException">
             <message>
               <![CDATA[Cant change animal type in cage newAquaLand cause another animal still living here!]]>
@@ -1670,13 +1670,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- typeOfAnimalTest -->
-        <test-method is-config="true" signature="message()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-02T11:05:37 MSK" name="message" finished-at="2022-06-02T11:05:37 MSK" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="message()[pri:0, instance:animalHouseTest.AquariumTest@503d687a]" started-at="2022-06-13T17:29:40 MSK" name="message" finished-at="2022-06-13T17:29:40 MSK" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- message -->
       </class> <!-- animalHouseTest.AquariumTest -->
       <class name="animalTest.mammal.rodent.SquirrelTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- livingZoneTest -->
+        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="ageTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1729,29 +1745,13 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.mammal.rodent.SquirrelTest@1a4013]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.mammal.rodent.SquirrelTest -->
       <class name="animalTest.fish.carp.BreamTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1804,33 +1804,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- livingZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        </test-method> <!-- describeTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- livingZoneTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.carp.BreamTest@732c2a62]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.fish.carp.BreamTest -->
       <class name="animalTest.bird.penguin.EmperorPenguinTest">
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -1883,85 +1879,81 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.penguin.EmperorPenguinTest@696da30b]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.bird.penguin.EmperorPenguinTest -->
       <class name="zooTest.ZooTest">
-        <test-method is-config="true" signature="setIdForAllEntities()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="setIdForAllEntities" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setIdForAllEntities()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="setIdForAllEntities" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setIdForAllEntities -->
-        <test-method signature="addressTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="addressTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="addressTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="addressTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addressTest -->
-        <test-method signature="animalHouseTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="animalHouseTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="animalHouseTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="animalHouseTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- animalHouseTest -->
-        <test-method signature="describeTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="idTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="idTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- idTest -->
-        <test-method signature="budgetTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="budgetTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="budgetTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="budgetTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- budgetTest -->
-        <test-method signature="financeTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="financeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="financeTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="financeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- financeTest -->
-        <test-method signature="foodTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="testContactInfo()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="testContactInfo" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="testContactInfo()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="testContactInfo" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testContactInfo -->
-        <test-method signature="nameTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="idTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="idTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- idTest -->
+        <test-method signature="nameTest()[pri:0, instance:zooTest.ZooTest@7ea9e1e2]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- zooTest.ZooTest -->
       <class name="financeTest.expenses.SalaryTest">
-        <test-method signature="costTest()[pri:0, instance:financeTest.expenses.SalaryTest@69997e9d]" started-at="2022-06-02T11:05:37 MSK" name="costTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="costTest()[pri:0, instance:financeTest.expenses.SalaryTest@69997e9d]" started-at="2022-06-13T17:29:40 MSK" name="costTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- costTest -->
-        <test-method signature="describeTest()[pri:0, instance:financeTest.expenses.SalaryTest@69997e9d]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:financeTest.expenses.SalaryTest@69997e9d]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
       </class> <!-- financeTest.expenses.SalaryTest -->
       <class name="animalTest.fish.sturgeon.BelugaTest">
-        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -2014,25 +2006,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="foodTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.fish.sturgeon.BelugaTest@625732]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.fish.sturgeon.BelugaTest -->
       <class name="financeTest.expenses.BuyFoodTest">
-        <test-method signature="countTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-02T11:05:37 MSK" name="countTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- countTest -->
-        <test-method signature="costTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-02T11:05:37 MSK" name="costTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="costTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-13T17:29:40 MSK" name="costTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.DissimilarityOfValuesException">
             <message>
               <![CDATA[Wrong values! PricePerEach * count not equals cost .. Check numbers]]>
@@ -2085,21 +2081,25 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- costTest -->
-        <test-method signature="describeTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="countTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-13T17:29:40 MSK" name="countTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- countTest -->
+        <test-method signature="describeTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="pricePerEachTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-02T11:05:37 MSK" name="pricePerEachTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pricePerEachTest -->
-        <test-method signature="typeOfFoodTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-02T11:05:37 MSK" name="typeOfFoodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="typeOfFoodTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-13T17:29:40 MSK" name="typeOfFoodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- typeOfFoodTest -->
+        <test-method signature="pricePerEachTest()[pri:0, instance:financeTest.expenses.BuyFoodTest@29d89d5d]" started-at="2022-06-13T17:29:40 MSK" name="pricePerEachTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pricePerEachTest -->
       </class> <!-- financeTest.expenses.BuyFoodTest -->
       <class name="animalTest.arachnid.spider.BirdmanTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -2152,33 +2152,29 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- foodTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- foodTest -->
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="nameTest()[pri:0, instance:animalTest.arachnid.spider.BirdmanTest@62230c58]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
       </class> <!-- animalTest.arachnid.spider.BirdmanTest -->
       <class name="animalTest.crustacean.highercancers.CrabTest">
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -2231,33 +2227,37 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- climateZoneTest -->
+        <test-method signature="describeTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- describeTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.crustacean.highercancers.CrabTest@44821a96]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
       </class> <!-- animalTest.crustacean.highercancers.CrabTest -->
       <class name="animalTest.reptile.scaled.ChameleonTest">
-        <test-method signature="describeTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="ageTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -2310,21 +2310,21 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.reptile.scaled.ChameleonTest@1b6e1eff]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nameTest -->
       </class> <!-- animalTest.reptile.scaled.ChameleonTest -->
       <class name="animalTest.bird.anseriforme.EiderDuckTest">
-        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-02T11:05:37 MSK" name="ageTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="ageTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-13T17:29:40 MSK" name="ageTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <exception class="com.epam.rd.tasks.zoo.exception.WrongAgeException">
             <message>
               <![CDATA[Age should be more than 0]]>
@@ -2377,26 +2377,26 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ageTest -->
-        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-02T11:05:37 MSK" name="describeTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- describeTest -->
-        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-02T11:05:37 MSK" name="climateZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="climateZoneTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-13T17:29:40 MSK" name="climateZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- climateZoneTest -->
-        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-02T11:05:37 MSK" name="foodTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="foodTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-13T17:29:40 MSK" name="foodTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foodTest -->
-        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-02T11:05:37 MSK" name="nameTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        <test-method signature="describeTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-13T17:29:40 MSK" name="describeTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- nameTest -->
-        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-02T11:05:37 MSK" name="livingZoneTest" finished-at="2022-06-02T11:05:37 MSK" duration-ms="0" status="PASS">
+        </test-method> <!-- describeTest -->
+        <test-method signature="livingZoneTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-13T17:29:40 MSK" name="livingZoneTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- livingZoneTest -->
+        <test-method signature="nameTest()[pri:0, instance:animalTest.bird.anseriforme.EiderDuckTest@e7edb54]" started-at="2022-06-13T17:29:40 MSK" name="nameTest" finished-at="2022-06-13T17:29:40 MSK" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nameTest -->
       </class> <!-- animalTest.bird.anseriforme.EiderDuckTest -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->

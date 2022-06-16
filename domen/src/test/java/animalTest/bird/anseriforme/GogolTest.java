@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.bird.anseriforme.Gogol;
 import com.epam.rd.tasks.zoo.animals.bird.pigeonlike.Vyakhir;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class GogolTest {
-    Gogol Gogol = new Gogol("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class);
+    Gogol Gogol = new Gogol("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
 
     public void nameTest(){
         Assert.assertEquals(Gogol.getName(), "AnimalName");
@@ -41,7 +44,7 @@ public class GogolTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(Gogol.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(Gogol.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class GogolTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(Gogol.getFoodType(), Bugs.class);
-        Gogol.setFoodType(Meat.class);
-        Assert.assertNotEquals(Gogol.getFoodType(), Bugs.class);
-        Assert.assertEquals(Gogol.getFoodType(), Meat.class);
+        Assert.assertEquals(Gogol.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        Gogol.setFoodType(food);
+        Assert.assertNotEquals(Gogol.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(Gogol.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }

@@ -6,17 +6,20 @@ import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp;
 import com.epam.rd.tasks.zoo.animals.fish.carp.Bream;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
+import com.epam.rd.tasks.zoo.food.Food;
 import com.epam.rd.tasks.zoo.food.Meat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Test
 public class ShrimpTest {
-    Shrimp shrimp = new Shrimp("AnimalName","TestDescribe12",1, Terrarium.class,
-            Collections.singletonList(ClimateZone.TROPICAL), Bugs.class,"Medium");
+    Shrimp shrimp = new Shrimp("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class),"Medium");
 
     public void nameTest(){
         Assert.assertEquals(shrimp.getName(), "AnimalName");
@@ -41,7 +44,7 @@ public class ShrimpTest {
     }
 
     public void livingZoneTest(){
-        Assert.assertEquals(shrimp.getLivingZone(), Terrarium.class);
+        Assert.assertEquals(shrimp.getLivingZone(), Set.of(Terrarium.class));
     }
 
     public void climateZoneTest(){
@@ -49,9 +52,11 @@ public class ShrimpTest {
     }
 
     public void foodTest(){
-        Assert.assertEquals(shrimp.getFoodType(), Bugs.class);
-        shrimp.setFoodType(Meat.class);
-        Assert.assertNotEquals(shrimp.getFoodType(), Bugs.class);
-        Assert.assertEquals(shrimp.getFoodType(), Meat.class);
+        Assert.assertEquals(shrimp.getFoodType(), Set.of(Bugs.class));
+        Set<Class<? extends Food>> food = new HashSet<>();
+        food.addAll(Set.of(Meat.class,Bugs.class));
+        shrimp.setFoodType(food);
+        Assert.assertNotEquals(shrimp.getFoodType(), Set.of(Bugs.class));
+        Assert.assertEquals(shrimp.getFoodType(), Set.of(Meat.class, Bugs.class));
     }
 }
