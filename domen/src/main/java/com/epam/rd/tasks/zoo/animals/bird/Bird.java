@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class Bird extends Animal {
+    public Bird(){
+        super();
+    }
     public Bird(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
         super(name, describe, age, livingZone, climateZone, foodType);
     }

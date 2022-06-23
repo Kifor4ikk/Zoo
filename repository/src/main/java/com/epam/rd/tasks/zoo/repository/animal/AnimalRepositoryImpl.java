@@ -2,9 +2,6 @@ package com.epam.rd.tasks.zoo.repository.animal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.dto.animal.AnimalCreateDto;
-import com.epam.rd.tasks.zoo.dto.animal.AnimalDto;
-import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepository;
 import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
 
 import java.sql.Connection;
@@ -19,7 +16,7 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
 
 
     @Override
-    public void create(AnimalCreateDto animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
+    public void create(Animal animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
         try(ResultSet resultSet = state().executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
                 animal.getName() + "','" +
                 animal.getDescribe() + "'," +

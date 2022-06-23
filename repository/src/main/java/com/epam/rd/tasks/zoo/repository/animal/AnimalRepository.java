@@ -1,16 +1,13 @@
 package com.epam.rd.tasks.zoo.repository.animal;
 
-import ch.qos.logback.classic.spi.IThrowableProxy;
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.dto.animal.AnimalCreateDto;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public interface AnimalRepository<T extends Animal, Id> {
 
-    public void create(AnimalCreateDto animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException;
+    public void create(T animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException;
     public T getById(Id id) throws SQLException, ClassNotFoundException;
     public T getByAllParamsFromAnimal(T animal) throws SQLException, ClassNotFoundException;
     public void update(T animal) throws SQLException, ClassNotFoundException;

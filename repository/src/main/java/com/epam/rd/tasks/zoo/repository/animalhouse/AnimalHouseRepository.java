@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public interface AnimalHouseRepository <T extends AnimalHouse, Id>{
 
     public Boolean create(T animalHouse) throws SQLException, ClassNotFoundException;
-    public Boolean addAnimalToHouse(Long IdAnimal, Long IdAnimalHouse) throws SQLException, ClassNotFoundException;
+    public Boolean addAnimalToHouse(Animal animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException;
     public T getById(Id id) throws SQLException, ClassNotFoundException;
     public void update(T animalHouse) throws SQLException, ClassNotFoundException;
     public void setDeleteStatus(Id id, boolean status) throws SQLException;
