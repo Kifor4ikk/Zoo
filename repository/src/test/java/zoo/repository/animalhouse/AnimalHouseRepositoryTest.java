@@ -67,15 +67,14 @@ public class AnimalHouseRepositoryTest {
                 + animalHouse.getClass().getName() + "'), (SELECT ct.Id FROM climateType ct WHERE ct.climateType = '"
                 + animalHouse.getClimateZone().name() + "'), '"
                 + animalHouse.isDeleted() + "') RETURNING id;");
-
         Mockito.verify(statement, Mockito.times(1))
                 .executeQuery("SELECT animalType.id FROM animalType WHERE animalType = '" + Crab.class.getName() + "'");
         Mockito.verify(statement, Mockito.times(1))
                 .executeQuery("SELECT animalType.id FROM animalType WHERE animalType = '" + Bullfinch.class.getName() + "'");
-
         Mockito.verify(statement, Mockito.times(2))
                 .execute("INSERT INTO animalTypeInHouse (ID_HOUSE,ID_ANIMALTYPE) VALUES ("
                         + animalHouse.getId() + ", " + resultSetMock.getLong("id") + ")");
+        
     }
 
     @Test

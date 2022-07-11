@@ -12,6 +12,10 @@ public class Lion extends Predator{
         super(name, describe, age, livingZone, climateZone, foodType);
     }
 
+    public Lion() {
+        super();
+    }
+
     public void roar(){
         System.out.println("ROAR!");
     }

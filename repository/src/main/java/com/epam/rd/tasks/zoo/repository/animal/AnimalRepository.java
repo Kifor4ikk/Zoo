@@ -7,9 +7,8 @@ import java.sql.SQLException;
 
 public interface AnimalRepository<T extends Animal, Id> {
 
-    public void create(T animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException;
+    public Long create(T animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException;
     public T getById(Id id) throws SQLException, ClassNotFoundException;
-    public T getByAllParamsFromAnimal(T animal) throws SQLException, ClassNotFoundException;
     public void update(T animal) throws SQLException, ClassNotFoundException;
     public void setDeleteStatus(Id id, boolean status) throws SQLException;
     public void hardDelete(Id id) throws SQLException;

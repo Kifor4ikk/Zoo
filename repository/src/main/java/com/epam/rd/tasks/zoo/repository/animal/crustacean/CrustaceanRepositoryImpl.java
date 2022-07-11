@@ -1,6 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animal.crustacean;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
+import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
 import com.epam.rd.tasks.zoo.exception.AlreadyExistException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
@@ -20,13 +21,16 @@ public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
     //@TODO
 
     public void create(Crustacean crustacean, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
-
     }
 
     @Override
-    public Crustacean getById(Long id) throws SQLException, ClassNotFoundException {
-
-        return null;
+    public Animal getById(Long id) throws SQLException, ClassNotFoundException {
+        try (ResultSet crab = state().executeQuery("select * from crustacean where id = " + id)){
+            if(crab.next()) {
+                return CrustaceanMapper.fromRawToCrustacean(super.getById(crab.getLong("animal_id")), crab);
+            }
+        }
+        throw new NotFoundException("Data for Crustacean with id " + id + " was not found");
     }
 
 
