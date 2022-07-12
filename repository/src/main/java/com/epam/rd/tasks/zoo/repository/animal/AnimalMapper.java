@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AnimalMapper {
+public abstract class AnimalMapper {
 
     public static <T extends Animal> T fromRawDataToAnimal(ResultSet data) throws ClassNotFoundException {
         T animal = null;
@@ -44,5 +44,27 @@ public class AnimalMapper {
         return animal;
     }
 
+    //Just info about living zone,climate zone, food. By animal type!!1
+    public static <T extends Animal> Animal getInfoFromRaw(ResultSet data, Class<? extends Animal> animaltype) throws SQLException {
+        T animal = null;
+        System.out.println(animaltype.toString());
+        try {
+            while (data.next()) {
+                if (animal == null) {
+                    Constructor<?> constructor = animaltype.getConstructor();
+                    animal = (T) constructor.newInstance();
+                }
+                if(!animal.getClimateZone().contains(ClimateZone.valueOf(data.getString("climateType"))))
+                    animal.getClimateZone().add(ClimateZone.valueOf(data.getString("climateType")));
+                if(!animal.getLivingZone().contains(Class.forName(data.getString("zoneType"))))
+                    animal.getLivingZone().add((Class<? extends AnimalHouse>) Class.forName(data.getString("zoneType")));
+                if(!animal.getFoodType().contains(Class.forName(data.getString("foodType"))))
+                    animal.getFoodType().add((Class<? extends Food>) Class.forName(data.getString("foodType")));
+            }
+        } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
+        return animal;
+    }
 }

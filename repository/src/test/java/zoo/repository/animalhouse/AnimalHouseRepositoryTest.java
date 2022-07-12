@@ -26,29 +26,25 @@ import static org.mockito.ArgumentMatchers.anyString;
 public class AnimalHouseRepositoryTest {
 
     private Connection connection;
-
     private Statement statement;
-
     private ResultSet resultSetMock;
-
     private AnimalHouseRepositoryImpl animalHouseRepository;
-
+    private Field animalHouse;
 
     @BeforeTest
     public void beforeTest() throws SQLException, ClassNotFoundException {
-
         connection = Mockito.mock(Connection.class);
         statement = Mockito.mock(Statement.class);
         resultSetMock = Mockito.mock(ResultSet.class);
-
         animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
+
+        animalHouse = animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.MODERATE);
     }
 
     @Test
     public void connectionTest(){
         Assert.assertNotNull(animalHouseRepository);
     }
-    Field animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.MODERATE);
 
     @Test
     public void createTest() throws SQLException {
@@ -58,6 +54,20 @@ public class AnimalHouseRepositoryTest {
         Mockito.when(resultSetMock.getString("id")).thenReturn("1");
         Mockito.when(resultSetMock.getLong("id")).thenReturn(1L);
         Mockito.when(resultSetMock.next()).thenReturn(true);
+
+        Mockito.when(statement.executeQuery("INSERT INTO animalHouse (name,area,id_zonetype,id_climatetype,isDeleted) VALUES ('"
+                + animalHouse.getName() + "', '"
+                + animalHouse.getArea() + "', (SELECT zt.Id FROM zoneType zt WHERE zt.zonetype = '"
+                + animalHouse.getClass().getName() + "'), (SELECT ct.Id FROM climateType ct WHERE ct.climateType = '"
+                + animalHouse.getClimateZone().name() + "'), '"
+                + animalHouse.isDeleted() + "') RETURNING id;")).thenReturn(resultSetMock);
+
+        Mockito.when(statement.executeQuery("SELECT animalType.id FROM animalType WHERE animalType = '"
+                + Crab.class.getName() + "'")).thenReturn(resultSetMock);
+        Mockito.when(statement.executeQuery("SELECT animalType.id FROM animalType WHERE animalType = '" + Bullfinch.class.getName() + "'"))
+                        .thenReturn(resultSetMock);
+        Mockito.when(statement.executeQuery("INSERT INTO animalTypeInHouse (ID_HOUSE,ID_ANIMALTYPE) VALUES ("
+                        + animalHouse.getId() + ", " + resultSetMock.getLong("id") + ")")).thenReturn(resultSetMock);
 
         animalHouseRepository.create(animalHouse);
 
@@ -78,8 +88,14 @@ public class AnimalHouseRepositoryTest {
     }
 
     @Test
-    public void getTest() throws  SQLException{
-        System.out.println(animalHouseRepository.getById(21L));
+    public void getTest() throws  SQLException {
+
+        Mockito.when(connection.createStatement()).thenReturn(statement);
+        Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
+        Mockito.when(resultSetMock.getString("id")).thenReturn("1");
+        Mockito.when(resultSetMock.getLong("id")).thenReturn(1L);
+        Mockito.when(resultSetMock.next()).thenReturn(true);
+
 
     }
 

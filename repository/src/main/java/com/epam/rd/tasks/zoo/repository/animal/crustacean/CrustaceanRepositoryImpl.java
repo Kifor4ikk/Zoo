@@ -18,21 +18,23 @@ public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
         super(connection);
     }
 
-    //@TODO
+    public void create(Crustacean crustacean, AnimalHouse animalHouse,Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
 
-    public void create(Crustacean crustacean, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
+        state().execute("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
+                super.create(crustacean,animalHouse,typeOfAnimal) + ",'" + crustacean.getSeashell() + "');");
+
     }
 
     @Override
     public Animal getById(Long id) throws SQLException, ClassNotFoundException {
-        try (ResultSet crab = state().executeQuery("select * from crustacean where id = " + id)){
-            if(crab.next()) {
-                return CrustaceanMapper.fromRawToCrustacean(super.getById(crab.getLong("animal_id")), crab);
+
+        try (ResultSet infoAboutCrabResultSet = state().executeQuery("select * from crustacean where id = " + id)){
+            if(infoAboutCrabResultSet.next()) {
+                return CrustaceanMapper.fromRawToCrustacean(super.getById(infoAboutCrabResultSet.getLong("animal_id")), infoAboutCrabResultSet);
             }
         }
         throw new NotFoundException("Data for Crustacean with id " + id + " was not found");
     }
-
 
     //Have a 3 think how to realise this method
     //now this very SAFETY method

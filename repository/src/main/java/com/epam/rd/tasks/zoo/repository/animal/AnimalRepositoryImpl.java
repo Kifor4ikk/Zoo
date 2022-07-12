@@ -2,8 +2,11 @@ package com.epam.rd.tasks.zoo.repository.animal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.BadClimateException;
+import com.epam.rd.tasks.zoo.exception.BadZoneException;
+import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
 
 import java.sql.Connection;
@@ -18,23 +21,31 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
 
 
     @Override
-    public Long create(Animal animal, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
-        if(!animalHouse.getTypeOfAnimal().contains(animal.getClass()))
+    public Long create(Animal animal, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
+
+        Animal infoAboutTypeObject = getInfoAboutType(typeOfAnimal);
+
+        if(!animalHouse.getTypeOfAnimal().contains(typeOfAnimal))
             throw new BadAnimalTypeException(animal.getClass() + " cant live in " + animalHouse.getName());
-        if(!animal.getClimateZone().contains(animalHouse.getClimateZone()))
-            throw new BadAnimalTypeException(animal.getClass() + " cant live in " + animalHouse.getClimateZone() + " zone");
+        if(!infoAboutTypeObject.getClimateZone().contains(animalHouse.getClimateZone()))
+            throw new BadClimateException(animal.getClass() + " cant live in " + animalHouse.getClimateZone() + " zone");
+        if(!infoAboutTypeObject.getLivingZone().contains(animalHouse.getClass()))
+            throw new BadZoneException(animal.getClass() + " cant live in " + animalHouse.getClass() + " zone");
 
         try(ResultSet animalCreateResultSet = state().executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
                 animal.getName() + "','" +
                 animal.getDescribe() + "'," +
                 animal.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +
-                animal.getClass() + "')," + animal.isDeleted() + ") RETURNING animal.id;")
+                typeOfAnimal.getName() + "')," + animal.isDeleted() + ") RETURNING animal.id;")
         ){
-            try (ResultSet animalAddToHouseResultSet = state().executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
-                    "VALUES (" + animalHouse.getId() + "," +  animalCreateResultSet.getLong("id") + ");")){
-                return animalCreateResultSet.getLong("id");
+            if(animalCreateResultSet.next()) {
+                try (ResultSet animalAddToHouseResultSet = state().executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
+                        "VALUES (" + animalHouse.getId() + "," + animalCreateResultSet.getLong("id") + ");")) {
+                    return animalCreateResultSet.getLong("id");
+                }
             }
         }
+        throw new NotFoundException("House was not found, but animal was created! You should add animal in house!");
     }
 
     @Override
@@ -70,5 +81,23 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
     @Override
     public void hardDelete(Long aLong) throws SQLException {
 
+    }
+
+    public Animal getInfoAboutType(Class<? extends Animal> typeOfAnimal){
+        try(ResultSet infoAboutType = state().executeQuery("SELECT climatetype.climatetype, zonetype.zonetype, foodtype.foodtype FROM animaltype aty " +
+                "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
+                "INNER JOIN climatetype ON climatetype.id = ctfta.id_climatetype " +
+                "INNER JOIN zonetypefortypeanimal ztfta ON ztfta.id_typeofanimal = aty.id " +
+                "INNER JOIN zonetype ON zonetype.id = ztfta.id_zonetype " +
+                "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
+                "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
+                "WHERE aty.animaltype = '"+ typeOfAnimal.getName() +"'")){
+
+            return AnimalMapper.getInfoFromRaw(infoAboutType, typeOfAnimal);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        throw new BadAnimalTypeException("Something go wrong");
     }
 }

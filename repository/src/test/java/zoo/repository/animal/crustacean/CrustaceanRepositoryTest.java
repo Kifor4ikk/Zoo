@@ -35,27 +35,4 @@ import java.util.List;
 @Test
 public class CrustaceanRepositoryTest {
 
-    Connection connection = Database.connectWithDataBase();
-    CrustaceanRepositoryImpl crustaceanRepository;
-    CrabRepository crabRepository;
-
-    public CrustaceanRepositoryTest() throws SQLException, ClassNotFoundException {
-    }
-
-    @BeforeTest
-    public void beforeTest() throws SQLException {
-
-        crustaceanRepository = new CrustaceanRepositoryImpl(connection);
-        crabRepository = new CrabRepository(connection);
-    }
-
-    @Test
-    public void connectionTest(){
-        Assert.assertNotNull(crustaceanRepository);
-    }
-
-    @Test
-    public void test() throws SQLException, ClassNotFoundException {
-        System.out.println(crabRepository.getById(1L));
-    }
 }
