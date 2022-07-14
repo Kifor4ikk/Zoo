@@ -119,7 +119,7 @@ public class CrabRepositoryTest {
     }
 
     @Test
-    public void test() throws SQLException, ClassNotFoundException {
+    public void getTest() throws SQLException, ClassNotFoundException {
 
         Mockito.mockStatic(AnimalMapper.class);
         Mockito.mockStatic(CrustaceanMapper.class);

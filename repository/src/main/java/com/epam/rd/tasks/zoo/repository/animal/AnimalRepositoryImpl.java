@@ -61,7 +61,7 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
                 "INNER JOIN zonetype ON zonetype.id = ztfta.id_zonetype " +
                 "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
-                "WHERE an.id = " + id)){
+                "WHERE an.id = " + id + "AND an.isDeleted = false")){
         animal = AnimalMapper.fromRawDataToAnimal(animalGetResultSet);
 
         }
@@ -74,8 +74,8 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
     }
 
     @Override
-    public void setDeleteStatus(Long aLong, boolean status) throws SQLException {
-
+    public void setDeleteStatus(Long id, boolean status) throws SQLException {
+        state().executeQuery("UPDATE animal SET isdeleted = '"+ status +"' WHERE ID = " + id);
     }
 
     @Override
