@@ -35,7 +35,7 @@ public abstract class Crustacean extends Animal {
     @Override
     public String toString() {
         return "Crustacean{" + super.toString() +
-                "seashell='" + seashell + '\'' +
+                " seashell='" + seashell + '\'' +
                 '}';
     }
 }

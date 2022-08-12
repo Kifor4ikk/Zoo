@@ -4,6 +4,7 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
 import com.epam.rd.tasks.zoo.exception.AlreadyExistException;
+import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalRepositoryImpl;
 
@@ -14,26 +15,33 @@ import java.sql.SQLException;
 
 public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
 
-    public CrustaceanRepositoryImpl(Connection connection) {
-        super(connection);
+    public CrustaceanRepositoryImpl(Connection connection, CrustaceanMapper crustaceanMapper) {
+        super(connection, crustaceanMapper);
     }
 
-    public void create(Crustacean crustacean, AnimalHouse animalHouse,Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
+    public void create(Crustacean crustacean, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
 
-        state().execute("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
-                super.create(crustacean,animalHouse,typeOfAnimal) + ",'" + crustacean.getSeashell() + "');");
-
+        try(ResultSet crustaceanRaw = state().executeQuery("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
+                super.create(crustacean, animalHouse, typeOfAnimal) + ",'" + crustacean.getSeashell() + "') RETURNING ID;") ){
+            if(crustaceanRaw.next() && crustaceanRaw.getLong("id") == 0) throw new BadAnimalTypeException("Cant create crustacean!");
+        };
     }
 
     @Override
     public Animal getById(Long id) throws SQLException, ClassNotFoundException {
+        return null;
+    }
 
-        try (ResultSet infoAboutCrabResultSet = state().executeQuery("select * from crustacean where id = " + id)){
-            if(infoAboutCrabResultSet.next()) {
-                return CrustaceanMapper.fromRawToCrustacean(super.getById(infoAboutCrabResultSet.getLong("animal_id")), infoAboutCrabResultSet);
-            }
-        }
-        throw new NotFoundException("Data for Crustacean with id " + id + " was not found");
+    protected String getSelectCrustacean() {
+        return ", cr.seashell ";
+    }
+
+    protected String getInnerJoinCrustacean() {
+        return "INNER JOIN crustacean cr ON cr.animal_id = an.id ";
+    }
+
+    protected String getWhereIdCrustacean(Long id) {
+        return "WHERE cr.id = " + id + " AND an.isDeleted = false ";
     }
 
     //Have a 3 think how to realise this method

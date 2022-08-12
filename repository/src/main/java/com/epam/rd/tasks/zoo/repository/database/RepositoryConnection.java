@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class RepositoryConnection {
-    private final Connection connection;
+    protected final Connection connection;
 
     public RepositoryConnection(Connection connection) {
         this.connection = connection;

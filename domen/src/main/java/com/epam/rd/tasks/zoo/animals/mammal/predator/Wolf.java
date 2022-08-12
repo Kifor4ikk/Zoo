@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Wolf extends Predator {
+
     public Wolf(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
         super(name, describe, age, livingZone, climateZone, foodType);
     }

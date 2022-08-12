@@ -11,10 +11,15 @@ import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanMapper;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanRepositoryImpl;
+import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancers.crab.CrabMapper;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancers.crab.CrabRepository;
 import com.epam.rd.tasks.zoo.repository.database.Database;
+import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
+import org.apache.commons.lang3.StringUtils;
+import org.checkerframework.checker.units.qual.C;
 import org.mockito.MockedConstruction;
 import org.mockito.Mockito;
+import org.mockito.internal.util.StringUtil;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -39,6 +44,9 @@ public class CrabRepositoryTest {
 
     private CrabRepository crabRepository;
 
+    private AnimalMapper animalMapper;
+    private CrabMapper crabMapper;
+
     public CrabRepositoryTest() throws SQLException, ClassNotFoundException {}
 
     @BeforeTest
@@ -47,13 +55,21 @@ public class CrabRepositoryTest {
         connection = Mockito.mock(Connection.class);
         statement = Mockito.mock(Statement.class);
         resultSetMock = Mockito.mock(ResultSet.class);
-        crabRepository = new CrabRepository(connection);
+        crabMapper = Mockito.mock(CrabMapper.class);
+        crabRepository = new CrabRepository(connection,crabMapper);
 
         crab = new Crab("Alex", "KingSlayerCrab", 1, Set.of(Field.class,Terrarium.class),
                 Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Blue shell");
-        animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.MODERATE);
+
+        animalHouse = new Field(3L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
     }
 
+    @Test
+    public void test() throws SQLException, ClassNotFoundException {
+        Connection connection = Database.connectWithDataBase();
+        CrabRepository crabRepository = new CrabRepository(connection, crabMapper);
+        System.out.println(crabRepository.getById(1L));
+    }
     @Test
     public void connectionTest(){
         Assert.assertNotNull(crabRepository);
@@ -89,10 +105,9 @@ public class CrabRepositoryTest {
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                 "WHERE aty.animaltype = '"+ crab.getClass().getName() +"'")).thenReturn(resultSetMock);
 
-        Mockito.when(AnimalMapper.getInfoFromRaw(resultSetMock,crab.getClass())).thenReturn(crab);
+        Mockito.when(crabMapper.getInfoFromRaw(resultSetMock,crab.getClass())).thenReturn((Animal) crab);
 
         crabRepository.create(crab,animalHouse,crab.getClass());
-
 
         Mockito.verify(statement, Mockito.times(1)).execute("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
                 1 + ",'" + crab.getSeashell() + "');");
@@ -114,28 +129,22 @@ public class CrabRepositoryTest {
 
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
                 "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ");");
-
-
     }
 
     @Test
     public void getTest() throws SQLException, ClassNotFoundException {
 
-        Mockito.mockStatic(AnimalMapper.class);
-        Mockito.mockStatic(CrustaceanMapper.class);
         Mockito.when(connection.createStatement()).thenReturn(statement);
         Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
         Mockito.when(resultSetMock.getString("id")).thenReturn("1");
         Mockito.when(resultSetMock.getLong("id")).thenReturn(1L);
         Mockito.when(resultSetMock.getLong("animal_id")).thenReturn(1L);
         Mockito.when(resultSetMock.next()).thenReturn(true);
+        Mockito.when(crabMapper.fromRawToAnimal(resultSetMock, crab)).thenReturn(crab);
+        Mockito.when(crabMapper.fromRawToCrustacean(resultSetMock, crab)).thenReturn(crab);
 
-        Mockito.when(AnimalMapper.fromRawDataToAnimal(resultSetMock)).thenReturn(crab);
-        Mockito.when(CrustaceanMapper.fromRawToCrustacean(crab,resultSetMock)).thenReturn(crab);
-
-        Mockito.when(statement.executeQuery("select * from crustacean where id = " + 1L)).thenReturn(resultSetMock);
         Mockito.when(statement.executeQuery(
-                "select an.id, an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted " +
+                "select an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted, cr.seashell " +
                         "from animal an " +
                         "INNER JOIN animaltype aty ON aty.id = an.id_animaltype " +
                         "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
@@ -144,13 +153,13 @@ public class CrabRepositoryTest {
                         "INNER JOIN zonetype ON zonetype.id = ztfta.id_zonetype " +
                         "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
-                        "WHERE an.id = " + 1L)).thenReturn(resultSetMock);
+                        "INNER JOIN crustacean cr ON cr.animal_id = an.id " +
+                        "WHERE cr.id = " + 1L + " AND an.isDeleted = false")).thenReturn(resultSetMock);
 
         crabRepository.getById(1L);
 
-        Mockito.verify(statement,Mockito.times(1)).executeQuery("select * from crustacean where id = " + 1L);
         Mockito.verify(statement,Mockito.times(1)).executeQuery(
-                "select an.id, an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted " +
+                "select an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted , cr.seashell " +
                         "from animal an " +
                         "INNER JOIN animaltype aty ON aty.id = an.id_animaltype " +
                         "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
@@ -159,6 +168,13 @@ public class CrabRepositoryTest {
                         "INNER JOIN zonetype ON zonetype.id = ztfta.id_zonetype " +
                         "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
-                        "WHERE an.id = " + 1L);
+                        "INNER JOIN crustacean cr ON cr.animal_id = an.id " +
+                        "WHERE cr.id = "+ 1L + " AND an.isDeleted = false ");
+    }
+
+    @Test
+    public void testS() throws SQLException, ClassNotFoundException {
+        CrabRepository crabRepository = new CrabRepository(Database.connectWithDataBase(), new CrabMapper());
+        crabRepository.create(crab,animalHouse);
     }
 }

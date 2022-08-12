@@ -38,7 +38,7 @@ public class AnimalHouseRepositoryTest {
         resultSetMock = Mockito.mock(ResultSet.class);
         animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
 
-        animalHouse = animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.MODERATE);
+        animalHouse = animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
     }
 
     @Test
@@ -88,7 +88,7 @@ public class AnimalHouseRepositoryTest {
     }
 
     @Test
-    public void getTest() throws  SQLException {
+    public void getTest() throws SQLException {
 
         Mockito.when(connection.createStatement()).thenReturn(statement);
         Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
@@ -96,7 +96,12 @@ public class AnimalHouseRepositoryTest {
         Mockito.when(resultSetMock.getLong("id")).thenReturn(1L);
         Mockito.when(resultSetMock.next()).thenReturn(true);
 
-
     }
 
+    @Test
+    public void create() throws SQLException, ClassNotFoundException {
+
+        AnimalHouseRepositoryImpl animalHouseRepository2 = new AnimalHouseRepositoryImpl(Database.connectWithDataBase());
+        animalHouseRepository2.create(animalHouse);
+    }
 }

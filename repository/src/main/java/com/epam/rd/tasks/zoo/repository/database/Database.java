@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class Database {
 
-    private static final String jdbcUrl = "jdbc:postgresql://localhost:1489/Zoo";
+    private static final String jdbcUrl = "jdbc:postgresql://localhost:1994/zoo";
     private static final String username = "postgres";
-    private static final String password = "pass";
+    private static final String password = "1";
 
     public static Connection connectWithDataBase() throws SQLException, ClassNotFoundException {
         Connection connection = DriverManager.getConnection(jdbcUrl,username,password);
