@@ -41,6 +41,7 @@ public class CrabRepositoryTest {
 
     private Field animalHouse;
     private Crab crab;
+    private Crab crab2;
 
     private CrabRepository crabRepository;
 
@@ -60,6 +61,9 @@ public class CrabRepositoryTest {
 
         crab = new Crab("Alex", "KingSlayerCrab", 1, Set.of(Field.class,Terrarium.class),
                 Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Blue shell");
+
+        crab2 = new Crab("Alex222", "KingSlayerCrab222", 10, Set.of(Field.class,Terrarium.class),
+                Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Green shell");
 
         animalHouse = new Field(3L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
     }
@@ -135,7 +139,6 @@ public class CrabRepositoryTest {
     public void getTest() throws SQLException, ClassNotFoundException {
 
         Mockito.when(connection.createStatement()).thenReturn(statement);
-        Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
         Mockito.when(resultSetMock.getString("id")).thenReturn("1");
         Mockito.when(resultSetMock.getLong("id")).thenReturn(1L);
         Mockito.when(resultSetMock.getLong("animal_id")).thenReturn(1L);
@@ -173,8 +176,34 @@ public class CrabRepositoryTest {
     }
 
     @Test
-    public void testS() throws SQLException, ClassNotFoundException {
-        CrabRepository crabRepository = new CrabRepository(Database.connectWithDataBase(), new CrabMapper());
-        crabRepository.create(crab,animalHouse);
+    public void update() throws SQLException, ClassNotFoundException {
+        Mockito.mockStatic(AnimalMapper.class);
+        Mockito.when(connection.createStatement()).thenReturn(statement);
+        Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
+        crab.setId(1L);
+
+        Mockito.when(statement.executeQuery("UPDATE animal SET" +
+                " \"name\" = '" + crab.getName() +"', \"describe\" = '" + crab.getDescribe() +
+                "', age = " + crab.getAge() + " WHERE ID = " + crab.getId() + " AND isdeleted = false RETURNING true;")).thenReturn(resultSetMock);
+
+        Mockito.when(statement.executeQuery("UPDATE crustacean SET seashell = '" + crab.getSeashell()
+                + "' WHERE animal_id = " + crab.getId())).thenReturn(resultSetMock);
+
+        crabRepository.update(crab);
+
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("UPDATE animal SET" +
+                " \"name\" = '" + crab.getName() +"', \"describe\" = '" + crab.getDescribe() +
+                "', age = " + crab.getAge() + " WHERE ID = " + crab.getId() + " AND isdeleted = false RETURNING true;");
+
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("UPDATE crustacean SET seashell = '" + crab.getSeashell()
+                + "' WHERE animal_Id = " + crab.getId() + " RETURNING true;");
+    }
+
+    @Test
+    public void softDeleteTest() throws SQLException {
+        Mockito.when(connection.createStatement()).thenReturn(statement);
+        crab.setId(1L);
+        crabRepository.setDeleteStatus(crab.getId(), true);
+        Mockito.verify(statement,Mockito.times(1)).execute("UPDATE Animal SET isDeleted = '" + true + "' WHERE id = " + crab.getId());
     }
 }

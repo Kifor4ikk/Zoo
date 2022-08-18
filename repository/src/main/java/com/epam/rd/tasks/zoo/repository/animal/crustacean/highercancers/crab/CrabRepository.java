@@ -44,4 +44,19 @@ public class CrabRepository extends CrustaceanRepositoryImpl {
         }
         throw new NotFoundException("Crab with id " + id + " was not found!");
     }
+
+    public boolean update(Crab crab) throws SQLException, ClassNotFoundException {
+        try {
+            connection.setAutoCommit(false);
+            super.update(crab);
+            connection.commit();
+        } catch (Exception e) {
+            connection.rollback();
+            throw e;
+
+        } finally {
+            connection.setAutoCommit(true);
+        }
+        return true;
+    }
 }

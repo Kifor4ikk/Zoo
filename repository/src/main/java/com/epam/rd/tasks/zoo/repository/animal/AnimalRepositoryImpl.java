@@ -100,7 +100,7 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
     @Override
     public void update(Animal animal) throws SQLException {
         state().executeQuery("UPDATE animal SET \"name\" = '" + animal.getName() + "'," +
-                " \"describe\" = '"+ animal.getDescribe() +"', age = "+ animal.getAge() +"; WHERE ID = " + animal.getId() + ")");
+                " \"describe\" = '"+ animal.getDescribe() +"', age = "+ animal.getAge() + " WHERE ID = " + animal.getId() + " AND isdeleted = false RETURNING true;");
     }
 
     @Override

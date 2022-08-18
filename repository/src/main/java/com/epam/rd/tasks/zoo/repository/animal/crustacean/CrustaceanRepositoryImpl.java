@@ -44,9 +44,9 @@ public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
         return "WHERE cr.id = " + id + " AND an.isDeleted = false ";
     }
 
-    //Have a 3 think how to realise this method
-    //now this very SAFETY method
     public void update(Crustacean data) throws SQLException, ClassNotFoundException {
+        super.update(data);
+        state().executeQuery("UPDATE crustacean SET seashell = '" + data.getSeashell() + "' WHERE animal_Id = " + data.getId() + " RETURNING true;");
     }
 
     @Override
