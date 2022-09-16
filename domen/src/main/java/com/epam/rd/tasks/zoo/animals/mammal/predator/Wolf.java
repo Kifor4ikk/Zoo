@@ -9,7 +9,26 @@ import java.util.Set;
 
 public class Wolf extends Predator {
 
-    public Wolf(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
-        super(name, describe, age, livingZone, climateZone, foodType);
+    private String behaviour;
+
+    public Wolf() {
+        super();
+    }
+
+    public Wolf(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String tail, String behaviour) {
+        super(name, describe, age, livingZone, climateZone, foodType, tail);
+        this.behaviour = behaviour;
+    }
+
+    public Wolf(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String tail) {
+        super(name, describe, age, livingZone, climateZone, foodType, tail);
+    }
+
+    public String getBehaviour() {
+        return behaviour;
+    }
+
+    public void setBehaviour(String behaviour) {
+        this.behaviour = behaviour;
     }
 }

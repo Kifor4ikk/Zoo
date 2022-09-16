@@ -33,15 +33,15 @@ public class ZooTest {
             "CyberCountry", "CyberCity", "CyberStreet", "1488A");
 
     Bullfinch bullfinch = new Bullfinch("Snegir", "Norm takoi", 1, Set.of(Field.class),
-            Set.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Set.of(Wheat.class));
+            Set.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Set.of(Wheat.class), "Wings", "Red");
     Bullfinch bullfinch2 = new Bullfinch("Snegir2", "Norm takoi2", 2, Set.of(Field.class),
-            Set.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Set.of(Wheat.class));
+            Set.of(ClimateZone.MODERATE, ClimateZone.TROPICAL), Set.of(Wheat.class), "Wings", "Red");
 
     Lion lion = new Lion("Lion", "Norm takoi", 4, Set.of(Field.class),
-            Set.of(ClimateZone.TROPICAL, ClimateZone.SUBTROPICAL), Set.of(Meat.class));
+            Set.of(ClimateZone.TROPICAL, ClimateZone.SUBTROPICAL), Set.of(Meat.class), "Tail");
 
     EmperorPenguin emperorPenguin = new EmperorPenguin("Emperor Penguin", "Norm takoi", 2, Set.of(Aquarium.class),
-            Set.of(ClimateZone.ARCTIC, ClimateZone.SUBANTARCTIC, ClimateZone.ANTARCTIC), Set.of(Wheat.class));
+            Set.of(ClimateZone.ARCTIC, ClimateZone.SUBANTARCTIC, ClimateZone.ANTARCTIC), Set.of(Wheat.class), "Wings");
 
     Chameleon chameleon = new Chameleon("Chameleon", "Norm takoi", 2, Set.of(Aquarium.class),
             Set.of(ClimateZone.TROPICAL, ClimateZone.SUBEQUATORIAL), Set.of(Bugs.class));

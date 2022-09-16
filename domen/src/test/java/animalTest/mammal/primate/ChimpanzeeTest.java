@@ -18,7 +18,7 @@ import java.util.Set;
 @Test
 public class ChimpanzeeTest {
     Chimpanzee chimpanzee = new Chimpanzee("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class), "Tail");
 
     public void nameTest(){
         Assert.assertEquals(chimpanzee.getName(), "AnimalName");

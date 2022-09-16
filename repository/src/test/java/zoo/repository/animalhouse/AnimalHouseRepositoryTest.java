@@ -38,7 +38,7 @@ public class AnimalHouseRepositoryTest {
         resultSetMock = Mockito.mock(ResultSet.class);
         animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
 
-        animalHouse = animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
+        animalHouse = new Field(2L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
     }
 
     @Test

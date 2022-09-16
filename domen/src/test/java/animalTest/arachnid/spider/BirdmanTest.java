@@ -19,7 +19,7 @@ import java.util.Set;
 @Test
 public class BirdmanTest {
     Birdman birdman = new Birdman("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-           Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+           Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class), false,8 , "Red");
 
     public void nameTest(){
         Assert.assertEquals(birdman.getName(), "AnimalName");

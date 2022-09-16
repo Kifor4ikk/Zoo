@@ -17,7 +17,7 @@ import java.util.Set;
 
 public class LionTest {
     Lion lion = new Lion("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class), "Tail");
 
     public void nameTest(){
         Assert.assertEquals(lion.getName(), "AnimalName");

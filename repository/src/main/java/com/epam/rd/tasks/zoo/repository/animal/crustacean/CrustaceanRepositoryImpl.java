@@ -19,17 +19,13 @@ public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
         super(connection, crustaceanMapper);
     }
 
-    public void create(Crustacean crustacean, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
-
-        try(ResultSet crustaceanRaw = state().executeQuery("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
-                super.create(crustacean, animalHouse, typeOfAnimal) + ",'" + crustacean.getSeashell() + "') RETURNING ID;") ){
-            if(crustaceanRaw.next() && crustaceanRaw.getLong("id") == 0) throw new BadAnimalTypeException("Cant create crustacean!");
-        };
-    }
-
-    @Override
-    public Animal getById(Long id) throws SQLException, ClassNotFoundException {
-        return null;
+    public long create(Crustacean crustacean, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
+        try (ResultSet crustaceanRaw = state().executeQuery("INSERT INTO Crustacean (ID,seashell) VALUES (" +
+                super.create(crustacean, animalHouse, typeOfAnimal) + ",'" + crustacean.getSeashell() + "') RETURNING ID;")) {
+            if (crustaceanRaw.next() && crustaceanRaw.getLong("id") == 0)
+                throw new BadAnimalTypeException("Cant create crustacean!");
+            return crustaceanRaw.getLong("ID");
+        }
     }
 
     protected String getSelectCrustacean() {
@@ -37,25 +33,11 @@ public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
     }
 
     protected String getInnerJoinCrustacean() {
-        return "INNER JOIN crustacean cr ON cr.animal_id = an.id ";
-    }
-
-    protected String getWhereIdCrustacean(Long id) {
-        return "WHERE cr.id = " + id + " AND an.isDeleted = false ";
+        return "INNER JOIN crustacean cr ON cr.id = an.id ";
     }
 
     public void update(Crustacean data) throws SQLException, ClassNotFoundException {
         super.update(data);
-        state().executeQuery("UPDATE crustacean SET seashell = '" + data.getSeashell() + "' WHERE animal_Id = " + data.getId() + " RETURNING true;");
-    }
-
-    @Override
-    public void setDeleteStatus(Long id, boolean status) throws SQLException {
-        state().execute("UPDATE Animal SET isDeleted = '" + status + "' WHERE id = " + id);
-    }
-
-    @Override
-    public void hardDelete(Long id) throws SQLException {
-        state().execute("DELETE FROM Animal WHERE id = " + id);
+        state().executeQuery("UPDATE crustacean SET seashell = '" + data.getSeashell() + "' WHERE ID = " + data.getId() + " RETURNING true;");
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class Penguin extends Bird {
-    public Penguin(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
-        super(name, describe, age, livingZone, climateZone, foodType);
+    public Penguin(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String wings) {
+        super(name, describe, age, livingZone, climateZone, foodType, wings);
     }
 }

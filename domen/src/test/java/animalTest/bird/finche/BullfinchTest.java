@@ -19,7 +19,7 @@ import java.util.Set;
 @Test
 public class BullfinchTest {
     Bullfinch bullfinch = new Bullfinch("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class),"Test", "red");
 
     public void nameTest(){
         Assert.assertEquals(bullfinch.getName(), "AnimalName");

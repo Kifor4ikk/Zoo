@@ -21,8 +21,8 @@ import java.util.Set;
 @Test
 public class FieldTest {
     Field field = new Field(1L, "Field for Eleph", 4, List.of(Elephant.class), ClimateZone.TROPICAL);
-    Elephant elephant = new Elephant("Elephant","Test",12, Set.of(Field.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class));
-    Elephant elephant1 = new Elephant("Elephant2","Test2",1, Set.of(Field.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class));
+    Elephant elephant = new Elephant("Elephant","Test",12, Set.of(Field.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class), "Tail");
+    Elephant elephant1 = new Elephant("Elephant2","Test2",1, Set.of(Field.class), Set.of(ClimateZone.TROPICAL), Set.of(Wheat.class), "Tail");
 
     @BeforeTest
     public void beforeTest(){

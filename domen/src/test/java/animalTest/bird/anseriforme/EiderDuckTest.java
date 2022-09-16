@@ -19,7 +19,7 @@ import java.util.Set;
 @Test
 public class EiderDuckTest {
     EiderDuck eitherduck = new EiderDuck("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class), "Wings");
 
     public void nameTest(){
         Assert.assertEquals(eitherduck.getName(), "AnimalName");

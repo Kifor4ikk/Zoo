@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Chimpanzee extends Primate{
-    public Chimpanzee(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
-        super(name, describe, age, livingZone, climateZone, foodType);
+    public Chimpanzee(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String tail) {
+        super(name, describe, age, livingZone, climateZone, foodType, tail);
     }
 }

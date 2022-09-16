@@ -8,18 +8,9 @@ import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.food.Meat;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.epam.rd.tasks.zoo.repository.animal.AnimalRepositoryImpl;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanMapper;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanRepositoryImpl;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancers.crab.CrabMapper;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancers.crab.CrabRepository;
-import com.epam.rd.tasks.zoo.repository.database.Database;
-import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
-import org.apache.commons.lang3.StringUtils;
-import org.checkerframework.checker.units.qual.C;
-import org.mockito.MockedConstruction;
+import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.crab.CrabMapper;
+import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.crab.CrabRepository;
 import org.mockito.Mockito;
-import org.mockito.internal.util.StringUtil;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -60,20 +51,15 @@ public class CrabRepositoryTest {
         crabRepository = new CrabRepository(connection,crabMapper);
 
         crab = new Crab("Alex", "KingSlayerCrab", 1, Set.of(Field.class,Terrarium.class),
-                Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Blue shell");
+                Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Blue shell",false,"Sweet");
 
         crab2 = new Crab("Alex222", "KingSlayerCrab222", 10, Set.of(Field.class,Terrarium.class),
-                Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Green shell");
+                Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Green shell",false, "Sweet dreams are made of this");
 
-        animalHouse = new Field(3L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
+        animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.MODERATE);
     }
 
-    @Test
-    public void test() throws SQLException, ClassNotFoundException {
-        Connection connection = Database.connectWithDataBase();
-        CrabRepository crabRepository = new CrabRepository(connection, crabMapper);
-        System.out.println(crabRepository.getById(1L));
-    }
+
     @Test
     public void connectionTest(){
         Assert.assertNotNull(crabRepository);
@@ -81,18 +67,18 @@ public class CrabRepositoryTest {
 
     @Test
     public void createTest() throws SQLException, ClassNotFoundException {
-        Mockito.mockStatic(AnimalMapper.class);
+
         Mockito.when(connection.createStatement()).thenReturn(statement);
         Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
         Mockito.when(resultSetMock.getString("id")).thenReturn("1");
         Mockito.when(resultSetMock.getLong("id")).thenReturn(1L);
         Mockito.when(resultSetMock.next()).thenReturn(true);
 
-        Mockito.when(statement.execute("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
-                1 + ",'" + crab.getSeashell() + "');")).thenReturn(true);
+        Mockito.when(statement.execute("INSERT INTO Crustacean (ID,seashell) VALUES (" +
+                1 + ",'" + crab.getSeashell() + "') RETURNING ID;")).thenReturn(true);
 
         Mockito.when(statement.executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
-                "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ");")).thenReturn(resultSetMock);
+                "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ") RETURNING animalhouse_id;")).thenReturn(resultSetMock);
 
         Mockito.when(statement.executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
                 crab.getName() + "','" +
@@ -113,8 +99,8 @@ public class CrabRepositoryTest {
 
         crabRepository.create(crab,animalHouse,crab.getClass());
 
-        Mockito.verify(statement, Mockito.times(1)).execute("INSERT INTO Crustacean (Animal_Id,seashell) VALUES (" +
-                1 + ",'" + crab.getSeashell() + "');");
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO Crustacean (ID,seashell) VALUES (" +
+                1 + ",'" + crab.getSeashell() + "') RETURNING ID;");
 
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
                 crab.getName() + "','" +
@@ -131,8 +117,8 @@ public class CrabRepositoryTest {
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                 "WHERE aty.animaltype = '"+ crab.getClass().getName() +"'");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
-                "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ");");
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id) " +
+                "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ") RETURNING animalhouse_id;");
     }
 
     @Test
@@ -145,24 +131,27 @@ public class CrabRepositoryTest {
         Mockito.when(resultSetMock.next()).thenReturn(true);
         Mockito.when(crabMapper.fromRawToAnimal(resultSetMock, crab)).thenReturn(crab);
         Mockito.when(crabMapper.fromRawToCrustacean(resultSetMock, crab)).thenReturn(crab);
+        Mockito.when(crabMapper.fromRawToCrab(resultSetMock, crab)).thenReturn(crab2);
 
         Mockito.when(statement.executeQuery(
-                "select an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted, cr.seashell " +
-                        "from animal an " +
-                        "INNER JOIN animaltype aty ON aty.id = an.id_animaltype " +
+                "select an.id, an.name, an.describe, an.age, aty.animaltype," +
+                        " climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted , cr.seashell , crab.taste from animal" +
+                        " an INNER JOIN animaltype aty ON aty.id = an.id_animaltype " +
                         "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
                         "INNER JOIN climatetype ON climatetype.id = ctfta.id_climatetype " +
                         "INNER JOIN zonetypefortypeanimal ztfta ON ztfta.id_typeofanimal = aty.id " +
                         "INNER JOIN zonetype ON zonetype.id = ztfta.id_zonetype " +
                         "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
-                        "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
-                        "INNER JOIN crustacean cr ON cr.animal_id = an.id " +
-                        "WHERE cr.id = " + 1L + " AND an.isDeleted = false")).thenReturn(resultSetMock);
+                        "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype INNER JOIN crustacean cr ON cr.id = an.id " +
+                        "INNER JOIN crab ON crab.id = an.id " +
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab'")
+        ).thenReturn(resultSetMock);
 
         crabRepository.getById(1L);
 
+        Mockito.when(crabMapper.fromRawToCrab(resultSetMock, new Crab())).thenReturn(crab2);
         Mockito.verify(statement,Mockito.times(1)).executeQuery(
-                "select an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted , cr.seashell " +
+                "select an.id, an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted , cr.seashell , crab.taste " +
                         "from animal an " +
                         "INNER JOIN animaltype aty ON aty.id = an.id_animaltype " +
                         "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
@@ -171,8 +160,9 @@ public class CrabRepositoryTest {
                         "INNER JOIN zonetype ON zonetype.id = ztfta.id_zonetype " +
                         "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
-                        "INNER JOIN crustacean cr ON cr.animal_id = an.id " +
-                        "WHERE cr.id = "+ 1L + " AND an.isDeleted = false ");
+                        "INNER JOIN crustacean cr ON cr.id = an.id " +
+                        "INNER JOIN crab ON crab.id = an.id " +
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab'");
     }
 
     @Test
@@ -187,7 +177,10 @@ public class CrabRepositoryTest {
                 "', age = " + crab.getAge() + " WHERE ID = " + crab.getId() + " AND isdeleted = false RETURNING true;")).thenReturn(resultSetMock);
 
         Mockito.when(statement.executeQuery("UPDATE crustacean SET seashell = '" + crab.getSeashell()
-                + "' WHERE animal_id = " + crab.getId())).thenReturn(resultSetMock);
+                + "' WHERE ID = " + crab.getId())).thenReturn(resultSetMock);
+
+        Mockito.when(statement.executeQuery("UPDATE Crab SET taste = '" + crab.getTaste() + "' WHERE ID = " + crab.getId() + " RETURNING true;"))
+                .thenReturn(resultSetMock);
 
         crabRepository.update(crab);
 
@@ -196,7 +189,11 @@ public class CrabRepositoryTest {
                 "', age = " + crab.getAge() + " WHERE ID = " + crab.getId() + " AND isdeleted = false RETURNING true;");
 
         Mockito.verify(statement, Mockito.times(1)).executeQuery("UPDATE crustacean SET seashell = '" + crab.getSeashell()
-                + "' WHERE animal_Id = " + crab.getId() + " RETURNING true;");
+                + "' WHERE ID = " + crab.getId() + " RETURNING true;");
+
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("UPDATE Crab SET taste = '"
+                + crab.getTaste() + "' WHERE ID = " + crab.getId() + " RETURNING true;");
+
     }
 
     @Test
@@ -206,4 +203,6 @@ public class CrabRepositoryTest {
         crabRepository.setDeleteStatus(crab.getId(), true);
         Mockito.verify(statement,Mockito.times(1)).execute("UPDATE Animal SET isDeleted = '" + true + "' WHERE id = " + crab.getId());
     }
+
+
 }

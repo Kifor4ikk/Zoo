@@ -18,7 +18,7 @@ import java.util.Set;
 @Test
 public class WolfTest {
     Wolf wolf = new Wolf("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class), "Tail");
 
     public void nameTest(){
         Assert.assertEquals(wolf.getName(), "AnimalName");

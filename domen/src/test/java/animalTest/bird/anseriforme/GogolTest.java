@@ -19,7 +19,7 @@ import java.util.Set;
 @Test
 public class GogolTest {
     Gogol Gogol = new Gogol("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class));
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class),"Test");
 
     public void nameTest(){
         Assert.assertEquals(Gogol.getName(), "AnimalName");

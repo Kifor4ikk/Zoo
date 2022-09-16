@@ -3,6 +3,7 @@ package com.epam.rd.tasks.zoo.repository.animal;
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.lang.reflect.Constructor;
@@ -24,15 +25,13 @@ public abstract class AnimalMapper {
         if(!animal.getFoodType().contains(Class.forName(data.getString("foodType"))))
             animal.getFoodType().add((Class<? extends Food>) Class.forName(data.getString("foodType")));
         animal.setDeleted(data.getBoolean("isDeleted"));
-        animal.setId(data.getLong("id"));
-
+        animal.setId(data.getLong("ID"));
         return animal;
     }
 
     //Just info about living zone,climate zone, food. By animal type!
     public <T extends Animal> Animal getInfoFromRaw(ResultSet data, Class<? extends Animal> animaltype) throws SQLException {
         T animal = null;
-        System.out.println(animaltype.toString());
         try {
             while (data.next()) {
                 if (animal == null) {
@@ -49,7 +48,7 @@ public abstract class AnimalMapper {
         } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
-
+        if(animal == null) throw new BadAnimalTypeException("Type " + animaltype.getName() + " is not exist");
         return animal;
     }
 }
