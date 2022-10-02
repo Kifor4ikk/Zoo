@@ -31,4 +31,11 @@ public abstract class Mammal extends Animal {
     public void setTail(String tail) {
         this.tail = tail;
     }
+
+    @Override
+    public String toString() {
+        return "Mammal{" + super.toString() +
+                " tail='" + tail + '\'' +
+                '}';
+    }
 }

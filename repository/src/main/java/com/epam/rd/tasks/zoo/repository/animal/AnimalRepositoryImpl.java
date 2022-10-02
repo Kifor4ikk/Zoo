@@ -54,7 +54,6 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
     }
 
     @Override
-    @Deprecated
     public Animal getById(Long id) throws SQLException, ClassNotFoundException {
         Animal animal;
         try (ResultSet animalGetResultSet = state().executeQuery(

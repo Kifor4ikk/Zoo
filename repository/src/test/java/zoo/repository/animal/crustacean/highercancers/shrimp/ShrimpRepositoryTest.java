@@ -13,6 +13,8 @@ import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.shrimp.Sh
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.shrimp.ShrimpRepository;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfMapper;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfRepository;
+import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelMapper;
+import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
 import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.mockito.Mockito;
 import org.testng.annotations.BeforeTest;
@@ -34,7 +36,7 @@ public class ShrimpRepositoryTest {
     private Statement statement;
     private ResultSet resultSetMock;
 
-    private Field animalHouse;
+    private Terrarium animalHouse;
     private Shrimp shrimp;
     private Shrimp shrimp2;
 
@@ -58,7 +60,7 @@ public class ShrimpRepositoryTest {
         shrimp2 = new Shrimp("Alex222", "Shrimp222", 10, Set.of(Field.class,Terrarium.class),
                 Set.of(ClimateZone.TROPICAL,ClimateZone.MODERATE), Set.of(Meat.class), "Green shell",false, "Sweet dreams are made of this");
 
-        animalHouse = new Field(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class, Shrimp.class), ClimateZone.MODERATE);
+        animalHouse = new Terrarium(1L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class, Shrimp.class), ClimateZone.SUBTROPICAL);
     }
 
     @Test
@@ -116,7 +118,6 @@ public class ShrimpRepositoryTest {
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id) " +
                 "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ") RETURNING animalhouse_id;");
     }
-
 
     @Test
     public void getTest() throws SQLException, ClassNotFoundException {

@@ -31,4 +31,11 @@ public class Wolf extends Predator {
     public void setBehaviour(String behaviour) {
         this.behaviour = behaviour;
     }
+
+    @Override
+    public String toString() {
+        return "Wolf{" + super.toString() +
+                " behaviour='" + behaviour + '\'' +
+                '}';
+    }
 }

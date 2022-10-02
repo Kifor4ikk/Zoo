@@ -24,7 +24,7 @@ public class ShrimpRepository extends CrustaceanRepositoryImpl {
             connection.setAutoCommit(false);
             try(ResultSet shrimpRaw = state().executeQuery("INSERT INTO Shrimp (ID,size) " +
                     "VALUES (" + super.create(shrimp, animalHouse, Shrimp.class) + ", '" + shrimp.getSize() + "') RETURNING ID;")){
-                if(shrimpRaw != null && shrimpRaw.getLong("ID") == 0) throw new BadAnimalTypeException("Cant create Shrimp!");
+                if(shrimpRaw != null && shrimpRaw.next() && shrimpRaw.getLong("id") == 0) throw new BadAnimalTypeException("Cant create Shrimp!");
             }
             connection.commit();
         } catch (Exception e) {

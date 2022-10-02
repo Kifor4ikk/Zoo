@@ -12,6 +12,7 @@ import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfMapper;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfRepository;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelMapper;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
+import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.mockito.Mockito;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -205,4 +206,6 @@ public class SquirrelRepositoryTest {
         squirrelRepository.setDeleteStatus(squirrel.getId(), true);
         Mockito.verify(statement,Mockito.times(1)).execute("UPDATE Animal SET isDeleted = '" + true + "' WHERE id = " + squirrel.getId());
     }
+
+
 }
