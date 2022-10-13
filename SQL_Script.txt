@@ -85,7 +85,9 @@
 		isDeleted BOOLEAN,
 		CONSTRAINT animalType_FK FOREIGN KEY (ID_animalType) REFERENCES animalType(Id) ON DELETE CASCADE ON UPDATE CASCADE
 	);
-	
+		ALTER TABLE Animal
+    	add COLUMN createDate Date NOT NULL;
+
 	CREATE TABLE IF NOT EXISTS climateTypeForTypeOfAnimal(
 		ID_TYPEOFANIMAL BIGINT NOT NULL,
 		ID_climateType BIGINT NOT NULL,
