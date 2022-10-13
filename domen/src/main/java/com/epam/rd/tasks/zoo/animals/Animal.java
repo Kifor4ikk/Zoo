@@ -7,6 +7,7 @@ import com.epam.rd.tasks.zoo.food.Food;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -21,6 +22,7 @@ public abstract class Animal {
     private Set<Class<? extends AnimalHouse>> livingZone = new HashSet<>();
     private Set<ClimateZone> climateZone = new HashSet<>();
     private Set<Class<? extends Food>> foodType = new HashSet<>();
+    private Date date;
     private boolean isDeleted = false;
 
     public Animal(){}
@@ -37,6 +39,11 @@ public abstract class Animal {
     public Animal(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, boolean isDeleted) {
         this(name,describe,age,livingZone,climateZone,foodType);
         this.isDeleted = isDeleted;
+    }
+
+    public Animal(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, Date date, boolean isDeleted) {
+        this(name,describe,age,livingZone,climateZone,foodType,isDeleted);
+        this.date = date;
     }
 
     public Long getId() {
@@ -73,7 +80,6 @@ public abstract class Animal {
         this.age = age;
     }
 
-
     public Set<Class<? extends AnimalHouse>> getLivingZone() {
         return livingZone;
     }
@@ -104,6 +110,14 @@ public abstract class Animal {
 
     public void setDeleted(boolean deleted) {
         isDeleted = deleted;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     @Override

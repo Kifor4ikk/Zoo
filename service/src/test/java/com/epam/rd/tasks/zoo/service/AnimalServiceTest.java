@@ -5,20 +5,30 @@ import com.epam.rd.tasks.zoo.repository.database.Database;
 import com.epam.rd.tasks.zoo.service.animal.AnimalService;
 import org.testng.annotations.Test;
 
+import java.sql.Date;
 import java.sql.SQLException;
 
 public class AnimalServiceTest {
 
-    private AnimalService animalServiceMapper = new AnimalService(Database.connectWithDataBase());
+    private AnimalService animalService = new AnimalService(Database.connectWithDataBase());
 
     public AnimalServiceTest() throws SQLException, ClassNotFoundException {}
 
     @Test
     public void test() throws SQLException, ClassNotFoundException {
-        AnimalService animalServiceMapper = new AnimalService(Database.connectWithDataBase());
 
-        System.out.println(animalServiceMapper.getAllAnimals());
-        System.out.println(animalServiceMapper.getAllTypes());
-        System.out.println(animalServiceMapper.getCountOfAllTypes());
+//        //System.out.println(animalService.getAllAnimals());
+//        for(Animal animal : animalService.getAllAnimals())
+//            System.out.println(animal.toString());
+//
+//        for(String type : animalService.getAllTypes())
+//            System.out.println(type);
+//
+//        System.out.println(animalService.getCountOfAllTypes());
+
+//        animalService.getAnimalByName("Al").forEach(o ->System.out.println(o.toString()));
+//        animalService.getAnimalByCreationDate(java.sql.Date.valueOf("2022-10-13")).forEach(o ->System.out.println(o.toString()));
+//        System.out.println(animalService.getAnimalAndHouseByAnimalId(4L));
+        System.out.println(animalService.getAllAnimalsInHouseByHouseId(1L));
     }
 }

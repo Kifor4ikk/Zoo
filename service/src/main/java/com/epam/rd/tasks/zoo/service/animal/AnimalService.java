@@ -1,8 +1,11 @@
 package com.epam.rd.tasks.zoo.service.animal;
 
+import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralMapper;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralRepositoryImpl;
+import com.epam.rd.tasks.zoo.repository.animal.AnimalIdTypeAndHouseId;
+import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.checkerframework.checker.units.qual.A;
 
@@ -13,13 +16,16 @@ import java.util.*;
 public class AnimalService {
 
     private AnimalGeneralRepositoryImpl animalGeneralRepository;
+    private AnimalHouseRepositoryImpl animalHouseRepository;
     private AnimalServiceMapper animalServiceMapper;
+
 
     public AnimalService(Connection connection){
         animalGeneralRepository = new AnimalGeneralRepositoryImpl(connection, new AnimalGeneralMapper());
+        animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
         animalServiceMapper = new AnimalServiceMapper(connection);
-    }
 
+    }
 
     public List<Animal> getAllAnimals() throws SQLException, ClassNotFoundException {
 
@@ -47,4 +53,48 @@ public class AnimalService {
         }
         return tempData;
     }
+
+    public List<Animal> getAnimalByName(String name) throws SQLException, ClassNotFoundException {
+        List<Animal> animalList = new ArrayList<>();
+        Map<Long, String> animalsIdAndType = animalGeneralRepository.getAllIdAndTypeOfAnimalByName(name);
+        for(Long id : animalsIdAndType.keySet()){
+            animalList.add(
+                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+            );
+        }
+        return animalList;
+    }
+
+    public List<Animal> getAnimalByCreationDate(java.sql.Date date) throws SQLException, ClassNotFoundException {
+        List<Animal> animalList = new ArrayList<>();
+        Map<Long, String> animalsIdAndType = animalGeneralRepository.getAllIdAndTypeOfAnimalByDateCreation(date);
+        for(Long id : animalsIdAndType.keySet()){
+            animalList.add(
+                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+            );
+        }
+        return animalList;
+    }
+
+    public Map<Animal, AnimalHouse> getAnimalAndHouseByAnimalId(Long id) throws SQLException, ClassNotFoundException {
+
+        Map<Animal, AnimalHouse> tempMap = new HashMap<>();
+        AnimalIdTypeAndHouseId tempAnimalIdTypeAndHouseId = animalGeneralRepository.getAllIdAndTypeOfAnimalAndHouseIdByAnimalId(id);
+
+        tempMap.put(animalServiceMapper.chooseRepositoryByAnimalType(tempAnimalIdTypeAndHouseId.getType()).getById(tempAnimalIdTypeAndHouseId.getId()),
+                animalHouseRepository.getById(tempAnimalIdTypeAndHouseId.getHouseId()));
+        return tempMap;
+    }
+
+    public List<Animal> getAllAnimalsInHouseByHouseId(Long houseId) throws SQLException, ClassNotFoundException {
+        List<Animal> animalList = new ArrayList<>();
+        Map<Long, String> animalsIdAndType = animalGeneralRepository.getAllAnimalInHouseByHouseId(houseId);
+        for(Long id : animalsIdAndType.keySet()){
+            animalList.add(
+                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+            );
+        }
+        return animalList;
+    }
+
 }

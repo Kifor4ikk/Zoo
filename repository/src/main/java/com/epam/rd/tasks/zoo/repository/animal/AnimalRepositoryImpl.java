@@ -10,10 +10,8 @@ import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
 import org.springframework.util.StringUtils;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
 
 public abstract class AnimalRepositoryImpl extends RepositoryConnection implements AnimalRepository<Animal, Long> {
 
@@ -25,7 +23,7 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
     }
 
     @Override
-    public Long create(Animal  animal, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
+    public Long create(Animal animal, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
 
         Animal infoAboutTypeObject = getInfoAboutType(typeOfAnimal);
 
@@ -36,11 +34,13 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
         if (!infoAboutTypeObject.getLivingZone().contains(animalHouse.getClass()))
             throw new BadZoneException(animal.getClass() + " cant live in " + animalHouse.getClass() + " zone");
 
-        try (ResultSet animalCreateResultSet = state().executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
+        try (ResultSet animalCreateResultSet = state().executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
                 animal.getName() + "','" +
                 animal.getDescribe() + "'," +
                 animal.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +
-                typeOfAnimal.getName() + "')," + animal.isDeleted() + ") RETURNING animal.id;")
+                typeOfAnimal.getName() + "'),'" +
+                Date.valueOf(LocalDate.now()) + "'," +
+                animal.isDeleted() + ") RETURNING animal.id;")
         ) {
             if (animalCreateResultSet.next()) {
                 try (ResultSet animalAddToHouseResultSet = state().executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +

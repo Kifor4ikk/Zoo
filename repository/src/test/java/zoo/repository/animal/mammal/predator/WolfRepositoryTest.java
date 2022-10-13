@@ -20,10 +20,8 @@ import org.mockito.Mockito;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -86,11 +84,13 @@ public class WolfRepositoryTest {
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                 "WHERE aty.animaltype = '"+ wolf.getClass().getName() + "'")).thenReturn(resultSetMock);
 
-        Mockito.when(statement.executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
+        Mockito.when(statement.executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
                 wolf.getName() + "','" +
                 wolf.getDescribe() + "'," +
                 wolf.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +
-                wolf.getClass().getName() + "')," + wolf.isDeleted() + ") RETURNING animal.id;")).thenReturn(resultSetMock);
+                wolf.getClass().getName()  + "'),'" +
+                Date.valueOf(LocalDate.now()) + "'," +
+                wolf.isDeleted() + ") RETURNING animal.id;")).thenReturn(resultSetMock);
 
         Mockito.when(statement.executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
                 "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ");")).thenReturn(resultSetMock);
@@ -114,11 +114,13 @@ public class WolfRepositoryTest {
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                 "WHERE aty.animaltype = '"+ wolf.getClass().getName() +"'");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
                 wolf.getName() + "','" +
                 wolf.getDescribe() + "'," +
                 wolf.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +
-                wolf.getClass().getName() + "')," + wolf.isDeleted() + ") RETURNING animal.id;");
+                wolf.getClass().getName()  + "'),'" +
+                Date.valueOf(LocalDate.now()) + "'," +
+                wolf.isDeleted() + ") RETURNING animal.id;");
 
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id) " +
                 "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ") RETURNING animalhouse_id;");

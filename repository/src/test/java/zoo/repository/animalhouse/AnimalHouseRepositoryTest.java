@@ -14,10 +14,9 @@ import org.mockito.stubbing.Answer;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyString;
@@ -60,6 +59,7 @@ public class AnimalHouseRepositoryTest {
                 + animalHouse.getArea() + "', (SELECT zt.Id FROM zoneType zt WHERE zt.zonetype = '"
                 + animalHouse.getClass().getName() + "'), (SELECT ct.Id FROM climateType ct WHERE ct.climateType = '"
                 + animalHouse.getClimateZone().name() + "'), '"
+                + Date.valueOf(LocalDate.now())
                 + animalHouse.isDeleted() + "') RETURNING id;")).thenReturn(resultSetMock);
 
         Mockito.when(statement.executeQuery("SELECT animalType.id FROM animalType WHERE animalType = '"

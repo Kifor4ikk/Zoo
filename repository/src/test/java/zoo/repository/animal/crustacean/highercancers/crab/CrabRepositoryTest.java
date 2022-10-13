@@ -15,10 +15,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -80,11 +78,13 @@ public class CrabRepositoryTest {
         Mockito.when(statement.executeQuery("INSERT INTO animalinhouse (animalhouse_id, animal_id)" +
                 "VALUES (" + animalHouse.getId() + "," + resultSetMock.getLong("id") + ") RETURNING animalhouse_id;")).thenReturn(resultSetMock);
 
-        Mockito.when(statement.executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
+        Mockito.when(statement.executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
                 crab.getName() + "','" +
                 crab.getDescribe() + "'," +
                 crab.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +
-                crab.getClass().getName() + "')," + crab.isDeleted() + ") RETURNING animal.id;")).thenReturn(resultSetMock);
+                crab.getClass().getName() + "'),'" +
+                Date.valueOf(LocalDate.now()) + "'," +
+                crab.isDeleted() + ") RETURNING animal.id;")).thenReturn(resultSetMock);
 
         Mockito.when(statement.executeQuery("SELECT climatetype.climatetype, zonetype.zonetype, foodtype.foodtype FROM animaltype aty " +
                 "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
@@ -102,11 +102,13 @@ public class CrabRepositoryTest {
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO Crustacean (ID,seashell) VALUES (" +
                 1 + ",'" + crab.getSeashell() + "') RETURNING ID;");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,isdeleted) VALUES (' " +
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
                 crab.getName() + "','" +
                 crab.getDescribe() + "'," +
                 crab.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +
-                crab.getClass().getName() + "')," + crab.isDeleted() + ") RETURNING animal.id;");
+                crab.getClass().getName() + "'),'" +
+                Date.valueOf(LocalDate.now()) + "'," +
+                crab.isDeleted() + ") RETURNING animal.id;");
 
         Mockito.verify(statement, Mockito.times(1)).executeQuery("SELECT climatetype.climatetype, zonetype.zonetype, foodtype.foodtype FROM animaltype aty " +
                 "INNER JOIN climatetypefortypeofanimal ctfta ON ctfta.id_typeofanimal = aty.id " +
