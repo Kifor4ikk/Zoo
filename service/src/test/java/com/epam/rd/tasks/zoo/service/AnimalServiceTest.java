@@ -16,7 +16,7 @@ public class AnimalServiceTest {
 
     @Test
     public void test() throws SQLException, ClassNotFoundException {
-
+//
 //        //System.out.println(animalService.getAllAnimals());
 //        for(Animal animal : animalService.getAllAnimals())
 //            System.out.println(animal.toString());
@@ -25,10 +25,10 @@ public class AnimalServiceTest {
 //            System.out.println(type);
 //
 //        System.out.println(animalService.getCountOfAllTypes());
-
-//        animalService.getAnimalByName("Al").forEach(o ->System.out.println(o.toString()));
+//
+//        animalService.getAnimalByName("").forEach(o ->System.out.println(o.toString()));
 //        animalService.getAnimalByCreationDate(java.sql.Date.valueOf("2022-10-13")).forEach(o ->System.out.println(o.toString()));
 //        System.out.println(animalService.getAnimalAndHouseByAnimalId(4L));
-        System.out.println(animalService.getAllAnimalsInHouseByHouseId(1L));
+//        System.out.println(animalService.getAllAnimalsInHouseByHouseId(1L));
     }
 }

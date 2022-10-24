@@ -8,23 +8,25 @@ import com.epam.rd.tasks.zoo.repository.animal.AnimalIdTypeAndHouseId;
 import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.checkerframework.checker.units.qual.A;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
 
+@Component
 public class AnimalService {
 
     private AnimalGeneralRepositoryImpl animalGeneralRepository;
     private AnimalHouseRepositoryImpl animalHouseRepository;
     private AnimalServiceMapper animalServiceMapper;
 
-
+    @Autowired
     public AnimalService(Connection connection){
         animalGeneralRepository = new AnimalGeneralRepositoryImpl(connection, new AnimalGeneralMapper());
         animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
         animalServiceMapper = new AnimalServiceMapper(connection);
-
     }
 
     public List<Animal> getAllAnimals() throws SQLException, ClassNotFoundException {

@@ -22,7 +22,7 @@ public class AnimalGeneralRepositoryImpl extends RepositoryConnection {
 
     public Map<Long,String> getAllIdAndTypeOfAnimal() throws SQLException {
 
-        try (ResultSet idAndTypeOfAnimalRaw = state().executeQuery("select animal.id, animaltype.animaltype from animal\n" +
+        try (ResultSet idAndTypeOfAnimalRaw = state().executeQuery("select animal.id, animaltype.animaltype from animal " +
                 "INNER JOIN animaltype ON animaltype.id = animal.id_animaltype")){
             return animalGeneralMapper.idAndTypeFromRawToMap(idAndTypeOfAnimalRaw);
         }
@@ -30,7 +30,7 @@ public class AnimalGeneralRepositoryImpl extends RepositoryConnection {
 
     public Map<Long,String> getAllIdAndTypeOfAnimalByName(String name) throws SQLException {
 
-        try (ResultSet idAndTypeOfAnimalRaw = state().executeQuery("select animal.id, animaltype.animaltype from animal\n" +
+        try (ResultSet idAndTypeOfAnimalRaw = state().executeQuery("select animal.id, animaltype.animaltype from animal " +
                 "INNER JOIN animaltype ON animaltype.id = animal.id_animaltype WHERE animal.name LIKE '%" + name + "%'")){
             return animalGeneralMapper.idAndTypeFromRawToMap(idAndTypeOfAnimalRaw);
         }
@@ -38,7 +38,7 @@ public class AnimalGeneralRepositoryImpl extends RepositoryConnection {
 
     public Map<Long,String> getAllIdAndTypeOfAnimalByDateCreation(Date date) throws SQLException {
 
-        try (ResultSet idAndTypeOfAnimalRaw = state().executeQuery("select animal.id, animaltype.animaltype from animal\n" +
+        try (ResultSet idAndTypeOfAnimalRaw = state().executeQuery("select animal.id, animaltype.animaltype from animal " +
                 "INNER JOIN animaltype ON animaltype.id = animal.id_animaltype WHERE animal.createDate = '"+ date + "'")){
             return animalGeneralMapper.idAndTypeFromRawToMap(idAndTypeOfAnimalRaw);
         }
