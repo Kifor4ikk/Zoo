@@ -1,8 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch;
 
-import com.epam.rd.tasks.zoo.animals.bird.Bird;
 import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.repository.animal.bird.BirdMapper;
 
 import java.sql.ResultSet;
@@ -18,4 +16,6 @@ public class BullfinchMapper extends BirdMapper {
         }
         return bullfinch;
     }
+
+
 }

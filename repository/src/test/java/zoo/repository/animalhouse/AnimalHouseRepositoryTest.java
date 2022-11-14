@@ -93,11 +93,4 @@ public class AnimalHouseRepositoryTest {
         Mockito.when(resultSetMock.next()).thenReturn(true);
 
     }
-
-    @Test
-    public void create() throws SQLException, ClassNotFoundException {
-
-        AnimalHouseRepositoryImpl animalHouseRepository2 = new AnimalHouseRepositoryImpl(Database.connectWithDataBase());
-        animalHouseRepository2.create(animalHouse);
-    }
 }

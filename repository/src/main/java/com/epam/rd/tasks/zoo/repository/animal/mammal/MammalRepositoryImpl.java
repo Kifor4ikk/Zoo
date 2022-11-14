@@ -14,8 +14,8 @@ import java.sql.SQLException;
 
 public class MammalRepositoryImpl extends AnimalRepositoryImpl {
 
-    public MammalRepositoryImpl(Connection connection, AnimalMapper animalMapper) {
-        super(connection, animalMapper);
+    public MammalRepositoryImpl(Connection connection, AnimalMapper animalMapper, Class<? extends Mammal> forAnimal) {
+        super(connection, animalMapper, forAnimal);
     }
 
     public long create(Mammal mammal, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {
@@ -39,5 +39,4 @@ public class MammalRepositoryImpl extends AnimalRepositoryImpl {
         super.update(mammal);
         state().executeQuery("UPDATE mammal SET tail = '" + mammal.getTail() + "' WHERE ID = " + mammal.getId() + " RETURNING true;");
     }
-
 }

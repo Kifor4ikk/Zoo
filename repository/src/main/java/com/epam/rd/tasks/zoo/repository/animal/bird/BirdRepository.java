@@ -14,8 +14,8 @@ import java.sql.SQLException;
 
 public class BirdRepository extends AnimalRepositoryImpl {
 
-    public BirdRepository(Connection connection, AnimalMapper animalMapper) {
-        super(connection, animalMapper);
+    public BirdRepository(Connection connection, AnimalMapper animalMapper, Class<? extends Bird> forAnimal) {
+        super(connection, animalMapper, forAnimal);
     }
 
     public long create(Bird bird, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {

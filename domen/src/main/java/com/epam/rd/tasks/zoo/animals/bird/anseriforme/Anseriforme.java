@@ -5,7 +5,6 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animals.bird.Bird;
 import com.epam.rd.tasks.zoo.food.Food;
 
-import java.util.List;
 import java.util.Set;
 
 public abstract class Anseriforme extends Bird {

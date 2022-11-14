@@ -4,15 +4,11 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Food;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
 
 import java.sql.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-@EqualsAndHashCode
 public abstract class Animal {
 
     private Long id;

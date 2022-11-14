@@ -5,10 +5,7 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Aquarium;
 import com.epam.rd.tasks.zoo.animals.fish.carp.Bream;
 import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Beluga;
 import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Sterlet;
-import com.epam.rd.tasks.zoo.exception.DissimilarityOfValuesException;
-import com.epam.rd.tasks.zoo.finance.expenses.BuyFood;
 import com.epam.rd.tasks.zoo.finance.expenses.Maintenance;
-import com.epam.rd.tasks.zoo.food.Wheat;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

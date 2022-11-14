@@ -16,10 +16,11 @@ import java.time.LocalDate;
 public abstract class AnimalRepositoryImpl extends RepositoryConnection implements AnimalRepository<Animal, Long> {
 
     AnimalMapper animalMapper;
-
-    public AnimalRepositoryImpl(Connection connection, AnimalMapper animalMapper) {
+    Class<? extends Animal> forAnimal;
+    public AnimalRepositoryImpl(Connection connection, AnimalMapper animalMapper, Class<? extends Animal> forAnimal) {
         super(connection);
         this.animalMapper = animalMapper;
+        this.forAnimal = forAnimal;
     }
 
     @Override
@@ -117,5 +118,9 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
             e.printStackTrace();
         }
         throw new BadAnimalTypeException("Something go wrong");
+    }
+
+    public Class<? extends Animal> getForAnimal() {
+        return forAnimal;
     }
 }

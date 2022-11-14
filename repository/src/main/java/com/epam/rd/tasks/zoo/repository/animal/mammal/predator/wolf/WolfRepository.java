@@ -19,7 +19,7 @@ public class WolfRepository extends MammalRepositoryImpl {
     private WolfMapper wolfMapper;
 
     public WolfRepository(Connection connection, WolfMapper wolfMapper) {
-        super(connection, wolfMapper);
+        super(connection, wolfMapper, Wolf.class);
         this.wolfMapper = wolfMapper;
     }
 

@@ -4,7 +4,6 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.food.Food;
 
-import java.util.List;
 import java.util.Set;
 
 public class Vyakhir extends PigeonLike{

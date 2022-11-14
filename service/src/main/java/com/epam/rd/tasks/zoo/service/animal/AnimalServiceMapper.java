@@ -1,10 +1,5 @@
 package com.epam.rd.tasks.zoo.service.animal;
 
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
-import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch.BullfinchMapper;
@@ -19,33 +14,38 @@ import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelMa
 import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AnimalServiceMapper {
 
-    private final BullfinchRepository bullfinchRepository;
-    private final CrabRepository crabRepository;
-    private final ShrimpRepository shrimpRepository;
-    private final WolfRepository wolfRepository;
-    private final SquirrelRepository squirrelRepository;
+    List<AnimalRepositoryImpl> repositories = new ArrayList<>();
 
     public AnimalServiceMapper(Connection connection){
-        bullfinchRepository = new BullfinchRepository(connection, new BullfinchMapper());
-        crabRepository = new CrabRepository(connection, new CrabMapper());
-        shrimpRepository = new ShrimpRepository(connection, new ShrimpMapper());
-        wolfRepository = new WolfRepository(connection, new WolfMapper());
-        squirrelRepository = new SquirrelRepository(connection,new SquirrelMapper());
+
+        repositories.add(new BullfinchRepository(connection, new BullfinchMapper()));
+        repositories.add(new CrabRepository(connection, new CrabMapper()));
+        repositories.add(new ShrimpRepository(connection, new ShrimpMapper()));
+        repositories.add(new WolfRepository(connection, new WolfMapper()));
+        repositories.add(new SquirrelRepository(connection,new SquirrelMapper()));
     }
 
+    @Deprecated
     public AnimalRepositoryImpl chooseRepositoryByAnimalType(String animalType){
 
-        String bullFinchType = Bullfinch.class.getName();
         switch (animalType){
-            case "com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch": return bullfinchRepository;
-            case "com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab": return crabRepository;
-            case "com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp": return shrimpRepository;
-            case "com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf": return wolfRepository;
-            case "com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel": return squirrelRepository;
+            case "com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch": return repositories.get(0);
+            case "com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab": return repositories.get(1);
+            case "com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp": return repositories.get(2);
+            case "com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf": return repositories.get(3);
+            case "com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel": return repositories.get(4);
             default: throw new NotFoundException("Animal with type " + animalType + " was not found!");
         }
+    }
+
+    public AnimalRepositoryImpl chooseRepository(String animalType){
+        for(AnimalRepositoryImpl animalRepository : repositories)
+            if(animalRepository.getForAnimal().getName().equals(animalType)) return animalRepository;
+        throw new NotFoundException("Animal with type " + animalType + " was not found!");
     }
 }

@@ -1,6 +1,5 @@
 package zooTest;
 
-import com.epam.rd.tasks.zoo.Address;
 import com.epam.rd.tasks.zoo.Zoo;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Aquarium;

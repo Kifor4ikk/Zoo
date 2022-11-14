@@ -6,8 +6,6 @@ import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralMapper;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalIdTypeAndHouseId;
 import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
-import com.epam.rd.tasks.zoo.repository.database.Database;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

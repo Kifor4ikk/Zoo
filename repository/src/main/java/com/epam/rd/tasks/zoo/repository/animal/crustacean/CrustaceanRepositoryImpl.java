@@ -15,8 +15,8 @@ import java.sql.SQLException;
 
 public class CrustaceanRepositoryImpl extends AnimalRepositoryImpl {
 
-    public CrustaceanRepositoryImpl(Connection connection, CrustaceanMapper crustaceanMapper) {
-        super(connection, crustaceanMapper);
+    public CrustaceanRepositoryImpl(Connection connection, CrustaceanMapper crustaceanMapper, Class<? extends Crustacean> forAnimal) {
+        super(connection, crustaceanMapper, forAnimal);
     }
 
     public long create(Crustacean crustacean, AnimalHouse animalHouse, Class<? extends Animal> typeOfAnimal) throws SQLException, ClassNotFoundException {

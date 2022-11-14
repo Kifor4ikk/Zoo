@@ -2,10 +2,7 @@ package com.epam.rd.tasks.zoo;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.exception.WrongCountException;
 import com.epam.rd.tasks.zoo.finance.Finance;
-import com.epam.rd.tasks.zoo.finance.expenses.Expenses;
-import com.epam.rd.tasks.zoo.finance.income.Income;
 import com.epam.rd.tasks.zoo.food.Food;
 
 import java.math.BigDecimal;

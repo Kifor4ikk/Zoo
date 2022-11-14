@@ -1,6 +1,5 @@
 package financeTest.income;
 
-import com.epam.rd.tasks.zoo.finance.income.Donation;
 import com.epam.rd.tasks.zoo.finance.income.StateSupport;
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -19,7 +19,7 @@ public class SquirrelRepository extends MammalRepositoryImpl {
     private SquirrelMapper squirrelMapper;
 
     public SquirrelRepository(Connection connection, SquirrelMapper squirrelMapper) {
-        super(connection, squirrelMapper);
+        super(connection, squirrelMapper, Squirrel.class);
         this.squirrelMapper = squirrelMapper;
     }
 

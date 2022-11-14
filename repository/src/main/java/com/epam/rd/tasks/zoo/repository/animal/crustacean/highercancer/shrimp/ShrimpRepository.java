@@ -15,7 +15,7 @@ public class ShrimpRepository extends CrustaceanRepositoryImpl {
     private ShrimpMapper shrimpMapper;
 
     public ShrimpRepository(Connection connection, ShrimpMapper shrimpMapper) {
-        super(connection, shrimpMapper);
+        super(connection, shrimpMapper, Shrimp.class);
         this.shrimpMapper = shrimpMapper;
     }
 

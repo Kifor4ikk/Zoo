@@ -2,10 +2,8 @@ package com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
-import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
 import com.epam.rd.tasks.zoo.repository.animal.bird.BirdRepository;
 
 import java.sql.Connection;
@@ -17,7 +15,7 @@ public class BullfinchRepository extends BirdRepository {
     private BullfinchMapper bullfinchMapper;
 
     public BullfinchRepository(Connection connection, BullfinchMapper animalMapper) {
-        super(connection, animalMapper);
+        super(connection, animalMapper, Bullfinch.class);
         this.bullfinchMapper = animalMapper;
     }
     

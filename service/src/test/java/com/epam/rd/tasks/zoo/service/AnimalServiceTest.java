@@ -1,34 +1,43 @@
 package com.epam.rd.tasks.zoo.service;
 
-import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.exception.NotFoundException;
+import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
 import com.epam.rd.tasks.zoo.repository.database.Database;
 import com.epam.rd.tasks.zoo.service.animal.AnimalService;
+import com.epam.rd.tasks.zoo.service.animal.AnimalServiceMapper;
+import org.checkerframework.checker.units.qual.A;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.sql.Date;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
+import static org.mockito.ArgumentMatchers.anyString;
 
 public class AnimalServiceTest {
 
-    private AnimalService animalService = new AnimalService(Database.connectWithDataBase());
-
-    public AnimalServiceTest() throws SQLException, ClassNotFoundException {}
-
     @Test
-    public void test() throws SQLException, ClassNotFoundException {
-//
-//        //System.out.println(animalService.getAllAnimals());
-//        for(Animal animal : animalService.getAllAnimals())
-//            System.out.println(animal.toString());
-//
-//        for(String type : animalService.getAllTypes())
-//            System.out.println(type);
-//
-//        System.out.println(animalService.getCountOfAllTypes());
-//
-//        animalService.getAnimalByName("").forEach(o ->System.out.println(o.toString()));
-//        animalService.getAnimalByCreationDate(java.sql.Date.valueOf("2022-10-13")).forEach(o ->System.out.println(o.toString()));
-//        System.out.println(animalService.getAnimalAndHouseByAnimalId(4L));
-//        System.out.println(animalService.getAllAnimalsInHouseByHouseId(1L));
+    public void AnimalServiceMapperTest() throws SQLException {
+
+        Connection connection = Mockito.mock(Connection.class);
+        Statement statement = Mockito.mock(Statement.class);
+        ResultSet resultSetMock = Mockito.mock(ResultSet.class);
+
+        Mockito.when(connection.createStatement()).thenReturn(statement);
+        Mockito.when(statement.executeQuery(anyString())).thenReturn(resultSetMock);
+        AnimalServiceMapper animalServiceMapper = new AnimalServiceMapper(connection);
+
+        try {
+            animalServiceMapper.chooseRepository("csm.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel");
+            throw new ClassCastException("Method before should throw exception!");
+        } catch (Exception e){
+            Assert.assertEquals(e.getClass(),NotFoundException.class);
+        }
+
+        Assert.assertEquals(animalServiceMapper.chooseRepository("com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel").getClass(), SquirrelRepository.class);
     }
 }

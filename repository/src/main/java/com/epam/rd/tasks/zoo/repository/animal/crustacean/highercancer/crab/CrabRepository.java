@@ -15,7 +15,7 @@ public class CrabRepository extends CrustaceanRepositoryImpl {
     private CrabMapper crabMapper;
 
     public CrabRepository(Connection connection, CrabMapper crabMapper) {
-        super(connection, crabMapper);
+        super(connection, crabMapper, Crab.class);
         this.crabMapper = crabMapper;
     }
 

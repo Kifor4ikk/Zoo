@@ -14,7 +14,7 @@ public class RepositoryConnection {
         this.connection = connection;
     }
 
-    @Bean
+
     public Statement state() throws SQLException {
         return connection.createStatement();
     }
