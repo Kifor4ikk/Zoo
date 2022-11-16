@@ -3,9 +3,9 @@ package zoo.repository.animal.crustacean.highercancers.crab;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.Animal;
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.food.Meat;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.crab.CrabMapper;
@@ -146,7 +146,7 @@ public class CrabRepositoryTest {
                         "INNER JOIN foodtypefortypeanimal ftfta ON ftfta.id_typeofanimal = aty.id " +
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype INNER JOIN crustacean cr ON cr.id = an.id " +
                         "INNER JOIN crab ON crab.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab'")
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab'")
         ).thenReturn(resultSetMock);
 
         crabRepository.getById(1L);
@@ -164,7 +164,7 @@ public class CrabRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN crustacean cr ON cr.id = an.id " +
                         "INNER JOIN crab ON crab.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab'");
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab'");
     }
 
     @Test

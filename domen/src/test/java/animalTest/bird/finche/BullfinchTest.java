@@ -2,7 +2,7 @@ package animalTest.bird.finche;
 
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
 import com.epam.rd.tasks.zoo.food.Food;

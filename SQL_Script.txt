@@ -85,8 +85,9 @@
 		isDeleted BOOLEAN,
 		CONSTRAINT animalType_FK FOREIGN KEY (ID_animalType) REFERENCES animalType(Id) ON DELETE CASCADE ON UPDATE CASCADE
 	);
-		ALTER TABLE Animal
-    	add COLUMN createDate Date NOT NULL;
+
+	ALTER TABLE Animal
+	add COLUMN createDate Date NOT NULL;
 
 	CREATE TABLE IF NOT EXISTS climateTypeForTypeOfAnimal(
 		ID_TYPEOFANIMAL BIGINT NOT NULL,
@@ -109,12 +110,11 @@
 		CONSTRAINT ID_zoneType_FK FOREIGN KEY (ID_zoneType) REFERENCES zoneType(Id) ON DELETE CASCADE ON UPDATE CASCADE,
 		UNIQUE(ID_TYPEOFANIMAL, ID_zoneType)
 	);
-	
+
 	-- Animal houses
 	CREATE TABLE IF NOT EXISTS animalHouse(
 		ID BIGSERIAL PRIMARY KEY UNIQUE NOT NULL,
 		name VARCHAR(255) NOT NULL,
-		describe VARCHAR(255) NOT NULL,
 		area SMALLINT CHECK (area > 0),
 		ID_zoneType BIGINT NOT NULL,
 		ID_climateType BIGINT NOT NULL,
@@ -143,12 +143,114 @@
 		UNIQUE (AnimalHouse_Id,Animal_Id),
 		UNIQUE (Animal_Id)
 	);
+
+
 	--Current types of animal
 		-- Crustacean
 	CREATE TABLE IF NOT EXISTS Crustacean(
-		ID BIGSERIAL PRIMARY KEY UNIQUE NOT NULL,
-		Animal_Id BIGINT,
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
 		seashell VARCHAR,
-		CONSTRAINT Animal_Id_fk FOREIGN KEY (Animal_Id) REFERENCES Animal(id) ON DELETE CASCADE ON UPDATE CASCADE,
-		UNIQUE (Animal_Id)
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Animal(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
 	);
+
+	CREATE TABLE IF NOT EXISTS Crab(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		taste VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Crustacean(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	CREATE TABLE IF NOT EXISTS Shrimp(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		size VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Crustacean(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+		-- mammals
+	CREATE TABLE IF NOT EXISTS Mammal(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		tail VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Animal(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	CREATE TABLE IF NOT EXISTS Squirrel(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		fur VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Mammal(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	CREATE TABLE IF NOT EXISTS Wolf(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		behaviour VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Mammal(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+		-- birds
+	CREATE TABLE IF NOT EXISTS Bird(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		wings VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Animal(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	CREATE TABLE IF NOT EXISTS Bullfinch(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		color VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Bird(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	-- arachnids
+	CREATE TABLE IF NOT EXISTS Arachnid(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		legCount INT,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Animal(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	CREATE TABLE IF NOT EXISTS Birdman(
+		ID BIGINT PRIMARY KEY UNIQUE NOT NULL,
+		color VARCHAR,
+		CONSTRAINT ID FOREIGN KEY (ID) REFERENCES Arachnid(id) ON DELETE CASCADE ON UPDATE CASCADE,
+		UNIQUE (ID)
+	);
+
+	INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.mammal.predator.Lion');
+    INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab');
+    INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch');
+
+    INSERT INTO climateType (climateType) VALUES ('MODERATE');
+    INSERT INTO climateType (climateType) VALUES ('SUBANTARCTIC');
+    INSERT INTO climateType (climateType) VALUES ('SUBTROPICAL');
+    INSERT INTO climateType (climateType) VALUES ('ARCTIC');
+
+    insert into zonetype (zonetype) VALUES ('com.epam.rd.tasks.zoo.animalhouse.zoneType.Aquarium');
+    insert into zonetype (zonetype) VALUES ('com.epam.rd.tasks.zoo.animalhouse.zoneType.Field');
+    insert into zonetype (zonetype) VALUES ('com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium');
+
+    INSERT INTO foodType (foodtype) VALUES ('com.epam.rd.tasks.zoo.food.Meat');
+    INSERT INTO foodType (foodtype) VALUES ('com.epam.rd.tasks.zoo.food.Wheat');
+    INSERT INTO foodType (foodtype) VALUES ('com.epam.rd.tasks.zoo.food.Bugs');
+
+    INSERT INTO climatetypefortypeofanimal VALUES (1,1);
+    INSERT INTO climatetypefortypeofanimal VALUES (1,2);
+    INSERT INTO climatetypefortypeofanimal VALUES (1,3);
+    INSERT INTO climatetypefortypeofanimal VALUES (1,4);
+    INSERT INTO climatetypefortypeofanimal VALUES (2,2);
+    INSERT INTO climatetypefortypeofanimal VALUES (3,3);
+
+    INSERT INTO foodtypefortypeanimal VALUES (1,1);
+    INSERT INTO foodtypefortypeanimal VALUES (1,2);
+    INSERT INTO foodtypefortypeanimal VALUES (1,3);
+    INSERT INTO foodtypefortypeanimal VALUES (2,2);
+    INSERT INTO foodtypefortypeanimal VALUES (3,3);
+
+    INSERT INTO zonetypefortypeanimal VALUES (1,1);
+    INSERT INTO zonetypefortypeanimal VALUES (1,2);
+    INSERT INTO zonetypefortypeanimal VALUES (1,3);
+    INSERT INTO zonetypefortypeanimal VALUES (2,2);
+    INSERT INTO zonetypefortypeanimal VALUES (3,3);

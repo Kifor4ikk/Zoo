@@ -3,16 +3,12 @@ package zoo.repository.animal.mammal.rodent;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
-import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.food.Meat;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfRepository;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelMapper;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
-import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.mockito.Mockito;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -151,7 +147,7 @@ public class SquirrelRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN mammal ON mammal.id = an.id " +
                         "INNER JOIN squirrel ON squirrel.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel'")
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel'")
         ).thenReturn(resultSetMock);
 
         squirrelRepository.getById(1L);
@@ -168,7 +164,7 @@ public class SquirrelRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN mammal ON mammal.id = an.id " +
                         "INNER JOIN squirrel ON squirrel.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel'");
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel'");
     }
 
     @Test

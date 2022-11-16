@@ -1,13 +1,12 @@
 package com.epam.rd.tasks.zoo.service;
 
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
 import com.epam.rd.tasks.zoo.repository.database.Database;
 import com.epam.rd.tasks.zoo.service.animal.AnimalService;
 import com.epam.rd.tasks.zoo.service.animal.AnimalServiceMapper;
-import org.checkerframework.checker.units.qual.A;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -38,6 +37,14 @@ public class AnimalServiceTest {
             Assert.assertEquals(e.getClass(),NotFoundException.class);
         }
 
-        Assert.assertEquals(animalServiceMapper.chooseRepository("com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel").getClass(), SquirrelRepository.class);
+        Assert.assertEquals(animalServiceMapper.chooseRepository("com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel").getClass(), SquirrelRepository.class);
     }
+
+    @Test
+    public void test() throws SQLException, ClassNotFoundException {
+        Connection connection = Database.connectWithDataBase("jdbc:postgresql://localhost:2000/zoo","postgres","1");
+        AnimalService animalService = new AnimalService(connection);
+    }
+
+
 }

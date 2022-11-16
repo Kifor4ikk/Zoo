@@ -1,6 +1,6 @@
-INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animals.mammal.predator.Lion');
-INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab');
-INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch');
+INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.mammal.predator.Lion');
+INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab');
+INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch');
 
 INSERT INTO climateType (climateType) VALUES ('MODERATE');
 INSERT INTO climateType (climateType) VALUES ('SUBANTARCTIC');

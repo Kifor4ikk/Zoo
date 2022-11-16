@@ -1,7 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.shrimp;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Shrimp;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanRepositoryImpl;
@@ -59,7 +59,7 @@ public class ShrimpRepository extends CrustaceanRepositoryImpl {
     }
 
     protected String getWhereId(Long id) {
-        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp'";
+        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Shrimp'";
     }
 
     public boolean update(Shrimp shrimp) throws SQLException {

@@ -2,7 +2,7 @@ package com.epam.rd.tasks.zoo.repository.animal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
-import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.food.Food;
 

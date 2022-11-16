@@ -2,10 +2,10 @@ package animalHouseTest;
 
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Aquarium;
-import com.epam.rd.tasks.zoo.animals.fish.carp.Bream;
-import com.epam.rd.tasks.zoo.animals.fish.carp.Vobla;
-import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Beluga;
-import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Sterlet;
+import com.epam.rd.tasks.zoo.animal.fish.carp.Bream;
+import com.epam.rd.tasks.zoo.animal.fish.carp.Vobla;
+import com.epam.rd.tasks.zoo.animal.fish.sturgeon.Beluga;
+import com.epam.rd.tasks.zoo.animal.fish.sturgeon.Sterlet;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.BadClimateException;
 import com.epam.rd.tasks.zoo.food.Meat;

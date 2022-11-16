@@ -2,9 +2,9 @@ package financeTest.expenses;
 
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Aquarium;
-import com.epam.rd.tasks.zoo.animals.fish.carp.Bream;
-import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Beluga;
-import com.epam.rd.tasks.zoo.animals.fish.sturgeon.Sterlet;
+import com.epam.rd.tasks.zoo.animal.fish.carp.Bream;
+import com.epam.rd.tasks.zoo.animal.fish.sturgeon.Beluga;
+import com.epam.rd.tasks.zoo.animal.fish.sturgeon.Sterlet;
 import com.epam.rd.tasks.zoo.finance.expenses.Maintenance;
 import org.testng.Assert;
 import org.testng.annotations.Test;

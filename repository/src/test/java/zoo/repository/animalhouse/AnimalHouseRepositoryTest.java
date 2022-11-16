@@ -2,10 +2,9 @@ package zoo.repository.animalhouse;
 
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
-import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.mockito.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;

@@ -1,14 +1,12 @@
 package com.epam.rd.tasks.zoo.repository.animal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.BadClimateException;
 import com.epam.rd.tasks.zoo.exception.BadZoneException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
-import org.springframework.util.StringUtils;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -35,7 +33,7 @@ public abstract class AnimalRepositoryImpl extends RepositoryConnection implemen
         if (!infoAboutTypeObject.getLivingZone().contains(animalHouse.getClass()))
             throw new BadZoneException(animal.getClass() + " cant live in " + animalHouse.getClass() + " zone");
 
-        try (ResultSet animalCreateResultSet = state().executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
+        try (ResultSet animalCreateResultSet = state().executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES ('" +
                 animal.getName() + "','" +
                 animal.getDescribe() + "'," +
                 animal.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +

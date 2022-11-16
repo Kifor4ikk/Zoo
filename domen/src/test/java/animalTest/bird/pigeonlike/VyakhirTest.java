@@ -2,7 +2,7 @@ package animalTest.bird.pigeonlike;
 
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.bird.pigeonlike.Vyakhir;
+import com.epam.rd.tasks.zoo.animal.bird.pigeonlike.Vyakhir;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
 import com.epam.rd.tasks.zoo.food.Food;

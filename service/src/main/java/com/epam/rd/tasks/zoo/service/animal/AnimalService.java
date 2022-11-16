@@ -1,7 +1,7 @@
 package com.epam.rd.tasks.zoo.service.animal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralMapper;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalIdTypeAndHouseId;
@@ -34,7 +34,7 @@ public class AnimalService {
 
         for(Long id : animalsIdAndType.keySet()){
             animalList.add(
-                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+                    animalServiceMapper.chooseRepository(animalsIdAndType.get(id)).getById(id)
             );
         }
         return animalList;
@@ -59,7 +59,7 @@ public class AnimalService {
         Map<Long, String> animalsIdAndType = animalGeneralRepository.getAllIdAndTypeOfAnimalByName(name);
         for(Long id : animalsIdAndType.keySet()){
             animalList.add(
-                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+                    animalServiceMapper.chooseRepository(animalsIdAndType.get(id)).getById(id)
             );
         }
         return animalList;
@@ -70,7 +70,7 @@ public class AnimalService {
         Map<Long, String> animalsIdAndType = animalGeneralRepository.getAllIdAndTypeOfAnimalByDateCreation(date);
         for(Long id : animalsIdAndType.keySet()){
             animalList.add(
-                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+                    animalServiceMapper.chooseRepository(animalsIdAndType.get(id)).getById(id)
             );
         }
         return animalList;
@@ -81,7 +81,7 @@ public class AnimalService {
         Map<Animal, AnimalHouse> tempMap = new HashMap<>();
         AnimalIdTypeAndHouseId tempAnimalIdTypeAndHouseId = animalGeneralRepository.getAllIdAndTypeOfAnimalAndHouseIdByAnimalId(id);
 
-        tempMap.put(animalServiceMapper.chooseRepositoryByAnimalType(tempAnimalIdTypeAndHouseId.getType()).getById(tempAnimalIdTypeAndHouseId.getId()),
+        tempMap.put(animalServiceMapper.chooseRepository(tempAnimalIdTypeAndHouseId.getType()).getById(tempAnimalIdTypeAndHouseId.getId()),
                 animalHouseRepository.getById(tempAnimalIdTypeAndHouseId.getHouseId()));
         return tempMap;
     }
@@ -91,7 +91,7 @@ public class AnimalService {
         Map<Long, String> animalsIdAndType = animalGeneralRepository.getAllAnimalInHouseByHouseId(houseId);
         for(Long id : animalsIdAndType.keySet()){
             animalList.add(
-                    animalServiceMapper.chooseRepositoryByAnimalType(animalsIdAndType.get(id)).getById(id)
+                    animalServiceMapper.chooseRepository(animalsIdAndType.get(id)).getById(id)
             );
         }
         return animalList;

@@ -1,6 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.shrimp;
 
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Shrimp;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanMapper;
 
 import java.sql.ResultSet;

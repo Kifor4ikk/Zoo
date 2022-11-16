@@ -1,13 +1,9 @@
 package com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.mammal.Mammal;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
-import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
+import com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
-import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.MammalRepository;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.MammalRepositoryImpl;
 
 import java.sql.Connection;
@@ -62,7 +58,7 @@ public class SquirrelRepository extends MammalRepositoryImpl {
     }
 
     protected String getWhereId(Long id) {
-        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel'";
+        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel'";
     }
 
     public boolean update(Squirrel squirrel) throws SQLException {

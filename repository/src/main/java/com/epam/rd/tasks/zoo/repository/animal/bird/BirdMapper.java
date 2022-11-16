@@ -1,7 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.animal.bird;
 
-import com.epam.rd.tasks.zoo.animals.bird.Bird;
-import com.epam.rd.tasks.zoo.animals.mammal.Mammal;
+import com.epam.rd.tasks.zoo.animal.bird.Bird;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
 
 import java.sql.ResultSet;

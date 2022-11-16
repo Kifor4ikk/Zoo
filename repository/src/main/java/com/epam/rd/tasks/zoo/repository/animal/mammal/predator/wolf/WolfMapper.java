@@ -1,7 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf;
 
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
+import com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.MammalMapper;
 
 import java.sql.ResultSet;

@@ -1,7 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.crab;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.animal.crustacean.CrustaceanRepositoryImpl;
@@ -75,6 +75,6 @@ public class CrabRepository extends CrustaceanRepositoryImpl {
     }
 
     protected String getWhereId(Long id) {
-        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab'";
+        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab'";
     }
 }

@@ -1,13 +1,8 @@
 package zoo.repository.animal;
 
-import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralMapper;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalGeneralRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalIdTypeAndHouseId;
-import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfRepository;
 import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.Test;

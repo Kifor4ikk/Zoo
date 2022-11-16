@@ -1,6 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch;
 
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.repository.animal.bird.BirdMapper;
 
 import java.sql.ResultSet;

@@ -2,7 +2,7 @@ package animalTest.bird.penguin;
 
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.bird.penguin.EmperorPenguin;
+import com.epam.rd.tasks.zoo.animal.bird.penguin.EmperorPenguin;
 import com.epam.rd.tasks.zoo.exception.WrongAgeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
 import com.epam.rd.tasks.zoo.food.Food;

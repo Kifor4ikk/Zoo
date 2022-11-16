@@ -1,9 +1,8 @@
 package com.epam.rd.tasks.zoo.repository.animal.mammal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
-import com.epam.rd.tasks.zoo.animals.mammal.Mammal;
+import com.epam.rd.tasks.zoo.animal.Animal;
+import com.epam.rd.tasks.zoo.animal.mammal.Mammal;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalRepositoryImpl;

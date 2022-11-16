@@ -1,9 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animal.crustacean;
 
-import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.animals.crustacean.Crustacean;
+import com.epam.rd.tasks.zoo.animal.crustacean.Crustacean;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.sun.net.httpserver.Authenticator;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

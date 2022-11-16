@@ -1,7 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
 import com.epam.rd.tasks.zoo.repository.animal.bird.BirdRepository;
@@ -22,9 +22,9 @@ public class BullfinchRepository extends BirdRepository {
     public void create(Bullfinch bullfinch, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
         try {
             connection.setAutoCommit(false);
-            try(ResultSet BullfinchRaw = state().executeQuery("INSERT INTO Bullfinch (ID,color) " +
+            try(ResultSet bullfinchRaw = state().executeQuery("INSERT INTO Bullfinch (ID,color) " +
                     "VALUES (" + super.create(bullfinch, animalHouse, Bullfinch.class) + ", '" + bullfinch.getColor() + "') RETURNING ID;")){
-                if(BullfinchRaw != null && BullfinchRaw.getLong("ID") == 0) throw new BadAnimalTypeException("Cant create Bullfinch!");
+                if(bullfinchRaw.next() && bullfinchRaw.getLong("ID") == 0) throw new BadAnimalTypeException("Cant create Bullfinch!");
             }
             connection.commit();
         } catch (Exception e) {
@@ -41,7 +41,7 @@ public class BullfinchRepository extends BirdRepository {
         try (ResultSet bullfinchRaw = state().executeQuery(getSelectAnimal() + getSelectBird() + getSelectBullfinch() +
                 getFromInnerJoinAnimal() + getInnerJoinBird() + getInnerJoinBullfinch() + getWhereId(id))) {
             Bullfinch bullfinchGet = bullfinchMapper.fromRawToBullfinch(bullfinchRaw, new Bullfinch());
-            if(bullfinchGet != null && bullfinchGet.getId() == 0) throw new BadAnimalTypeException("Bullfinch with ID = " + id + " do not exist");
+            if(bullfinchGet != null && (bullfinchGet.getId() == null || bullfinchGet.getId() == 0)) throw new BadAnimalTypeException("Bullfinch with ID = " + id + " do not exist");
             return bullfinchGet;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -58,7 +58,7 @@ public class BullfinchRepository extends BirdRepository {
     }
 
     protected String getWhereId(Long id) {
-        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch'";
+        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch'";
     }
 
     public boolean update(Bullfinch bullfinch) throws SQLException {

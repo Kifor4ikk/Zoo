@@ -1,7 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animal;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.animal.Animal;
 
 import java.sql.SQLException;
 

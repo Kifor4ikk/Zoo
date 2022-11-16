@@ -3,19 +3,12 @@ package zoo.repository.animal.mammal.predator;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.Animal;
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf;
 import com.epam.rd.tasks.zoo.food.Meat;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.crab.CrabMapper;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.crab.CrabRepository;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfMapper;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf.WolfRepository;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel.SquirrelRepository;
-import com.epam.rd.tasks.zoo.repository.database.Database;
 import org.mockito.Mockito;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -154,7 +147,7 @@ public class WolfRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN mammal ON mammal.id = an.id " +
                         "INNER JOIN wolf ON wolf.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf'")
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf'")
         ).thenReturn(resultSetMock);
 
         wolfRepository.getById(1L);
@@ -171,7 +164,7 @@ public class WolfRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN mammal ON mammal.id = an.id " +
                         "INNER JOIN wolf ON wolf.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf'");
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf'");
     }
 
     @Test

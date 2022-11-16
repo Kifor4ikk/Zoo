@@ -1,7 +1,7 @@
 package com.epam.rd.tasks.zoo.repository.animalhouse;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.Animal;
+import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.exception.*;
 import com.epam.rd.tasks.zoo.repository.database.RepositoryConnection;
 import java.sql.Connection;
@@ -73,7 +73,6 @@ public class AnimalHouseRepositoryImpl extends RepositoryConnection implements A
             while(animalTypeResultSet.next()) AnimalHouseMapper.addAnimalTypesFromRaw(animalHouse,animalTypeResultSet);
         }
 
-        //@TODO Add adding animal based on animal repo
         try (ResultSet animalLivingHereResultSet = state().executeQuery("select animal.id, animal.name," +
                 " animal.describe, animal.age, animaltype.animaltype, animal.isDeleted\n" +
                 "from animalinhouse\n" +

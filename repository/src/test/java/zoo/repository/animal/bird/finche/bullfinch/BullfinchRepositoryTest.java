@@ -3,8 +3,8 @@ package zoo.repository.animal.bird.finche.bullfinch;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
-import com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
+import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
 import com.epam.rd.tasks.zoo.food.Meat;
 import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
 import com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch.BullfinchMapper;
@@ -146,7 +146,7 @@ public class BullfinchRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN bird ON bird.id = an.id " +
                         "INNER JOIN bullfinch ON bullfinch.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch'")
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch'")
         ).thenReturn(resultSetMock);
 
         bullfinchRepository.getById(1L);
@@ -163,7 +163,7 @@ public class BullfinchRepositoryTest {
                         "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                         "INNER JOIN bird ON bird.id = an.id " +
                         "INNER JOIN bullfinch ON bullfinch.id = an.id " +
-                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.bird.finche.Bullfinch'");
+                        "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch'");
     }
 
     @Test

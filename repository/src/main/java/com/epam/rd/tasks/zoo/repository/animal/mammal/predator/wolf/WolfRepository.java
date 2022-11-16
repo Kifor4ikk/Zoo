@@ -1,13 +1,9 @@
 package com.epam.rd.tasks.zoo.repository.animal.mammal.predator.wolf;
 
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
-import com.epam.rd.tasks.zoo.animals.crustacean.highercancers.Shrimp;
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
+import com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.exception.NotFoundException;
-import com.epam.rd.tasks.zoo.repository.animal.AnimalMapper;
-import com.epam.rd.tasks.zoo.repository.animal.crustacean.highercancer.shrimp.ShrimpMapper;
-import com.epam.rd.tasks.zoo.repository.animal.mammal.MammalRepository;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.MammalRepositoryImpl;
 
 import java.sql.Connection;
@@ -62,7 +58,7 @@ public class WolfRepository extends MammalRepositoryImpl {
     }
 
     protected String getWhereId(Long id) {
-        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf'";
+        return "WHERE an.id = " + id + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf'";
     }
 
     public boolean update(Wolf wolf) throws SQLException {

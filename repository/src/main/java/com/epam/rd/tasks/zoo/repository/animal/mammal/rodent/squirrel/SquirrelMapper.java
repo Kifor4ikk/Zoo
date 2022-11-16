@@ -1,7 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.animal.mammal.rodent.squirrel;
 
-import com.epam.rd.tasks.zoo.animals.mammal.predator.Wolf;
-import com.epam.rd.tasks.zoo.animals.mammal.rodent.Squirrel;
+import com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel;
 import com.epam.rd.tasks.zoo.repository.animal.mammal.MammalMapper;
 
 import java.sql.ResultSet;
