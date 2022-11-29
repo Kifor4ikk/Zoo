@@ -20,11 +20,10 @@ public class AnimalService {
     private AnimalHouseRepositoryImpl animalHouseRepository;
     private AnimalServiceMapper animalServiceMapper;
 
-    @Autowired
-    public AnimalService(Connection connection){
-        animalGeneralRepository = new AnimalGeneralRepositoryImpl(connection, new AnimalGeneralMapper());
-        animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
-        animalServiceMapper = new AnimalServiceMapper(connection);
+    public AnimalService(AnimalGeneralRepositoryImpl animalGeneralRepository, AnimalHouseRepositoryImpl animalHouseRepository, AnimalServiceMapper animalServiceMapper) {
+        this.animalGeneralRepository = animalGeneralRepository;
+        this.animalHouseRepository = animalHouseRepository;
+        this.animalServiceMapper = animalServiceMapper;
     }
 
     public List<Animal> getAllAnimals() throws SQLException, ClassNotFoundException {

@@ -6,11 +6,10 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.exception.BadAnimalTypeException;
 import com.epam.rd.tasks.zoo.food.Bugs;
-import com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch.BullfinchMapper;
-import com.epam.rd.tasks.zoo.repository.animal.bird.finche.bullfinch.BullfinchRepository;
 import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
-import com.epam.rd.tasks.zoo.repository.database.Database;
 import com.epam.rd.tasks.zoo.service.animal.bird.finche.BullfinchService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -23,17 +22,23 @@ import java.util.Set;
 public class BullfinchServiceTest {
 
     private BullfinchService bullfinchService;
+    private Connection connection;
     private AnimalHouseRepositoryImpl animalHouseRepository;
-    Connection connection = Database.connectWithDataBase("jdbc:postgresql://localhost:2000/zooTest","postgres","1");
+    private ApplicationContext context;
 
     public BullfinchServiceTest() throws SQLException, ClassNotFoundException {
+        ApplicationContext context = new ClassPathXmlApplicationContext("SpringBean.xml", "TestSpringBean.xml");
+
+        connection = context.getBean("connection", Connection.class);
+        bullfinchService = context.getBean("bullfinchService",BullfinchService.class);
+        animalHouseRepository = context.getBean("animalHouseRepository", AnimalHouseRepositoryImpl.class);
     }
 
     @BeforeTest
     public void beforeTest() throws SQLException, ClassNotFoundException, IOException {
+        //Before test create
         connection.createStatement().execute("DROP SCHEMA public CASCADE; CREATE SCHEMA public;");
-        bullfinchService = new BullfinchService(new AnimalHouseRepositoryImpl(connection), new BullfinchRepository(connection, new BullfinchMapper()));
-        animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
+
         BufferedReader reader = new BufferedReader(new FileReader("D:\\java\\Zoo\\SQL_Script.txt"));
         String temp = reader.readLine();
         StringBuilder createScript = new StringBuilder();

@@ -19,20 +19,13 @@ import java.util.List;
 
 public class AnimalServiceMapper {
 
-    List<AnimalRepositoryImpl> repositories = new ArrayList<>();
-
-    public AnimalServiceMapper(Connection connection){
-
-        repositories.add(new BullfinchRepository(connection, new BullfinchMapper()));
-        repositories.add(new CrabRepository(connection, new CrabMapper()));
-        repositories.add(new ShrimpRepository(connection, new ShrimpMapper()));
-        repositories.add(new WolfRepository(connection, new WolfMapper()));
-        repositories.add(new SquirrelRepository(connection,new SquirrelMapper()));
+    private List<AnimalRepositoryImpl> repositories;
+    public AnimalServiceMapper(List<AnimalRepositoryImpl> animalRepositoryList){
+        repositories = animalRepositoryList;
     }
 
     @Deprecated
     public AnimalRepositoryImpl chooseRepositoryByAnimalType(String animalType){
-
         switch (animalType){
             case "com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch": return repositories.get(0);
             case "com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab": return repositories.get(1);

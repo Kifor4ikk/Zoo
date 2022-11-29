@@ -42,9 +42,6 @@ public class AnimalServiceTest {
 
     @Test
     public void test() throws SQLException, ClassNotFoundException {
-        Connection connection = Database.connectWithDataBase("jdbc:postgresql://localhost:2000/zoo","postgres","1");
-        AnimalService animalService = new AnimalService(connection);
+
     }
-
-
 }

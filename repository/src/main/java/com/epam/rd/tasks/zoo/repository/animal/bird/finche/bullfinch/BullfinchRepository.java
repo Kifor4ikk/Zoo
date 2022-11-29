@@ -14,9 +14,9 @@ public class BullfinchRepository extends BirdRepository {
 
     private BullfinchMapper bullfinchMapper;
 
-    public BullfinchRepository(Connection connection, BullfinchMapper animalMapper) {
-        super(connection, animalMapper, Bullfinch.class);
-        this.bullfinchMapper = animalMapper;
+    public BullfinchRepository(Connection connection, BullfinchMapper bullfinchMapper) {
+        super(connection, bullfinchMapper, Bullfinch.class);
+        this.bullfinchMapper = bullfinchMapper;
     }
     
     public void create(Bullfinch bullfinch, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {

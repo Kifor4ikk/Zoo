@@ -14,7 +14,6 @@ public class RepositoryConnection {
         this.connection = connection;
     }
 
-
     public Statement state() throws SQLException {
         return connection.createStatement();
     }

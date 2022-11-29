@@ -107,7 +107,7 @@ public class SquirrelRepositoryTest {
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                 "WHERE aty.animaltype = '"+ squirrel.getClass().getName() +"'");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES ('" +
                 squirrel.getName() + "','" +
                 squirrel.getDescribe() + "'," +
                 squirrel.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +

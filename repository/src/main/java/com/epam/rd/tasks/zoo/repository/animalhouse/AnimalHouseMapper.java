@@ -13,13 +13,12 @@ import java.util.Arrays;
 
 public class AnimalHouseMapper {
 
-    public static <T extends AnimalHouse> T fromRowGeneralInfo(ResultSet rs) throws SQLException, ClassNotFoundException {
+    public <T extends AnimalHouse> T fromRowGeneralInfo(ResultSet rs) throws SQLException, ClassNotFoundException {
 
         T animalHouse = null;
         try {
             Constructor<?> constructor = Class.forName(rs.getString("zoneType")).getConstructor();
             animalHouse = (T) constructor.newInstance();
-
             animalHouse.setId(rs.getLong("id"));
             animalHouse.setName(rs.getString("name"));
             animalHouse.setArea(rs.getInt("area"));
@@ -32,14 +31,14 @@ public class AnimalHouseMapper {
         return animalHouse;
     }
 
-    public static <T extends AnimalHouse> T addAnimalTypesFromRaw(T animalHouse, ResultSet rs) throws SQLException, ClassNotFoundException{
+    public <T extends AnimalHouse> T addAnimalTypesFromRaw(T animalHouse, ResultSet rs) throws SQLException, ClassNotFoundException{
 
         animalHouse.getTypeOfAnimal().add((Class<? extends Animal>) Class.forName(rs.getString("animalType")));
 
         return animalHouse;
     }
 
-    public static <T extends Animal> AnimalHouse addAnimalLivingFromRaw(AnimalHouse animalHouse, ResultSet rs) throws SQLException, ClassNotFoundException{
+    public <T extends Animal> AnimalHouse addAnimalLivingFromRaw(AnimalHouse animalHouse, ResultSet rs) throws SQLException, ClassNotFoundException{
         T animal = null;
         try {
             Constructor<?> constructor = Class.forName(rs.getString("animalType")).getConstructor();

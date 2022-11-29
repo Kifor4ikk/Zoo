@@ -4,6 +4,7 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
 import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab;
+import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseMapper;
 import com.epam.rd.tasks.zoo.repository.animalhouse.AnimalHouseRepositoryImpl;
 import org.mockito.*;
 import org.testng.Assert;
@@ -30,7 +31,7 @@ public class AnimalHouseRepositoryTest {
         connection = Mockito.mock(Connection.class);
         statement = Mockito.mock(Statement.class);
         resultSetMock = Mockito.mock(ResultSet.class);
-        animalHouseRepository = new AnimalHouseRepositoryImpl(connection);
+        animalHouseRepository = new AnimalHouseRepositoryImpl(connection, new AnimalHouseMapper());
 
         animalHouse = new Field(2L, "Fields222222",1945, List.of(Crab.class, Bullfinch.class), ClimateZone.SUBANTARCTIC);
     }

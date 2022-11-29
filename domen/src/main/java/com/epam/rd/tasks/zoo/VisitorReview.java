@@ -3,6 +3,7 @@ package com.epam.rd.tasks.zoo;
 import java.time.LocalDateTime;
 
 public class VisitorReview{
+
     private String visitorName;
     private String review;
     private LocalDateTime visitTime;

@@ -45,11 +45,9 @@ INSERT INTO animalHouse (name,area,id_zonetype,id_climatetype,isDeleted) VALUES 
 																						  (SELECT ct.Id FROM climateType ct WHERE ct.climateType = 'Hot'),
 																						  false) RETURNING id;
 
-
 SELECT foodType.foodType FROM foodtypefortypeanimal f INNER JOIN foodType ON f.id_foodtype = foodType.id WHERE f.id_typeofanimal = 1
 SELECT climateType.climateType FROM climatetypefortypeofanimal f INNER JOIN climateType ON f.id_climateType = climateType.id WHERE f.id_typeofanimal = 1
 SELECT zoneType.zoneType FROM zonetypefortypeanimal f INNER JOIN zoneType ON f.ID_zoneType = zoneType.id WHERE f.id_typeofanimal = 1;
-
 
 select * from animalHouse ah INNER JOIN zoneType ON ah.id_zoneType = zoneType.id INNER JOIN climateType ON ah.id_climatetype = climateType.id
 

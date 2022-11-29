@@ -94,7 +94,7 @@ public class ShrimpRepositoryTest {
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO Crustacean (ID,seashell) VALUES (" +
                 1 + ",'" + shrimp.getSeashell() + "') RETURNING ID;");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES ('" +
                 shrimp.getName() + "','" +
                 shrimp.getDescribe() + "'," +
                 shrimp.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +

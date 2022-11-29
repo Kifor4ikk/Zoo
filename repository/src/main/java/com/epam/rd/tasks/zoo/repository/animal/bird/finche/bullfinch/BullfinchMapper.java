@@ -17,5 +17,4 @@ public class BullfinchMapper extends BirdMapper {
         return bullfinch;
     }
 
-
 }

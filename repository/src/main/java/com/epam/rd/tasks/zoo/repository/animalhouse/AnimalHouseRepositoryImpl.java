@@ -10,8 +10,10 @@ import java.sql.SQLException;
 
 public class AnimalHouseRepositoryImpl extends RepositoryConnection implements AnimalHouseRepository<AnimalHouse, Long> {
 
-    public AnimalHouseRepositoryImpl(Connection connection) {
+    private AnimalHouseMapper animalHouseMapper;
+    public AnimalHouseRepositoryImpl(Connection connection, AnimalHouseMapper animalHouseMapper) {
         super(connection);
+        this.animalHouseMapper = animalHouseMapper;
     }
 
     @Override
@@ -65,12 +67,12 @@ public class AnimalHouseRepositoryImpl extends RepositoryConnection implements A
                 "zoneType.zoneType, climateType.climateType " +
                 "from animalHouse INNER JOIN zoneType ON zoneType.id = " +
                 "animalHouse.id_zoneType INNER JOIN climateType ON climateType.id = animalHouse.id_climateType WHERE animalHouse.id = " + id)){
-            if(mainParamsResultSet.next()) animalHouse = AnimalHouseMapper.fromRowGeneralInfo(mainParamsResultSet);
+            if(mainParamsResultSet.next()) animalHouse = animalHouseMapper.fromRowGeneralInfo(mainParamsResultSet);
             else throw new NotFoundException("With current id was not found");
         //Collect info about animal which can live here
         try(ResultSet animalTypeResultSet = state().executeQuery("SELECT animalType.animaltype FROM animalTypeInHouse INNER" +
                 " JOIN animaltype ON animaltype.id = animalTypeInHouse.id_animaltype WHERE animalTypeInHouse.ID_HOUSE = " + id)) {
-            while(animalTypeResultSet.next()) AnimalHouseMapper.addAnimalTypesFromRaw(animalHouse,animalTypeResultSet);
+            while(animalTypeResultSet.next()) animalHouseMapper.addAnimalTypesFromRaw(animalHouse,animalTypeResultSet);
         }
 
         try (ResultSet animalLivingHereResultSet = state().executeQuery("select animal.id, animal.name," +
@@ -79,7 +81,7 @@ public class AnimalHouseRepositoryImpl extends RepositoryConnection implements A
                 "INNER JOIN animal ON animal.id = animalinhouse.animal_id\n" +
                 "INNER JOIN animalType ON animalType.id = animal.id_animaltype WHERE animalinhouse.animalhouse_id = " + id)){
             while (animalLivingHereResultSet.next()) {
-                AnimalHouseMapper.addAnimalLivingFromRaw(animalHouse, animalLivingHereResultSet);
+                animalHouseMapper.addAnimalLivingFromRaw(animalHouse, animalLivingHereResultSet);
             }
         }
 

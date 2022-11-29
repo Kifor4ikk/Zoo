@@ -102,7 +102,7 @@ public class CrabRepositoryTest {
         Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO Crustacean (ID,seashell) VALUES (" +
                 1 + ",'" + crab.getSeashell() + "') RETURNING ID;");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES ('" +
                 crab.getName() + "','" +
                 crab.getDescribe() + "'," +
                 crab.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +

@@ -106,7 +106,7 @@ public class BullfinchRepositoryTest {
                 "INNER JOIN foodtype ON foodtype.id = ftfta.id_foodtype " +
                 "WHERE aty.animaltype = '"+ bullfinch.getClass().getName() +"'");
 
-        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES (' " +
+        Mockito.verify(statement, Mockito.times(1)).executeQuery("INSERT INTO animal (name,describe,age,id_animaltype,createDate,isdeleted) VALUES ('" +
                 bullfinch.getName() + "','" +
                 bullfinch.getDescribe() + "'," +
                 bullfinch.getAge() + ", (SELECT aType.id FROM animalType aType WHERE aType.animalType = '" +

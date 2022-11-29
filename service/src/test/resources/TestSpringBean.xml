@@ -9,21 +9,16 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:property-placeholder location="classpath:properties.properties" />
+
     <bean id="connection"
           scope="singleton"
           class="com.epam.rd.tasks.zoo.repository.database.Database"
           factory-method="connectWithDataBase">
-        <constructor-arg name="jdbcUrl" value="${database.jdbcUrl}"/>
-        <constructor-arg name="username" value="${database.username:postgres}"/>
-        <constructor-arg name="password" value="${database.password:1}"/>
+        <constructor-arg name="jdbcUrl" value="${database.test.jdbcUrl}"/>
+        <constructor-arg name="username" value="${database.test.username:postgres}"/>
+        <constructor-arg name="password" value="${database.test.password:1}"/>
     </bean>
-
-    <bean id="animalService"
-          scope="singleton"
-          class="com.epam.rd.tasks.zoo.service.animal.AnimalService">
-        <constructor-arg name="connection" ref="connection"/>
-    </bean>
-
 
 </beans>
+
 
