@@ -9,16 +9,47 @@
 
     <context:property-placeholder location="classpath:properties.properties" />
 
-    <bean id="connection"
-          scope="singleton"
-          class="com.epam.rd.tasks.zoo.repository.database.Database"
-          factory-method="connectWithDataBase">
+    <bean id="dataBase"
+          class="com.epam.rd.tasks.zoo.repository.database.Database">
+    </bean>
+
+    <bean id="dataSource"
+    factory-bean="dataBase"
+    factory-method="createDataSource">
         <constructor-arg name="jdbcUrl" value="${database.jdbcUrl}"/>
         <constructor-arg name="username" value="${database.username:postgres}"/>
         <constructor-arg name="password" value="${database.password:1}"/>
     </bean>
 
+    <bean id="connection"
+          factory-bean="dataBase"
+          factory-method="connectWithDataBase">
+        <constructor-arg name="dataSource" ref="dataSource"/>
+    </bean>
+
+        <!-- MyBatisConfig -->
+    <bean id="myBatisUtils"
+          class="com.epam.rd.tasks.zoo.setting.MyBatisUtils">
+    </bean>
+
+    <bean id="sqlSessionFactory"
+    factory-bean="myBatisUtils"
+    factory-method="sqlSessionFactory">
+        <constructor-arg name="way" value="myBatis/myBatisConfig.xml"/>
+    </bean>
+
         <!-- Repositories and mappers-->
+
+    <!-- Animal type repository -->
+    <bean id="animalTypeRepository"
+          class="com.epam.rd.tasks.zoo.repository.animal.AnimalTypeRepository" abstract="true">
+    </bean>
+
+    <bean id="animalTypeRepositoryImpl"
+          class="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepositoryImpl">
+        <constructor-arg ref="sqlSessionFactory"/>
+    </bean>
+
     <!-- Animal house-->
     <bean id="animalHouseMapper"
           scope="singleton"

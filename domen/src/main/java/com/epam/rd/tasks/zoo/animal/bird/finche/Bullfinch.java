@@ -1,5 +1,6 @@
 package com.epam.rd.tasks.zoo.animal.bird.finche;
 
+import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.food.Food;
@@ -7,7 +8,6 @@ import com.epam.rd.tasks.zoo.food.Food;
 import java.util.Set;
 
 public class Bullfinch extends Finche{
-
     private String color;
 
     public Bullfinch() {
@@ -27,10 +27,12 @@ public class Bullfinch extends Finche{
         this.color = color;
     }
 
+
     @Override
     public String toString() {
         return "Bullfinch{" + super.toString() +
                 "color='" + color + '\'' +
                 '}';
+
     }
 }

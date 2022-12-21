@@ -56,7 +56,7 @@ public class AnimalHouseRepositoryImpl extends RepositoryConnection implements A
     }
 
     @Override
-    public AnimalHouse getById(Long id) throws SQLException {
+    public AnimalHouse findById(Long id) throws SQLException {
         //Here we should to add animalTypes which can live in this house
         // add ANIMALS which ALREADY LIVING HERE
         // and general info

@@ -149,7 +149,7 @@ public class CrabRepositoryTest {
                         "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab'")
         ).thenReturn(resultSetMock);
 
-        crabRepository.getById(1L);
+        crabRepository.findById(1L);
 
         Mockito.when(crabMapper.fromRawToCrab(resultSetMock, new Crab())).thenReturn(crab2);
         Mockito.verify(statement,Mockito.times(1)).executeQuery(

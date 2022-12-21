@@ -149,7 +149,7 @@ public class BullfinchRepositoryTest {
                         "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch'")
         ).thenReturn(resultSetMock);
 
-        bullfinchRepository.getById(1L);
+        bullfinchRepository.findById(1L);
 
         Mockito.verify(statement,Mockito.times(1)).executeQuery(
                 "select an.id, an.name, an.describe, an.age, aty.animaltype," +

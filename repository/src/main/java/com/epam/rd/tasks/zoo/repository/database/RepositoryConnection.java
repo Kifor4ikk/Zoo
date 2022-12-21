@@ -1,5 +1,6 @@
 package com.epam.rd.tasks.zoo.repository.database;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.context.annotation.Bean;
 
 import java.sql.Connection;
@@ -13,8 +14,8 @@ public class RepositoryConnection {
     public RepositoryConnection(Connection connection) {
         this.connection = connection;
     }
-
     public Statement state() throws SQLException {
+
         return connection.createStatement();
     }
 }

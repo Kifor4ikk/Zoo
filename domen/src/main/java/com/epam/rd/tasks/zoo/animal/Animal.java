@@ -116,6 +116,9 @@ public abstract class Animal {
         this.date = date;
     }
 
+    public String getTypeOfAnimal(){
+        return this.getClass().getName();
+    }
     @Override
     public String toString() {
         return "Animal{" +

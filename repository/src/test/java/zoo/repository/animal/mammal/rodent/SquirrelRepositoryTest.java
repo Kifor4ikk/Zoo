@@ -150,7 +150,7 @@ public class SquirrelRepositoryTest {
                         "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel'")
         ).thenReturn(resultSetMock);
 
-        squirrelRepository.getById(1L);
+        squirrelRepository.findById(1L);
 
         Mockito.verify(statement,Mockito.times(1)).executeQuery(
                 "select an.id, an.name, an.describe, an.age, aty.animaltype," +

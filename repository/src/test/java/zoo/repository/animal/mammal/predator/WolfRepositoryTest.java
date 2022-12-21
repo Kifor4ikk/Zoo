@@ -150,7 +150,7 @@ public class WolfRepositoryTest {
                         "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf'")
         ).thenReturn(resultSetMock);
 
-        wolfRepository.getById(1L);
+        wolfRepository.findById(1L);
 
         Mockito.verify(statement,Mockito.times(1)).executeQuery(
                 "select an.id, an.name, an.describe, an.age, aty.animaltype," +

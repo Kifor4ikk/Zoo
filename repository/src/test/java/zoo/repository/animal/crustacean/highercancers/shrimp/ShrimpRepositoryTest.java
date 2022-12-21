@@ -142,7 +142,7 @@ public class ShrimpRepositoryTest {
                         "WHERE an.id = " + 1L + " AND an.isDeleted = false AND aty.animalType = 'com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Shrimp'")
         ).thenReturn(resultSetMock);
 
-        shrimpRepository.getById(1L);
+        shrimpRepository.findById(1L);
 
         Mockito.verify(statement,Mockito.times(1)).executeQuery(
                 "select an.id, an.name, an.describe, an.age, aty.animaltype, climatetype.climatetype, zonetype.zonetype, foodtype.foodtype, an.isdeleted , cr.seashell , shrimp.size " +

@@ -10,13 +10,22 @@
 
     <context:property-placeholder location="classpath:properties.properties" />
 
-    <bean id="connection"
-          scope="singleton"
-          class="com.epam.rd.tasks.zoo.repository.database.Database"
-          factory-method="connectWithDataBase">
+    <bean id="dataBase"
+          class="com.epam.rd.tasks.zoo.repository.database.Database">
+    </bean>
+
+    <bean id="dataSource"
+          factory-bean="dataBase"
+          factory-method="createDataSource">
         <constructor-arg name="jdbcUrl" value="${database.test.jdbcUrl}"/>
         <constructor-arg name="username" value="${database.test.username:postgres}"/>
         <constructor-arg name="password" value="${database.test.password:1}"/>
+    </bean>
+
+    <bean id="connection"
+          factory-bean="dataBase"
+          factory-method="connectWithDataBase">
+        <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
 </beans>
