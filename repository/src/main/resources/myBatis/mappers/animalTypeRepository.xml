@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepository">
+
+    <resultMap type="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalType" id="animalTypeRepositoryImpl">
+        <result column="climateZone" property="climateZone"/>
+        <result column="foodType" property="foodType"/>
+        <result column="livingZone" property="livingZone"/>
+    </resultMap>
+
+    <select id="infoAboutAnimalTypeByName" resultMap="animalTypeRepositoryImpl">
+        SELECT
+            climatetype.climatetype as climateZone,
+            zonetype.zonetype as livingZone,
+            foodtype.foodtype as foodType
+        FROM animaltype
+            INNER JOIN climatetypefortypeofanimal ON climatetypefortypeofanimal.id_typeofanimal = animaltype.id
+            INNER JOIN climatetype ON climatetype.id = climatetypefortypeofanimal.id_climatetype
+            INNER JOIN zonetypefortypeanimal ON zonetypefortypeanimal.id_typeofanimal = animaltype.id
+            INNER JOIN zonetype ON zonetype.id = zonetypefortypeanimal.id_zonetype
+            INNER JOIN foodtypefortypeanimal ON foodtypefortypeanimal.id_typeofanimal = animaltype.id
+            INNER JOIN foodtype ON foodtype.id = foodtypefortypeanimal.id_foodtype
+        WHERE animaltype = #{animalType}
+    </select>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.epam.rd.tasks.zoo.repository.animals.AnimalRepository">
+
+        <resultMap type="com.epam.rd.tasks.zoo.animal.Animal" id="animalRepositoryImpl">
+            <result column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="describe" property="describe"/>
+            <result column="age" property="age"/>
+            <result column="isDeleted" property="isDeleted"/>
+        </resultMap>
+
+        <select id="findAll" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal
+        </select>
+
+        <select id="findById" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal WHERE id = #{id}
+        </select>
+
+        <select id="findByName" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal WHERE name = #{name}
+        </select>
+
+        <select id="findByAge" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal WHERE age = #{age}
+        </select>
+
+        <select id="findByAnimalType" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal WHERE id_animaltype = #{id_animaltype}
+        </select>
+
+        <select id="findByIsDeleted" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal WHERE isDeleted = #{isDeleted}
+        </select>
+
+        <select id="findByCreateDate" resultMap="animalRepositoryImpl">
+            SELECT * FROM animal WHERE createDate = #{createDate}
+        </select>
+
+        <insert id="create" >
+            INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+            VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, #{animal.id_animaltype},
+            false, CURRENT_DATE)
+        </insert>
+
+        <update id="update" >
+            UPDATE animal SET name = #{animal.name}, describe = #{animal.describe}, age = #{animal.age},
+            id_animaltype = #{animal.id_animaltype}, isDeleted = #{animal.isDeleted}, createDate = #{animal.createDate}
+            WHERE id = #{animal.id}
+        </update>
+
+        <delete id="delete" >
+            DELETE FROM animal WHERE id = #{id}
+        </delete>
+</mapper>

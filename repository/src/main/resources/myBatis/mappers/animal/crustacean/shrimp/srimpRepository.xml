@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.epam.rd.tasks.zoo.repository.animals.crustacean.highcancer.shrimp.ShrimpRepository">
+
+    <resultMap id="shrimpResultMap" type="com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Shrimp">
+        <result column="name" property="name"/>
+        <result column="describe" property="describe"/>
+        <result column="age" property="age"/>
+        <result column="isDeleted" property="isDeleted"/>
+        <result column="seashell" property="seashell"/>
+        <result column="size" property="size"/>
+    </resultMap>
+
+    <insert id="create" >
+        DO $$
+        DECLARE animalId NUMERIC;
+        BEGIN
+        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+        VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
+        false, CURRENT_DATE)
+        RETURNING id INTO animalId;
+        INSERT INTO bird (id, wings) VALUES (animalId, #{wings});
+        INSERT INTO bullfinch(id, color) VALUES (animalId, #{color});
+        END $$;
+    </insert>
+
+    <select id="findById" resultMap="shrimpResultMap">
+        SELECT * FROM ANIMAL
+        INNER JOIN crustacean ON crustacean.id = ANIMAL.id
+        INNER JOIN shrimp ON shrimp.id = ANIMAL.id
+        WHERE ANIMAL.id = #{id}
+    </select>
+
+    <update id = "update">
+        UPDATE shrimp SET size = #{animal.size} WHERE ID = #{animal.id};
+        UPDATE crustacean SET seashell = #{animal.seashell} WHERE ID = #{animal.id};
+        UPDATE animal SET name = #{animal.name} ,describe = #{animal.describe}, age = #{animal.age} WHERE ID = #{animal.id} AND isdeleted = #{animal.isDeleted};
+    </update>
+
+    <update id = "setDeleteStatus">
+        UPDATE animal SET isdeleted = #{status} WHERE ID = #{id};
+    </update>
+
+    <delete id="hardDelete">
+        DELETE FROM shrimp WHERE id = #{id};
+        DELETE FROM crustacean WHERE id = #{id};
+        DELETE FROM animal WHERE id = #{id};
+    </delete>
+</mapper>

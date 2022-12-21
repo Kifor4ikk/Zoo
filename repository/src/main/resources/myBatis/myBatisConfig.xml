@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://localhost:2000/zoo"/>
+                <property name="username" value="postgres"/>
+                <property name="password" value="1"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource ="myBatis/mappers/animalTypeRepository.xml"/>
+        <mapper resource ="myBatis/mappers/animal/animalRepository.xml"/>
+        <mapper resource ="myBatis/mappers/animal/bird/finch/bullfinchRepository.xml"/>
+    </mappers>
+
+</configuration>
