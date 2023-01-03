@@ -14,16 +14,15 @@
     </resultMap>
 
     <insert id="create" >
-        DO $$
-            DECLARE animalId NUMERIC;
-        BEGIN
-            INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
-            VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
-        false, CURRENT_DATE)
-        RETURNING id INTO animalId;
-            INSERT INTO bird (id, wings) VALUES (animalId, #{wings});
-            INSERT INTO bullfinch(id, color) VALUES (animalId, #{color});
-        END $$;
+        BEGIN work;
+        LOCK TABLE animal;
+        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+        VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
+        false, CURRENT_DATE);
+
+        INSERT INTO bird (id, wings) VALUES ((select MAX(id) from animal), #{animal.wings});
+        INSERT INTO bullFinch(id,color) VALUES ((select MAX(id) from animal), #{animal.color});
+        COMMIT work;
     </insert>
 
     <select id="findById" resultMap="bullfinchResultMap">

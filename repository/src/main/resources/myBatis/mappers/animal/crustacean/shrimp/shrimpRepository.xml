@@ -14,16 +14,14 @@
     </resultMap>
 
     <insert id="create" >
-        DO $$
-        DECLARE animalId NUMERIC;
-        BEGIN
+        BEGIN work;
+        LOCK TABLE animal;
         INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
         VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
-        false, CURRENT_DATE)
-        RETURNING id INTO animalId;
-        INSERT INTO bird (id, wings) VALUES (animalId, #{wings});
-        INSERT INTO bullfinch(id, color) VALUES (animalId, #{color});
-        END $$;
+        false, CURRENT_DATE);
+        INSERT INTO bird (id, seashell) VALUES ((SELECT MAX(id) FROM animal), #{seashell});
+        INSERT INTO bullfinch(id, size) VALUES ((SELECT MAX(id) FROM animal), #{size});
+        COMMIT work;
     </insert>
 
     <select id="findById" resultMap="shrimpResultMap">
