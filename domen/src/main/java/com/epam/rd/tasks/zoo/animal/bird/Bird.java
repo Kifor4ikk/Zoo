@@ -27,4 +27,11 @@ public abstract class Bird extends Animal {
     public void setWings(String wings) {
         this.wings = wings;
     }
+
+    @Override
+    public String toString() {
+        return "Bird{" + super.toString() +
+                "wings='" + wings + '\'' +
+                '}';
+    }
 }

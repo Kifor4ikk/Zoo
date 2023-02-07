@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.epam.rd.tasks.zoo.repository.animals.bird.BullfinchRepository">
+<mapper namespace="com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch.BullfinchRepository">
 
-    <resultMap id="bullfinchResultMap" type="com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch">
+    <resultMap id="bullfinchResultMap" type="com.epam.rd.tasks.zoo.bird.finche.Bullfinch">
         <result column="name" property="name"/>
         <result column="describe" property="describe"/>
         <result column="age" property="age"/>
@@ -13,36 +13,28 @@
         <result column="color" property="color"/>
     </resultMap>
 
-    <insert id="create" >
-        BEGIN work;
-        LOCK TABLE animal;
-        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
-        VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
-        false, CURRENT_DATE);
-
-        INSERT INTO bird (id, wings) VALUES ((select MAX(id) from animal), #{animal.wings});
-        INSERT INTO bullFinch(id,color) VALUES ((select MAX(id) from animal), #{animal.color});
-        COMMIT work;
+    <insert id="createBullfinch">
+        INSERT INTO bullfinch (id, color) VALUES (#{id}, #{color})
     </insert>
 
-    <select id="findById" resultMap="bullfinchResultMap">
+    <select id="findBullfinchById" resultMap="bullfinchResultMap">
         SELECT * FROM ANIMAL
-        INNER JOIN bird ON bird.id = ANIMAL.id
+        INNER JOIN bird ON bird.id = id
         INNER JOIN bullfinch ON bullfinch.id = bird.id
-        WHERE animal.id = #{id}
+        WHERE id = #{id}
     </select>
 
-    <update id = "update">
-        UPDATE bullfinch SET color = #{animal.color} WHERE ID = #{animal.id};
-        UPDATE bird SET wings = #{animal.wings} WHERE ID = #{animal.id};
-        UPDATE animal SET name = #{animal.name} ,describe = #{animal.describe}, age = #{animal.age} WHERE ID = #{animal.id} AND isdeleted = #{animal.isDeleted};
+    <update id = "updateBullfinch">
+        UPDATE bullfinch SET color = #{color} WHERE ID = #{id};
+        UPDATE bird SET wings = #{wings} WHERE ID = #{id};
+        UPDATE animal SET name = #{name} ,describe = #{describe}, age = #{age} WHERE ID = #{id} AND isdeleted = #{isDeleted};
     </update>
 
-    <update id = "setDeleteStatus">
+    <update id = "setDeleteStatusBullfinch">
         UPDATE animal SET isdeleted = #{status} WHERE ID = #{id};
     </update>
 
-    <delete id="hardDelete">
+    <delete id="hardDeleteBullfinch">
         DELETE FROM bullfinch WHERE id = #{id};
         DELETE FROM bird WHERE id = #{id};
         DELETE FROM animal WHERE id = #{id};

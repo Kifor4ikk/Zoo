@@ -21,6 +21,7 @@ public abstract class Animal {
     private Date date;
     private boolean isDeleted = false;
 
+    private String typeOfAnimal = null;
     public Animal(){}
 
     public Animal(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType) {
@@ -30,6 +31,7 @@ public abstract class Animal {
         this.livingZone = livingZone;
         this.climateZone = climateZone;
         this.foodType = foodType;
+        this.typeOfAnimal = this.getClass().getName();
     }
 
     public Animal(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, boolean isDeleted) {
@@ -108,6 +110,14 @@ public abstract class Animal {
         isDeleted = deleted;
     }
 
+    public String getTypeOfAnimal() {
+        return typeOfAnimal;
+    }
+
+    public void setTypeOfAnimal(String typeOfAnimal) {
+        this.typeOfAnimal = typeOfAnimal;
+    }
+
     public Date getDate() {
         return date;
     }
@@ -116,9 +126,6 @@ public abstract class Animal {
         this.date = date;
     }
 
-    public String getTypeOfAnimal(){
-        return this.getClass().getName();
-    }
     @Override
     public String toString() {
         return "Animal{" +

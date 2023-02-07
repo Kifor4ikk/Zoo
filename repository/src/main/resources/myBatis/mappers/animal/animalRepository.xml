@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.epam.rd.tasks.zoo.repository.animals.AnimalRepository">
+
+    <resultMap id="animalResultMap" type="com.epam.rd.tasks.zoo.animal.Animal">
+        <result column="name" property="name"/>
+        <result column="describe" property="describe"/>
+        <result column="age" property="age"/>
+        <result column="isDeleted" property="isDeleted"/>
+        <result column="typeOfAnimal" property="typeOfAnimal"/>
+    </resultMap>
+
+    <insert id="createAnimal" >
+        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+        VALUES (#{name}, #{describe}, #{age}, (SELECT id FROM animalType WHERE animalType.animalType = #{typeOfAnimal}),
+        false, CURRENT_DATE) RETURNING id;
+        <selectKey order="AFTER" keyProperty="id" resultType="long">
+            SELECT currval('animal_id_seq')
+        </selectKey>
+    </insert>
+
+</mapper>

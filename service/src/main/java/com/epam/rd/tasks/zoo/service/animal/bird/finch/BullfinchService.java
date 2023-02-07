@@ -2,28 +2,39 @@ package com.epam.rd.tasks.zoo.service.animal.bird.finch;
 
 import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;
 import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
+import com.epam.rd.tasks.zoo.repository.animals.AnimalRepositoryImpl;
 import com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepositoryImpl;
-import com.epam.rd.tasks.zoo.repository.animals.bird.BullfinchRepository;
+import com.epam.rd.tasks.zoo.repository.animals.bird.BirdRepositoryImpl;
+import com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch.BullfinchRepositoryImpl;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.sql.SQLException;
 
 public class BullfinchService {
 
-    private BullfinchRepository bullfinchRepository;
+    private BullfinchRepositoryImpl bullfinchRepository;
+    private BirdRepositoryImpl birdRepository;
+
+    private AnimalRepositoryImpl animalRepository;
     private AnimalTypeRepositoryImpl animalTypeRepository;
 
-    public BullfinchService(SqlSessionFactory session, AnimalTypeRepositoryImpl animalTypeRepository) {
-        this.bullfinchRepository = session.openSession().getMapper(BullfinchRepository.class);
+    private SqlSession sqlSession;
+
+    public BullfinchService(BullfinchRepositoryImpl bullfinchRepository, BirdRepositoryImpl birdRepository, AnimalRepositoryImpl animalRepository, AnimalTypeRepositoryImpl animalTypeRepository, SqlSession sqlSession) {
+        this.bullfinchRepository = bullfinchRepository;
+        this.birdRepository = birdRepository;
+        this.animalRepository = animalRepository;
         this.animalTypeRepository = animalTypeRepository;
+        this.sqlSession = sqlSession;
     }
 
     public boolean create(Bullfinch bullfinch, AnimalHouse animalHouse) throws SQLException, ClassNotFoundException {
-        bullfinchRepository.create(bullfinch, animalHouse);
+        animalRepository.create(bullfinch, animalHouse);
+        birdRepository.create(bullfinch, animalHouse);
+        bullfinchRepository.create(bullfinch,animalHouse);
+        sqlSession.commit();
         return true;
     }
-
     public Bullfinch getById(Long id) throws SQLException, ClassNotFoundException {
         Bullfinch bullfinch = bullfinchRepository.findById(id);
         if(bullfinch == null)

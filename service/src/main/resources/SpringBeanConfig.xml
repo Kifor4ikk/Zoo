@@ -38,20 +38,43 @@
         <constructor-arg name="way" value="myBatis/myBatisConfig.xml"/>
     </bean>
 
-        <!-- Repositories and mappers-->
-    <!-- Mappers -->
-    <bean id="animalTypeRepository"
+    <bean id="sqlSession"
+          factory-bean="dataBase"
+          factory-method="getSession">
+        <constructor-arg ref="sqlSessionFactory"/>
+    </bean>
+        <!-- general animal -->
+        <bean id="animalTypeRepository"
             class="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepositoryImpl">
-        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
     </bean>
 
-    <!-- Services -->
+    <bean id="animalRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.AnimalRepositoryImpl">
+        <constructor-arg name="session" ref="sqlSession"/>
+    </bean>
+            <!-- Bird -->
+    <bean id="birdRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.bird.BirdRepositoryImpl">
+        <constructor-arg name="session" ref="sqlSession"/>
+    </bean>
+
+        <!-- Bullfinch-->
+    <bean id="bullfinchRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch.BullfinchRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
 
     <bean id="bullfinchService"
+          scope="prototype"
           class="com.epam.rd.tasks.zoo.service.animal.bird.finch.BullfinchService">
-        <constructor-arg name="session" ref="sqlSessionFactory"/>
+        <constructor-arg name="bullfinchRepository" ref="bullfinchRepository"/>
+        <constructor-arg name="birdRepository" ref="birdRepository"/>
         <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="animalRepository" ref="animalRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
     </bean>
+
 </beans>
 
 

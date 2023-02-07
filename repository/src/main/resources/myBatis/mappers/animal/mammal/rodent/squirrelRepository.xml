@@ -14,14 +14,7 @@
     </resultMap>
 
     <insert id="create" >
-        BEGIN work;
-        LOCK TABLE animal;
-        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
-        VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
-        false, CURRENT_DATE);
-        INSERT INTO mammal (id, tail) VALUES ((SELECT MAX(id) FROM animal), #{tail});
-        INSERT INTO squirrel(id, fur) VALUES ((SELECT MAX(id) FROM animal), #{fur});
-        COMMIT work;
+        INSERT INTO squirrel(id, fur) VALUES (#{animal.id}, #{animal.fur});
     </insert>
 
     <select id="findById" resultMap="squirrelResultMap">

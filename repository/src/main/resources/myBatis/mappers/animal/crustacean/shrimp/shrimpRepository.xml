@@ -14,14 +14,7 @@
     </resultMap>
 
     <insert id="create" >
-        BEGIN work;
-        LOCK TABLE animal;
-        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
-        VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
-        false, CURRENT_DATE);
-        INSERT INTO bird (id, seashell) VALUES ((SELECT MAX(id) FROM animal), #{seashell});
-        INSERT INTO bullfinch(id, size) VALUES ((SELECT MAX(id) FROM animal), #{size});
-        COMMIT work;
+        INSERT INTO shrimp(id, size) VALUES (#{animal.id}, #{animal.size});
     </insert>
 
     <select id="findById" resultMap="shrimpResultMap">

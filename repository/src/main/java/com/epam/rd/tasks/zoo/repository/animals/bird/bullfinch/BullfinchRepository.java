@@ -1,4 +1,4 @@
-package com.epam.rd.tasks.zoo.repository.animals.bird;
+package com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch;
 
 import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch;

@@ -9,13 +9,14 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 public class AnimalTypeRepositoryImpl {
 
-    private final SqlSessionFactory sqlSessionFactory;
-    public AnimalTypeRepositoryImpl(SqlSessionFactory sqlSessionFactory) {
-        this.sqlSessionFactory = sqlSessionFactory;
+    private final SqlSession session;
+
+    public AnimalTypeRepositoryImpl(SqlSession sqlSession) {
+        this.session = sqlSession;
     }
+
     public <T extends Animal> T putInfoAboutTypeOfAnimalByTypeOfAnimal(T animal) throws ClassNotFoundException {
 
-        SqlSession session = sqlSessionFactory.openSession();
         for(AnimalType animalType : session.getMapper(AnimalTypeRepository.class).infoAboutAnimalTypeByName(animal.getClass().getName())){
             animal.getClimateZone().add(ClimateZone.valueOf(animalType.getClimateZone()));
             animal.getLivingZone().add((Class<? extends AnimalHouse>) Class.forName(animalType.getLivingZone()));

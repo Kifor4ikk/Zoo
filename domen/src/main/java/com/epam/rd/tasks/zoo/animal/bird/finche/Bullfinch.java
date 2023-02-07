@@ -7,7 +7,7 @@ import com.epam.rd.tasks.zoo.food.Food;
 
 import java.util.Set;
 
-public class Bullfinch extends Finche{
+public class Bullfinch extends Finche {
     private String color;
 
     public Bullfinch() {
