@@ -6,6 +6,7 @@
 
     <settings>
         <setting name="jdbcTypeForNull" value="NULL" />
+
     </settings>
 
     <environments default="development">
@@ -24,10 +25,8 @@
         <mapper resource ="myBatis/mappers/animal/animalRepository.xml"/>
         <mapper resource ="myBatis/mappers/animalTypeRepository.xml"/>
 
-        <mapper resource ="myBatis/mappers/animal/bird/birdRepository.xml"/>
         <mapper resource ="myBatis/mappers/animal/bird/finch/bullfinchRepository.xml"/>
 
-        <mapper resource ="myBatis/mappers/animal/crustacean/crustaceanRepository.xml"/>
         <mapper resource ="myBatis/mappers/animal/crustacean/crab/crabRepository.xml"/>
         <mapper resource ="myBatis/mappers/animal/crustacean/shrimp/shrimpRepository.xml"/>
 

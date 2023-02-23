@@ -4,7 +4,7 @@
 
 <mapper namespace="com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch.BullfinchRepository">
 
-    <resultMap id="bullfinchResultMap" type="com.epam.rd.tasks.zoo.bird.finche.Bullfinch">
+    <resultMap id="bullfinchResultMap" type="com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch">
         <result column="name" property="name"/>
         <result column="describe" property="describe"/>
         <result column="age" property="age"/>
@@ -14,24 +14,32 @@
     </resultMap>
 
     <insert id="createBullfinch">
-        INSERT INTO bullfinch (id, color) VALUES (#{id}, #{color})
+        WITH insertedAnimal AS (
+            INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+            VALUES (#{name}, #{describe}, #{age}, (SELECT id FROM animalType WHERE animalType.animalType = #{typeOfAnimal}), false, CURRENT_DATE)
+        RETURNING id
+        ),
+        insertedBird AS (
+            INSERT INTO bird (id, wings) SELECT insertedAnimal.id, #{wings} FROM insertedAnimal
+        )
+        INSERT INTO bullfinch (id, color) SELECT insertedAnimal.id, #{color} FROM insertedAnimal
     </insert>
 
-    <select id="findBullfinchById" resultMap="bullfinchResultMap">
+    <select id="findByIdBullfinch" resultMap="bullfinchResultMap">
         SELECT * FROM ANIMAL
-        INNER JOIN bird ON bird.id = id
+        INNER JOIN bird ON bird.id = animal.id
         INNER JOIN bullfinch ON bullfinch.id = bird.id
-        WHERE id = #{id}
+        WHERE animal.id = #{id}
     </select>
 
     <update id = "updateBullfinch">
-        UPDATE bullfinch SET color = #{color} WHERE ID = #{id};
+        UPDATE animal SET name = #{name}, describe = #{describe}, age = #{age} WHERE ID = #{id} AND isdeleted = #{isDeleted};
         UPDATE bird SET wings = #{wings} WHERE ID = #{id};
-        UPDATE animal SET name = #{name} ,describe = #{describe}, age = #{age} WHERE ID = #{id} AND isdeleted = #{isDeleted};
+        UPDATE bullfinch SET color = #{color} WHERE ID = #{id};
     </update>
 
     <update id = "setDeleteStatusBullfinch">
-        UPDATE animal SET isdeleted = #{status} WHERE ID = #{id};
+        UPDATE animal SET isdeleted = #{isDeleted} WHERE ID = #{id};
     </update>
 
     <delete id="hardDeleteBullfinch">

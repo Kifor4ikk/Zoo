@@ -13,28 +13,36 @@
         <result column="size" property="size"/>
     </resultMap>
 
-    <insert id="create" >
-        INSERT INTO shrimp(id, size) VALUES (#{animal.id}, #{animal.size});
+    <insert id="createShrimp" >
+        WITH insertedAnimal AS (
+        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+        VALUES (#{name}, #{describe}, #{age}, (SELECT id FROM animalType WHERE animalType.animalType = #{typeOfAnimal}), false, CURRENT_DATE)
+        RETURNING id
+        ),
+        insertedShrimp AS (
+        INSERT INTO crustacean (id, seashell) SELECT insertedAnimal.id, #{seashell} FROM insertedAnimal
+        )
+        INSERT INTO shrimp (id, size) SELECT insertedAnimal.id, #{size} FROM insertedAnimal
     </insert>
 
-    <select id="findById" resultMap="shrimpResultMap">
+    <select id="findByIdShrimp" resultMap="shrimpResultMap">
         SELECT * FROM ANIMAL
         INNER JOIN crustacean ON crustacean.id = ANIMAL.id
         INNER JOIN shrimp ON shrimp.id = ANIMAL.id
         WHERE ANIMAL.id = #{id}
     </select>
 
-    <update id = "update">
-        UPDATE shrimp SET size = #{animal.size} WHERE ID = #{animal.id};
-        UPDATE crustacean SET seashell = #{animal.seashell} WHERE ID = #{animal.id};
-        UPDATE animal SET name = #{animal.name} ,describe = #{animal.describe}, age = #{animal.age} WHERE ID = #{animal.id} AND isdeleted = #{animal.isDeleted};
+    <update id = "updateShrimp">
+        UPDATE shrimp SET size = #{size} WHERE ID = #{id};
+        UPDATE crustacean SET seashell = #{seashell} WHERE ID = #{id};
+        UPDATE animal SET name = #{name} ,describe = #{describe}, age = #{age} WHERE ID = #{id} AND isdeleted = #{isDeleted};
     </update>
 
-    <update id = "setDeleteStatus">
-        UPDATE animal SET isdeleted = #{status} WHERE ID = #{id};
+    <update id = "setDeleteStatusShrimp">
+        UPDATE animal SET isdeleted = #{isDeleted} WHERE ID = #{id};
     </update>
 
-    <delete id="hardDelete">
+    <delete id="hardDeleteShrimp">
         DELETE FROM shrimp WHERE id = #{id};
         DELETE FROM crustacean WHERE id = #{id};
         DELETE FROM animal WHERE id = #{id};

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class Database {
 
     public DataSource createDataSource(String jdbcUrl, String username, String password){
+        System.out.println(jdbcUrl + " | " + username + " | " + password);
        return new DriverManagerDataSource(jdbcUrl,username,password);
     }
 

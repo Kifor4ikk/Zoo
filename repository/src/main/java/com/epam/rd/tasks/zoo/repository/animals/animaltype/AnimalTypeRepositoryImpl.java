@@ -7,7 +7,14 @@ import com.epam.rd.tasks.zoo.food.Food;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-public class AnimalTypeRepositoryImpl {
+import java.sql.ResultSet;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class AnimalTypeRepositoryImpl implements AnimalTypeRepository {
 
     private final SqlSession session;
 
@@ -17,12 +24,32 @@ public class AnimalTypeRepositoryImpl {
 
     public <T extends Animal> T putInfoAboutTypeOfAnimalByTypeOfAnimal(T animal) throws ClassNotFoundException {
 
-        for(AnimalType animalType : session.getMapper(AnimalTypeRepository.class).infoAboutAnimalTypeByName(animal.getClass().getName())){
-            animal.getClimateZone().add(ClimateZone.valueOf(animalType.getClimateZone()));
-            animal.getLivingZone().add((Class<? extends AnimalHouse>) Class.forName(animalType.getLivingZone()));
-            animal.getFoodType().add((Class<? extends Food>) Class.forName(animalType.getFoodType()));
+       List<AnimalType> animalTypes = session.selectList("infoAboutAnimalTypeByType", animal.getClass().getName());
+
+        for(AnimalType animalTypeObject : animalTypes){
+            animal.getClimateZone().add(ClimateZone.valueOf(animalTypeObject.getClimateZone()));
+            animal.getLivingZone().add((Class<? extends AnimalHouse>) Class.forName(animalTypeObject.getLivingZone()));
+            animal.getFoodType().add((Class<? extends Food>) Class.forName(animalTypeObject.getFoodType()));
         }
-        session.close();
+        session.commit();
         return animal;
+    }
+
+    public List<AnimalIdAndType> getAnimalsIdsWithTypeOfAnimal (Integer page, Integer size) {
+        List<AnimalIdAndType> allAnimals = new ArrayList<>();
+        if(page == null) page = 0;
+        if(size == null) size = 10;
+        allAnimals.add(session.selectOne("com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepository.getIdAndTypeofAnimalMap", 10L));
+        return allAnimals;
+    }
+
+    @Override
+    public List<AnimalType> infoAboutAnimalTypeByType(String type) {
+        return null;
+    }
+
+    @Override
+    public Map<Long, String> getIdAndTypeofAnimalMap() {
+        return null;
     }
 }

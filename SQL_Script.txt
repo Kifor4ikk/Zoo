@@ -221,7 +221,10 @@
 
 	INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.mammal.predator.Lion');
     INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Crab');
+    INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.crustacean.highercancers.Shrimp');
     INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.bird.finche.Bullfinch');
+    INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.mammal.rodent.Squirrel');
+    INSERT INTO animaltype (animaltype) VALUES ('com.epam.rd.tasks.zoo.animal.mammal.predator.Wolf');
 
     INSERT INTO climateType (climateType) VALUES ('MODERATE');
     INSERT INTO climateType (climateType) VALUES ('SUBANTARCTIC');
@@ -242,15 +245,34 @@
     INSERT INTO climatetypefortypeofanimal VALUES (1,4);
     INSERT INTO climatetypefortypeofanimal VALUES (2,2);
     INSERT INTO climatetypefortypeofanimal VALUES (3,3);
+    INSERT INTO climatetypefortypeofanimal VALUES (4,2);
+    INSERT INTO climatetypefortypeofanimal VALUES (5,2);
+    INSERT INTO climatetypefortypeofanimal VALUES (5,3);
+    INSERT INTO climatetypefortypeofanimal VALUES (5,1);
+    INSERT INTO climatetypefortypeofanimal VALUES (5,4);
+    INSERT INTO climatetypefortypeofanimal VALUES (6,2);
+    INSERT INTO climatetypefortypeofanimal VALUES (6,3);
+
 
     INSERT INTO foodtypefortypeanimal VALUES (1,1);
     INSERT INTO foodtypefortypeanimal VALUES (1,2);
     INSERT INTO foodtypefortypeanimal VALUES (1,3);
     INSERT INTO foodtypefortypeanimal VALUES (2,2);
     INSERT INTO foodtypefortypeanimal VALUES (3,3);
+    INSERT INTO foodtypefortypeanimal VALUES (4,3);
+    INSERT INTO foodtypefortypeanimal VALUES (5,3);
+    INSERT INTO foodtypefortypeanimal VALUES (5,2);
+    INSERT INTO foodtypefortypeanimal VALUES (5,1);
+    INSERT INTO foodtypefortypeanimal VALUES (6,1);
+    INSERT INTO foodtypefortypeanimal VALUES (6,2);
+    INSERT INTO foodtypefortypeanimal VALUES (6,3);
 
     INSERT INTO zonetypefortypeanimal VALUES (1,1);
     INSERT INTO zonetypefortypeanimal VALUES (1,2);
     INSERT INTO zonetypefortypeanimal VALUES (1,3);
     INSERT INTO zonetypefortypeanimal VALUES (2,2);
     INSERT INTO zonetypefortypeanimal VALUES (3,3);
+    INSERT INTO zonetypefortypeanimal VALUES (4,3);
+    INSERT INTO zonetypefortypeanimal VALUES (5,2);
+    INSERT INTO zonetypefortypeanimal VALUES (6,2);
+    INSERT INTO zonetypefortypeanimal VALUES (6,3);

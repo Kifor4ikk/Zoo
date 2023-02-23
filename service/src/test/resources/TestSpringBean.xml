@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
@@ -28,6 +27,98 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
+    <!-- MyBatisConfig -->
+    <bean id="myBatisUtils"
+          class="com.epam.rd.tasks.zoo.setting.MyBatisUtils">
+    </bean>
+
+    <bean id="sqlSessionFactory"
+          factory-bean="myBatisUtils"
+          factory-method="sqlSessionFactory">
+        <constructor-arg name="way" value="TestMyBatisConfig.xml"/>
+    </bean>
+
+    <bean id="sqlSession"
+          factory-bean="dataBase"
+          factory-method="getSession">
+        <constructor-arg ref="sqlSessionFactory"/>
+    </bean>
+    <!-- general animal -->
+    <bean id="animalTypeRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Bullfinch-->
+    <bean id="bullfinchRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch.BullfinchRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="bullfinchService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.bird.finch.BullfinchService">
+        <constructor-arg name="bullfinchRepository" ref="bullfinchRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+
+    <!-- Crab -->
+    <bean id="crabRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.crustacean.highcancer.crab.CrabRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="crabService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.crustacean.highcancer.CrabService">
+        <constructor-arg name="crabRepository" ref="crabRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Shrimp -->
+    <bean id="shrimpRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.crustacean.highcancer.shrimp.ShrimpRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="shrimpService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.crustacean.highcancer.ShrimpService">
+        <constructor-arg name="shrimpRepository" ref="shrimpRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Wolf -->
+    <bean id="wolfRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.mammal.predator.WolfRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="wolfService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.mammal.predator.WolfService">
+        <constructor-arg name="wolfRepository" ref="wolfRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Squirrel -->
+    <bean id="squirrelRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.mammal.rodent.SquirrelRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="squirrelService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.mammal.rodent.SquirrelService">
+        <constructor-arg name="squirrelRepository" ref="squirrelRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
 </beans>
 
 

@@ -13,28 +13,36 @@
         <result column="fur" property="fur"/>
     </resultMap>
 
-    <insert id="create" >
-        INSERT INTO squirrel(id, fur) VALUES (#{animal.id}, #{animal.fur});
+    <insert id="createSquirrel" >
+        WITH insertedAnimal AS (
+        INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
+        VALUES (#{name}, #{describe}, #{age}, (SELECT id FROM animalType WHERE animalType.animalType = #{typeOfAnimal}), false, CURRENT_DATE)
+        RETURNING id
+        ),
+        insertedMammal AS (
+        INSERT INTO mammal (id, tail) SELECT insertedAnimal.id, #{tail} FROM insertedAnimal
+        )
+        INSERT INTO squirrel (id, fur) SELECT insertedAnimal.id, #{fur} FROM insertedAnimal
     </insert>
 
-    <select id="findById" resultMap="squirrelResultMap">
+    <select id="findByIdSquirrel" resultMap="squirrelResultMap">
         SELECT * FROM ANIMAL
         INNER JOIN mammal ON mammal.id = ANIMAL.id
         INNER JOIN squirrel ON squirrel.id = ANIMAL.id
         WHERE ANIMAL.id = #{id}
     </select>
 
-    <update id = "update">
-        UPDATE squirrel SET fur = #{animal.fur} WHERE ID = #{animal.id};
-        UPDATE mammal SET tail = #{animal.tail} WHERE ID = #{animal.id};
-        UPDATE animal SET name = #{animal.name} ,describe = #{animal.describe}, age = #{animal.age} WHERE ID = #{animal.id} AND isdeleted = #{animal.isDeleted};
+    <update id = "updateSquirrel">
+        UPDATE squirrel SET fur = #{fur} WHERE ID = #{id};
+        UPDATE mammal SET tail = #{tail} WHERE ID = #{id};
+        UPDATE animal SET name = #{name} ,describe = #{describe}, age = #{age} WHERE ID = #{id} AND isdeleted = #{isDeleted};
     </update>
 
-    <update id = "setDeleteStatus">
-        UPDATE animal SET isdeleted = #{status} WHERE ID = #{id};
+    <update id = "setDeleteStatusSquirrel">
+        UPDATE animal SET isdeleted = #{isDeleted} WHERE ID = #{id};
     </update>
 
-    <delete id="hardDelete">
+    <delete id="hardDeleteSquirrel">
         DELETE FROM squirrel WHERE id = #{id};
         DELETE FROM mammal WHERE id = #{id};
         DELETE FROM animal WHERE id = #{id};

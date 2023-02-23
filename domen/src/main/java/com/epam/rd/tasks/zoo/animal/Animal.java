@@ -7,6 +7,7 @@ import com.epam.rd.tasks.zoo.food.Food;
 
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class Animal {
@@ -141,4 +142,16 @@ public abstract class Animal {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return age == animal.age && Objects.equals(id, animal.id) && Objects.equals(name, animal.name) && Objects.equals(describe, animal.describe) && Objects.equals(livingZone, animal.livingZone) && Objects.equals(climateZone, animal.climateZone) && Objects.equals(foodType, animal.foodType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, describe, age, livingZone, climateZone, foodType);
+    }
 }

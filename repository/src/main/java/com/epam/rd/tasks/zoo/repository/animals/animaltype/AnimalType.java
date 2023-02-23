@@ -5,7 +5,6 @@ public class AnimalType {
     private String foodType;
     private String livingZone;
 
-
     public String getClimateZone() {
         return climateZone;
     }

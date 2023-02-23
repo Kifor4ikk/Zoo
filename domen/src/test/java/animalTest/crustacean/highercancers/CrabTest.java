@@ -17,7 +17,7 @@ import java.util.Set;
 @Test
 public class CrabTest {
     Crab crab = new Crab("AnimalName","TestDescribe12",1, Set.of(Terrarium.class),
-            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class),"Seashell medium");
+            Set.of(ClimateZone.TROPICAL), Set.of(Bugs.class),"Seashell medium", "GoodTaste");
 
     public void nameTest(){
         Assert.assertEquals(crab.getName(), "AnimalName");

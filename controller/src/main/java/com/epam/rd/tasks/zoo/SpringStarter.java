@@ -6,6 +6,7 @@ import com.epam.rd.tasks.zoo.animalhouse.zoneType.Field;
 import com.epam.rd.tasks.zoo.animalhouse.zoneType.Terrarium;
 import com.epam.rd.tasks.zoo.food.Bugs;
 import com.epam.rd.tasks.zoo.repository.animals.AnimalRepositoryImpl;
+import com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepositoryImpl;
 import com.epam.rd.tasks.zoo.service.animal.bird.finch.BullfinchService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,14 +21,17 @@ import java.util.Set;
 public class SpringStarter {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException, InterruptedException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeanConfig.xml");
 
-        Bullfinch bullfinch = new Bullfinch("You are my test now", LocalTime.now().toString(), 1, Set.of(Terrarium.class),
-                Set.of(ClimateZone.SUBTROPICAL), Set.of(Bugs.class), "You are my wings now", "Yes indeed");
+        ApplicationContext context = new ClassPathXmlApplicationContext( "SpringBeanConfig.xml");
+        AnimalTypeRepositoryImpl animalRepository = context.getBean(AnimalTypeRepositoryImpl.class);
+
 
         BullfinchService bullfinchService = context.getBean(BullfinchService.class);
-
-        bullfinchService.create(bullfinch, new Field());
         System.out.println(bullfinchService.getById(2L));
+
+
+        System.out.println(animalRepository.getAnimalsIdsWithTypeOfAnimal(0, 10));
+
+
     }
 }

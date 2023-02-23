@@ -22,7 +22,7 @@ public class BullfinchRepositoryImpl implements BullfinchRepository {
 
     @Override
     public Bullfinch findById(Long aLong) throws SQLException, ClassNotFoundException {
-        return session.selectOne("findBullfinchById", aLong);
+        return session.selectOne("findByIdBullfinch", aLong);
     }
 
     @Override
@@ -32,10 +32,10 @@ public class BullfinchRepositoryImpl implements BullfinchRepository {
     }
 
     @Override
-    public void setDeleteStatus(Long aLong, boolean status) throws SQLException {
+    public void setDeleteStatus(Long aLong, boolean isDeleted) throws SQLException {
         Bullfinch bullfinch = new Bullfinch();
         bullfinch.setId(aLong);
-        bullfinch.setDeleted(status);
+        bullfinch.setDeleted(isDeleted);
         session.update("setDeleteStatusBullfinch", bullfinch);
         session.commit();
     }

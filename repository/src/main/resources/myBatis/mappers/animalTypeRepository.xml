@@ -4,13 +4,13 @@
 
 <mapper namespace="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalTypeRepository">
 
-    <resultMap type="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalType" id="animalTypeRepositoryImpl">
+    <resultMap id="animalTypeRepositoryMap" type="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalType" >
         <result column="climateZone" property="climateZone"/>
         <result column="foodType" property="foodType"/>
         <result column="livingZone" property="livingZone"/>
     </resultMap>
 
-    <select id="infoAboutAnimalTypeByName" resultMap="animalTypeRepositoryImpl">
+    <select id="infoAboutAnimalTypeByType" resultMap="animalTypeRepositoryMap" parameterType ="java.lang.String">
         SELECT
             climatetype.climatetype as climateZone,
             zonetype.zonetype as livingZone,
@@ -23,5 +23,16 @@
             INNER JOIN foodtypefortypeanimal ON foodtypefortypeanimal.id_typeofanimal = animaltype.id
             INNER JOIN foodtype ON foodtype.id = foodtypefortypeanimal.id_foodtype
         WHERE animaltype = #{animalType}
+    </select>
+
+    <resultMap id="idAndTypeMap" type="com.epam.rd.tasks.zoo.repository.animals.animaltype.AnimalIdAndType">
+        <result column="id" property="id"/>
+        <result column="animalType" property="type"/>
+    </resultMap>
+
+    <select id="getIdAndTypeofAnimalMap" resultMap="idAndTypeMap">
+        select animal.id, animalType from animal
+        INNER JOIN animaltype ON animaltype.id = animal.id_animaltype
+        WHERE animal.id = #{id}
     </select>
 </mapper>

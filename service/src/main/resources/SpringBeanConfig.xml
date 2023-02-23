@@ -53,13 +53,8 @@
           class="com.epam.rd.tasks.zoo.repository.animals.AnimalRepositoryImpl">
         <constructor-arg name="session" ref="sqlSession"/>
     </bean>
-            <!-- Bird -->
-    <bean id="birdRepository"
-          class="com.epam.rd.tasks.zoo.repository.animals.bird.BirdRepositoryImpl">
-        <constructor-arg name="session" ref="sqlSession"/>
-    </bean>
 
-        <!-- Bullfinch-->
+        <!-- Bullfinch -->
     <bean id="bullfinchRepository"
           class="com.epam.rd.tasks.zoo.repository.animals.bird.bullfinch.BullfinchRepositoryImpl">
         <constructor-arg name="sqlSession" ref="sqlSession"/>
@@ -69,12 +64,70 @@
           scope="prototype"
           class="com.epam.rd.tasks.zoo.service.animal.bird.finch.BullfinchService">
         <constructor-arg name="bullfinchRepository" ref="bullfinchRepository"/>
-        <constructor-arg name="birdRepository" ref="birdRepository"/>
         <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
         <constructor-arg name="animalRepository" ref="animalRepository"/>
         <constructor-arg name="sqlSession" ref="sqlSession"/>
     </bean>
 
+        <!-- Crab -->
+    <bean id="crabRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.crustacean.highcancer.crab.CrabRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="crabService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.crustacean.highcancer.CrabService">
+        <constructor-arg name="crabRepository" ref="crabRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="animalRepository" ref="animalRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Shrimp -->
+    <bean id="shrimpRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.crustacean.highcancer.shrimp.ShrimpRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="shrimpService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.crustacean.highcancer.ShrimpService">
+        <constructor-arg name="shrimpRepository" ref="shrimpRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="animalRepository" ref="animalRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Wolf -->
+    <bean id="wolfRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.mammal.predator.WolfRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="wolfService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.mammal.predator.WolfService">
+        <constructor-arg name="wolfRepository" ref="wolfRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="animalRepository" ref="animalRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <!-- Squirrel -->
+    <bean id="squirrelRepository"
+          class="com.epam.rd.tasks.zoo.repository.animals.mammal.rodent.SquirrelRepositoryImpl">
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
+
+    <bean id="squirrelService"
+          scope="prototype"
+          class="com.epam.rd.tasks.zoo.service.animal.mammal.rodent.SquirrelService">
+        <constructor-arg name="squirrelRepository" ref="squirrelRepository"/>
+        <constructor-arg name="animalTypeRepository" ref="animalTypeRepository"/>
+        <constructor-arg name="animalRepository" ref="animalRepository"/>
+        <constructor-arg name="sqlSession" ref="sqlSession"/>
+    </bean>
 </beans>
 
 

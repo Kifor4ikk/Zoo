@@ -5,6 +5,7 @@ import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.animal.Animal;
 import com.epam.rd.tasks.zoo.food.Food;
 
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class Bird extends Animal {
@@ -33,5 +34,19 @@ public abstract class Bird extends Animal {
         return "Bird{" + super.toString() +
                 "wings='" + wings + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Bird bird = (Bird) o;
+        return Objects.equals(wings, bird.wings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), wings);
     }
 }

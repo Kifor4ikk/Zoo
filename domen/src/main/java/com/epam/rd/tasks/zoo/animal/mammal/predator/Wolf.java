@@ -4,6 +4,7 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.food.Food;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class Wolf extends Predator {
@@ -36,5 +37,19 @@ public class Wolf extends Predator {
         return "Wolf{" + super.toString() +
                 " behaviour='" + behaviour + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Wolf wolf = (Wolf) o;
+        return Objects.equals(behaviour, wolf.behaviour);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), behaviour);
     }
 }

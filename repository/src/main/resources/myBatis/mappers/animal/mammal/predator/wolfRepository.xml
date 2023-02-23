@@ -13,36 +13,36 @@
         <result column="behaviour" property="behaviour"/>
     </resultMap>
 
-    <insert id="create" >
-        BEGIN work;
-        LOCK TABLE animal;
+    <insert id="createWolf" >
+        WITH insertedAnimal AS (
         INSERT INTO animal (name, describe, age, id_animaltype, isDeleted, createDate)
-        VALUES (#{animal.name}, #{animal.describe}, #{animal.age}, (SELECT id FROM animalType WHERE animalType.animalType = #{animal.typeOfAnimal}),
-        false, CURRENT_DATE);
-
-        INSERT INTO mammal (id, tail) VALUES ((SELECT MAX(id) FROM animal), #{tail});
-        INSERT INTO wolf(id, behaviour) VALUES ((SELECT MAX(id) FROM animal), #{behaviour});
-        COMMIT work;
+        VALUES (#{name}, #{describe}, #{age}, (SELECT id FROM animalType WHERE animalType.animalType = #{typeOfAnimal}), false, CURRENT_DATE)
+        RETURNING id
+        ),
+        insertedMammal AS (
+        INSERT INTO mammal (id, tail) SELECT insertedAnimal.id, #{tail} FROM insertedAnimal
+        )
+        INSERT INTO wolf (id, behaviour) SELECT insertedAnimal.id, #{behaviour} FROM insertedAnimal
     </insert>
 
-    <select id="findById" resultMap="wolfResultMap">
+    <select id="findByIdWolf" resultMap="wolfResultMap">
         SELECT * FROM ANIMAL
         INNER JOIN mammal ON mammal.id = ANIMAL.id
         INNER JOIN wolf ON wolf.id = ANIMAL.id
         WHERE ANIMAL.id = #{id}
     </select>
 
-    <update id = "update">
-        UPDATE wolf SET behaviour = #{animal.behaviour} WHERE ID = #{animal.id};
-        UPDATE mammal SET tail = #{animal.tail} WHERE ID = #{animal.id};
-        UPDATE animal SET name = #{animal.name} ,describe = #{animal.describe}, age = #{animal.age} WHERE ID = #{animal.id} AND isdeleted = #{animal.isDeleted};
+    <update id = "updateWolf">
+        UPDATE wolf SET behaviour = #{behaviour} WHERE ID = #{id};
+        UPDATE mammal SET tail = #{tail} WHERE ID = #{id};
+        UPDATE animal SET name = #{name} ,describe = #{describe}, age = #{age} WHERE ID = #{id} AND isdeleted = #{isDeleted};
     </update>
 
-    <update id = "setDeleteStatus">
-        UPDATE animal SET isdeleted = #{status} WHERE ID = #{id};
+    <update id = "setDeleteStatusWolf">
+        UPDATE animal SET isdeleted = #{isDeleted} WHERE ID = #{id};
     </update>
 
-    <delete id="hardDelete">
+    <delete id="hardDeleteWolf">
         DELETE FROM wolf WHERE id = #{id};
         DELETE FROM mammal WHERE id = #{id};
         DELETE FROM animal WHERE id = #{id};

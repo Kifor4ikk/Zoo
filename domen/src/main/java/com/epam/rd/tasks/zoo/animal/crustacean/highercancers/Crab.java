@@ -4,6 +4,7 @@ import com.epam.rd.tasks.zoo.animalhouse.AnimalHouse;
 import com.epam.rd.tasks.zoo.animalhouse.climate.ClimateZone;
 import com.epam.rd.tasks.zoo.food.Food;
 
+import java.util.Objects;
 import java.util.Set;
 
 public class Crab extends HigherCancers {
@@ -16,9 +17,6 @@ public class Crab extends HigherCancers {
         this.setId(0L);
     }
 
-    public Crab(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String seashell) {
-        super(name, describe, age, livingZone, climateZone, foodType, seashell);
-    }
 
     public Crab(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String seashell, boolean isDeleted) {
         super(name, describe, age, livingZone, climateZone, foodType, seashell, isDeleted);
@@ -26,6 +24,12 @@ public class Crab extends HigherCancers {
 
     public Crab(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String seashell, boolean isDeleted, String taste) {
         super(name, describe, age, livingZone, climateZone, foodType, seashell, isDeleted);
+        this.taste = taste;
+    }
+
+
+    public Crab(String name, String describe, int age, Set<Class<? extends AnimalHouse>> livingZone, Set<ClimateZone> climateZone, Set<Class<? extends Food>> foodType, String seashell, String taste) {
+        super(name, describe, age, livingZone, climateZone, foodType, seashell);
         this.taste = taste;
     }
 
@@ -43,5 +47,19 @@ public class Crab extends HigherCancers {
                 super.toString() +
                 " taste='" + taste + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Crab crab = (Crab) o;
+        return Objects.equals(taste, crab.taste);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), taste);
     }
 }
